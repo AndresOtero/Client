@@ -44,7 +44,7 @@ bool  Interprete::isFinalUpdates(string& msg){
 
 	printf("%s",msg.c_str());
 
-	if(msg.compare(string("ALIVE")) == 0){
+	if(msg.compare(this->getKeepAliveMsg()) == 0){
 		return true;
 	}
 	return false;

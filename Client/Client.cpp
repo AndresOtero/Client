@@ -4,6 +4,7 @@
 #include "Interprete.h"
 #include <iostream>
 #include <unistd.h>  // problem solved! it compiles!
+#include "VistaSrc/Vista.h"
 using namespace std;
 
 /*void enviarKeepAlive(MySocket* myClient, Interprete* interprete){
@@ -51,7 +52,7 @@ void obtenerActualizacionesDelServer(MySocket* myClient, Interprete* interprete)
 
 		enviarConfirmReceived(myClient,interprete);
 
-		while ( !interprete->isFinalUpdates(msgFromSrv)){
+		while ( interprete->isFinalUpdates(msgFromSrv)){
 
 			printf("confirmo \n");
 			string msgFromSrv = "";
@@ -79,7 +80,6 @@ int main(int argc, char *argv[])
 	establecerLogin(&myClient, &interprete);
 
 	tiempo_viejo=SDL_GetTicks();
-
 	while (1)
 	{
 		if (myClient.isConnected() == false){

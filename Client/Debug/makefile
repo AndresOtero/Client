@@ -39,8 +39,11 @@ endif
 # All Target
 all: Client
 
+dependents:
+	-cd /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/Debug && $(MAKE) all
+
 # Tool invocations
-Client: $(OBJS) $(USER_OBJS)
+Client: $(OBJS) $(USER_OBJS) /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/Debug/AgeOfEmpiresTaller
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
 	g++  -o "Client" $(OBJS) $(USER_OBJS) $(LIBS)
@@ -54,5 +57,6 @@ clean:
 
 .PHONY: all clean dependents
 .SECONDARY:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/Debug/AgeOfEmpiresTaller:
 
 -include ../makefile.targets
