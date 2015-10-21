@@ -47,12 +47,13 @@ void obtenerActualizacionesDelServer(MySocket* myClient, Interprete* interprete)
 	string msgFromSrv = "";
 
 	myClient->recieveMessage(msgFromSrv);
+	//printf("%s \n", msgFromSrv.c_str());
 
 	if (myClient->isConnected() == true){
 
 		enviarConfirmReceived(myClient,interprete);
 
-		while ( interprete->isFinalUpdates(msgFromSrv)){
+		/*while ( !interprete->isFinalUpdates(msgFromSrv)){
 
 			printf("confirmo \n");
 			string msgFromSrv = "";
@@ -62,7 +63,7 @@ void obtenerActualizacionesDelServer(MySocket* myClient, Interprete* interprete)
 
 				interprete->notifyUpdate(msgFromSrv);
 			}
-		}
+		}*/
 
 	}
 }

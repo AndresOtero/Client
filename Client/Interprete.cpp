@@ -44,12 +44,12 @@ string Interprete:: getActualizarRecursosMsg(int oro, int madera,int piedra){
 
 bool  Interprete::isFinalUpdates(string& msg){
 
-	printf("%s",msg.c_str());
-
-	if(msg.compare(this->getKeepAliveMsg()) == 0){
+	if(msg == this->getKeepAliveMsg()){
 		return true;
+	}else{
+		return false;
 	}
-	return false;
+
 }
 
 void Interprete:: notifyUpdate(string& msg){
