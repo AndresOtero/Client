@@ -6,9 +6,11 @@
  */
 
 #include "Interprete.h"
+#include "GameControllerSrc/GameControllerCliente.h"
 
 Interprete::Interprete() {
-	this->gameCtrl = new GameControllerClient();
+	//this->gameCtrl = new GameControllerCliente();
+	this->gameCtrl=NULL;
 }
 string Interprete:: getKeepAliveMsg(){
 	return string("ALIVE");

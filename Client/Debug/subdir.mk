@@ -5,19 +5,16 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../Client.cpp \
-../GameControllerClient.cpp \
 ../Interprete.cpp \
 ../MySocket.cpp 
 
 OBJS += \
 ./Client.o \
-./GameControllerClient.o \
 ./Interprete.o \
 ./MySocket.o 
 
 CPP_DEPS += \
 ./Client.d \
-./GameControllerClient.d \
 ./Interprete.d \
 ./MySocket.d 
 
