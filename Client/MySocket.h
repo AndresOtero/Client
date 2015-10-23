@@ -7,7 +7,7 @@
 
 #ifndef MYSOCKET_H_
 #define MYSOCKET_H_
-#include <iostream>
+
 #include <unistd.h>  // problem solved! it compiles!
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -60,7 +60,7 @@ public:
 	/*
 	   receive messages and stores the message in a buffer
 	*/
-	int recieveMessage(std::string& message);
+	std::string recieveMessage();
 
 	/*
 	   Binds the socket to an address and port number - a server call

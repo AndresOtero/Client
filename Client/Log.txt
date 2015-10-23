@@ -1,0 +1,54 @@
+﻿2015-10-23 12:42:32.931 WARN  [10576] [Yaml::read@390] Problemas para abrir el archivoyaml-cpp: error at line 0, column 0: bad dereference
+2015-10-23 12:42:33.035 WARN  [10576] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:42:33.035 WARN  [10576] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:42:33.038 WARN  [10576] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:42:33.038 WARN  [10576] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:42:58.886 WARN  [10622] [Yaml::read@390] Problemas para abrir el archivoyaml-cpp: error at line 0, column 0: bad dereference
+2015-10-23 12:42:59.026 WARN  [10622] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:42:59.026 WARN  [10622] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:42:59.035 WARN  [10622] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:42:59.035 WARN  [10622] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:43:25.098 WARN  [10683] [Yaml::read@390] Problemas para abrir el archivoyaml-cpp: error at line 0, column 0: bad dereference
+2015-10-23 12:43:25.226 WARN  [10683] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:43:25.226 WARN  [10683] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:43:25.231 WARN  [10683] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:43:25.231 WARN  [10683] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:43:36.490 WARN  [10724] [Yaml::read@390] Problemas para abrir el archivoyaml-cpp: error at line 0, column 0: bad dereference
+2015-10-23 12:43:42.483 WARN  [10724] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:43:42.483 WARN  [10724] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:43:42.491 WARN  [10724] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:43:42.491 WARN  [10724] [Textura::loadFromFile@37] No se pudo cargar: %s. SDL_image Error: %s
+
+2015-10-23 12:44:50.737 WARN  [10801] [Barra::load@50] Failed to load font!%s
+
+2015-10-23 12:44:50.737 WARN  [10801] [Barra::load@50] Failed to load font!%s
+
+2015-10-23 12:44:50.737 WARN  [10801] [Barra::load@50] Failed to load font!%s
+
+2015-10-23 12:45:03.525 WARN  [10835] [Barra::load@50] Failed to load font!%s
+
+2015-10-23 12:45:03.525 WARN  [10835] [Barra::load@50] Failed to load font!%s
+
+2015-10-23 12:45:03.525 WARN  [10835] [Barra::load@50] Failed to load font!%s
+
+2015-10-23 12:49:49.395 WARN  [11093] [Barra::load@50] Failed to load font!%s
+
+2015-10-23 12:49:49.395 WARN  [11093] [Barra::load@50] Failed to load font!%s
+
+2015-10-23 12:49:49.395 WARN  [11093] [Barra::load@50] Failed to load font!%s
+

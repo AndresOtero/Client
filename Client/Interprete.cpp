@@ -6,23 +6,24 @@
  */
 
 #include "Interprete.h"
-#include "GameControllerSrc/GameControllerCliente.h"
 
 Interprete::Interprete() {
-	//this->gameCtrl = new GameControllerCliente();
-	this->gameCtrl=NULL;
+	this->gameCtrl = new GameControllerClient();
 }
 string Interprete:: getKeepAliveMsg(){
-	return string("ALIVE");
+	string r = "ALIVE";
+	return r;
 }
 string Interprete:: getReceivedMsg(){
-	return string("OK");
+	string r = "OK";
+	return r;
 }
 string Interprete:: getQuit(){
-	return string("QUIT");
+	string r = "QUIT";
+	return r;
 }
 bool Interprete::isQuit(string& quit){
-	return (quit.compare("QUIT") == 0);
+	return (quit.compare(getQuit()) == 0);
 }
 string Interprete::getLoginMsg(){
 	string result = string("LOGIN ");
@@ -44,7 +45,7 @@ string Interprete:: getActualizarRecursosMsg(int oro, int madera,int piedra){
 
 bool  Interprete::isFinalUpdates(string& msg){
 
-	if(msg == this->getKeepAliveMsg()){
+	if( msg == this->getKeepAliveMsg()){
 		return true;
 	}else{
 		return false;

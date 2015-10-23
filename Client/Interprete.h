@@ -10,7 +10,7 @@
 
 #include <string>
 #include <string>
-#include "GameControllerSrc/GameControllerCliente.h"
+#include "GameControllerClient.h"
 
 using namespace std;
 
@@ -31,7 +31,7 @@ public:
 	virtual ~Interprete();
 
 private:
-	GameControllerCliente* gameCtrl;
+	GameControllerClient* gameCtrl;
 };
 
 #endif /* INTERPRETE_H_ */
