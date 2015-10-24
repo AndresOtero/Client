@@ -11,22 +11,22 @@
 #include <string>
 #include <string>
 #include "GameControllerClient.h"
+#include "mensaje.h"
 
 using namespace std;
 
 class Interprete {
 public:
 	Interprete();
-	string getQuit();
-	bool isQuit(string& quit);
-	string getKeepAliveMsg();
-	string getLoginMsg();
-	string getReceivedMsg();
 
-	string getActualizarRecursosMsg(int oro, int madera,int piedra);
+	msg_t getKeepAliveMsg();
 
-	void notifyUpdate(string& msg);
-	bool isFinalUpdates(string& msg);
+	msg_t getQuit();
+	bool isQuit(msg_t quit);
+
+	msg_t getLoginMsg();
+
+	void notifyUpdate(msg_t msg);
 
 	virtual ~Interprete();
 

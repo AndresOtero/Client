@@ -8,21 +8,24 @@ CPP_SRCS += \
 ../GameControllerClient.cpp \
 ../Interprete.cpp \
 ../MySocket.cpp \
-../Yaml.cpp 
+../Yaml.cpp \
+../mensaje.cpp 
 
 OBJS += \
 ./Client.o \
 ./GameControllerClient.o \
 ./Interprete.o \
 ./MySocket.o \
-./Yaml.o 
+./Yaml.o \
+./mensaje.o 
 
 CPP_DEPS += \
 ./Client.d \
 ./GameControllerClient.d \
 ./Interprete.d \
 ./MySocket.d \
-./Yaml.d 
+./Yaml.d \
+./mensaje.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

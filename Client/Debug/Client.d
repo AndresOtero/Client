@@ -1,41 +1,23 @@
-Client.d: ../Client.cpp ../MySocket.h ../Interprete.h \
- ../GameControllerClient.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Modelo.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Mapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Celda.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Entidad.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/GeneradorNumeros.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/BaseLogica.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/PixelsReferencia.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Posicion.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Personaje.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Posicion.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/GeneradorNumeros.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Celda.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Entidad.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Personaje.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/ObjetoMapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/RecursosJugador.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Juego.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Pantalla.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Oro.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Recurso.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Madera.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Piedra.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Configuracion.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Escenario.h \
+Client.d: ../Client.cpp ../MySocket.h ../mensaje.h ../Interprete.h \
+ ../GameControllerClient.h ../Yaml.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Juego.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Pantalla.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Oro.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Recurso.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Entidad.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/GeneradorNumeros.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/ObjetoMapa.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/BaseLogica.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/PixelsReferencia.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Posicion.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/RecursosJugador.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Madera.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Piedra.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Configuracion.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Escenario.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Personaje.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../VistaSrc/Dibujo.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../VistaSrc/../VistaSrc/Textura.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/ObjetoMapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Posicion.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/RecursosJugador.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/VistaSrc/Vista.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/VistaSrc/FactoryDibujo.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/VistaSrc/../ModeloSrc/Celda.h \
@@ -91,143 +73,72 @@ Client.d: ../Client.cpp ../MySocket.h ../Interprete.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/VistaSrc/../ModeloSrc/../ModeloSrc/Juego.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/VistaSrc/Textura.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/VistaSrc/RecursoVista.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Configuracion.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/VistaSrc/CambioDeCoordendas.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/GameControllerCliente.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/GameController.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/Modelo.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Mapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Celda.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Entidad.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Personaje.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Posicion.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Posicion.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/GeneradorNumeros.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Celda.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Entidad.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Personaje.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Juego.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/Personaje.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../VistaSrc/Dibujo.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/ObjetoMapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/Posicion.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/RecursosJugador.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/GameController.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/Modelo.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Mapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Celda.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Entidad.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Personaje.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Posicion.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Posicion.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/GeneradorNumeros.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Celda.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Entidad.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Personaje.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Juego.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/Personaje.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../VistaSrc/Dibujo.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/ObjetoMapa.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/Posicion.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/RecursosJugador.h \
- ../Yaml.h \
- /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Juego.h
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Modelo.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Mapa.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Celda.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Entidad.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Personaje.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Posicion.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Posicion.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/GeneradorNumeros.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Celda.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Entidad.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Personaje.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/ObjetoMapa.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/RecursosJugador.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Juego.h
 
 ../MySocket.h:
+
+../mensaje.h:
 
 ../Interprete.h:
 
 ../GameControllerClient.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Modelo.h:
+../Yaml.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Mapa.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Juego.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Celda.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Pantalla.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Entidad.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Oro.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/GeneradorNumeros.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Recurso.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Entidad.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/BaseLogica.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/GeneradorNumeros.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/PixelsReferencia.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/ObjetoMapa.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Posicion.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/BaseLogica.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Personaje.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/PixelsReferencia.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Posicion.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/RecursosJugador.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Madera.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Posicion.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Piedra.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/GeneradorNumeros.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Configuracion.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Celda.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Entidad.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Personaje.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/ObjetoMapa.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/RecursosJugador.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Juego.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Pantalla.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Oro.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Recurso.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Madera.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Piedra.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Configuracion.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Escenario.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Escenario.h:
 
 /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Personaje.h:
 
 /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../VistaSrc/Dibujo.h:
 
 /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../VistaSrc/../VistaSrc/Textura.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/ObjetoMapa.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Posicion.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/RecursosJugador.h:
 
 /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/VistaSrc/Vista.h:
 
@@ -339,120 +250,42 @@ Client.d: ../Client.cpp ../MySocket.h ../Interprete.h \
 
 /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/VistaSrc/RecursoVista.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Configuracion.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Modelo.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/VistaSrc/CambioDeCoordendas.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Mapa.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/GameControllerCliente.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Celda.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/GameController.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Entidad.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/Modelo.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Personaje.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Mapa.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Celda.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Entidad.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Personaje.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/Posicion.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Posicion.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/GeneradorNumeros.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Posicion.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Celda.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Entidad.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Posicion.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Personaje.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/GeneradorNumeros.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Celda.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Entidad.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/ObjetoMapa.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Personaje.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/RecursosJugador.h:
 
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../ModeloSrc/Juego.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/Personaje.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../VistaSrc/Dibujo.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/ObjetoMapa.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/Posicion.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../GameControllerSrc/../ModeloSrc/RecursosJugador.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/GameController.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/Modelo.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Mapa.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Celda.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Entidad.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Personaje.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/Posicion.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Posicion.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/GeneradorNumeros.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Celda.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Entidad.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Personaje.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/Dibujo.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/ObjetoMapa.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/RecursosJugador.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../ModeloSrc/Juego.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/Personaje.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../VistaSrc/Dibujo.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/../VistaSrc/../VistaSrc/Textura.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/ObjetoMapa.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/Posicion.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/GameControllerSrc/../ModeloSrc/RecursosJugador.h:
-
-../Yaml.h:
-
-/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Juego.h:
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Juego.h:

@@ -76,3 +76,5 @@
 2015-10-24 00:36:01.545 WARN  [28056] [Yaml::readCliente@464] Problemas para abrir el archivoyaml-cpp: error at line 2, column 9: invalid scalar
 2015-10-24 00:41:56.156 WARN  [28511] [Yaml::readCliente@456] Problemas para abrir el archivoyaml-cpp: error at line 2, column 9: invalid scalar
 2015-10-24 00:44:08.584 WARN  [28737] [Yaml::cargarConfiguracion@276] No se define configuracion para el margen del scroll y velocidad del personaje
+2015-10-24 16:08:57.039 WARN  [1620] [Yaml::cargarConfiguracion@276] No se define configuracion para el margen del scroll y velocidad del personaje
+2015-10-24 16:08:57.039 WARN  [1620] [Yaml::read@367] Problemas para abrir el archivoyaml-cpp: error at line 7, column 2: key not found: 12

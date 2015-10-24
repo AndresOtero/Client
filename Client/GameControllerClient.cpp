@@ -15,6 +15,8 @@ void GameControllerClient::actualizarJuego(string evento){
 	printf("Actualizando modelo en cliente: %s",evento.c_str());
 }
 
+
+
 string GameControllerClient::obtenerSiguienteEvento(){
 	//TODO GameController podria tener una cola de eventos donde se van agregando, y se saca el ultimo de ahi.
 	string siguienteEvento = "Mover id:1 pos:(5,3)";
