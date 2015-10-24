@@ -53,6 +53,9 @@ int main(int argc, char *argv[])
 			Yaml* reader=new Yaml("YAML/configuracionCliente.yaml");
 			Juego* juego = reader->readCliente();
 			delete reader;
+			juego->agregarEntidad("barraca",0,0);
+			juego->setEscenario("Orleans",100,100);
+			juego->setConfiguracion(200,1);
 			Modelo* modelo=new Modelo(juego);
 			Vista* vista=new Vista(modelo);
 			vista->init();
