@@ -55,8 +55,10 @@ int main(int argc, char *argv[]) {
 	bool reiniciar = true;
 
 	while (reiniciar) {
-		Yaml* reader = new Yaml();
-		Juego* juego = reader->read();
+		//Yaml* reader = new Yaml();
+		Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
+		Juego* juego = reader->readCliente();
+		//Juego* juego = reader->readCliente();
 		delete reader;
 		Modelo* modelo = new Modelo(juego);
 		Vista* vista = new Vista(modelo);

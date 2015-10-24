@@ -52,3 +52,27 @@
 
 2015-10-23 12:49:49.395 WARN  [11093] [Barra::load@50] Failed to load font!%s
 
+2015-10-23 23:40:44.897 WARN  [23749] [Yaml::readCliente@450] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:40:59.615 WARN  [23790] [Yaml::readCliente@450] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:41:24.967 WARN  [23842] [Yaml::readCliente@450] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:43:26.434 WARN  [23982] [Yaml::readCliente@450] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:44:03.758 WARN  [24063] [Yaml::readCliente@450] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:44:32.348 WARN  [24143] [Yaml::readCliente@450] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:44:48.386 WARN  [24193] [Yaml::readCliente@450] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:45:22.521 WARN  [24245] [Yaml::readCliente@450] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:46:19.123 WARN  [24377] [Yaml::readCliente@450] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:46:43.612 WARN  [24467] [Yaml::readCliente@450] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:48:50.304 WARN  [24746] [Yaml::readCliente@453] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:49:48.347 WARN  [24875] [Yaml::readCliente@453] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:50:21.508 WARN  [25002] [Yaml::readCliente@453] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:52:46.373 WARN  [25165] [Yaml::readCliente@453] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:54:04.557 WARN  [25254] [Yaml::readCliente@453] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:54:51.091 WARN  [25380] [Yaml::readCliente@453] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-23 23:58:31.827 WARN  [25707] [Yaml::cargarPersonaje@150] No se define un protagonista para el escenario
+2015-10-24 00:28:57.839 WARN  [27200] [Yaml::cargarPersonaje@162] No se define un protagonista para el escenario
+2015-10-24 00:29:58.350 WARN  [27426] [Yaml::cargarPersonaje@162] No se define un protagonista para el escenario
+2015-10-24 00:32:02.537 WARN  [27643] [Yaml::cargarPersonaje@162] No se define un protagonista para el escenario
+2015-10-24 00:34:05.432 WARN  [27891] [Yaml::readCliente@464] Problemas para abrir el archivoyaml-cpp: error at line 2, column 9: invalid scalar
+2015-10-24 00:36:01.545 WARN  [28056] [Yaml::readCliente@464] Problemas para abrir el archivoyaml-cpp: error at line 2, column 9: invalid scalar
+2015-10-24 00:41:56.156 WARN  [28511] [Yaml::readCliente@456] Problemas para abrir el archivoyaml-cpp: error at line 2, column 9: invalid scalar
+2015-10-24 00:44:08.584 WARN  [28737] [Yaml::cargarConfiguracion@276] No se define configuracion para el margen del scroll y velocidad del personaje

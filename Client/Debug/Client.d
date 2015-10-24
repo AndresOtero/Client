@@ -24,6 +24,10 @@ Client.d: ../Client.cpp ../MySocket.h ../Interprete.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/RecursosJugador.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Juego.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Pantalla.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Oro.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Recurso.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Madera.h \
+ /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Piedra.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Configuracion.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Escenario.h \
  /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/Personaje.h \
@@ -200,6 +204,14 @@ Client.d: ../Client.cpp ../MySocket.h ../Interprete.h \
 /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Juego.h:
 
 /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Pantalla.h:
+
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Oro.h:
+
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Recurso.h:
+
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Madera.h:
+
+/home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Piedra.h:
 
 /home/andres/git/AgeOfEmpiresTaller/AgeOfEmpiresTaller/ModeloSrc/../ModeloSrc/Configuracion.h:
 
