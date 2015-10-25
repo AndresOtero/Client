@@ -5,7 +5,6 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../Client.cpp \
-../GameControllerClient.cpp \
 ../Interprete.cpp \
 ../MySocket.cpp \
 ../Yaml.cpp \
@@ -13,7 +12,6 @@ CPP_SRCS += \
 
 OBJS += \
 ./Client.o \
-./GameControllerClient.o \
 ./Interprete.o \
 ./MySocket.o \
 ./Yaml.o \
@@ -21,7 +19,6 @@ OBJS += \
 
 CPP_DEPS += \
 ./Client.d \
-./GameControllerClient.d \
 ./Interprete.d \
 ./MySocket.d \
 ./Yaml.d \

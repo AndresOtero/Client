@@ -50,13 +50,14 @@ int main(int argc, char *argv[])
 	Interprete interprete;
 	bool reiniciar=true;
 	while (reiniciar){
-			Yaml* reader=new Yaml("YAML/configuracionCliente.yaml");
-			Juego* juego = reader->readCliente();
+			Yaml* reader=new Yaml("YAML/configuracion.yaml");
+			Juego* juego = reader->read();
 			delete reader;
-			juego->agregarEntidad("barraca",0,0);
 			juego->setEscenario("Orleans",100,100);
 			juego->setConfiguracion(200,1);
 			Modelo* modelo=new Modelo(juego);
+			//modelo->agregarEntidad("barraca",0,0);
+
 			Vista* vista=new Vista(modelo);
 			vista->init();
 			vista->loadMedia();

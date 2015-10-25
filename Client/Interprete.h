@@ -7,10 +7,9 @@
 
 #ifndef INTERPRETE_H_
 #define INTERPRETE_H_
-
+#include "GameControllerSrc/GameControllerCliente.h"
 #include <string>
 #include <string>
-#include "GameControllerClient.h"
 #include "mensaje.h"
 
 using namespace std;
@@ -31,7 +30,7 @@ public:
 	virtual ~Interprete();
 
 private:
-	GameControllerClient* gameCtrl;
+	GameControllerCliente* gameCtrl;
 };
 
 #endif /* INTERPRETE_H_ */
