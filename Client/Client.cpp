@@ -46,32 +46,45 @@ int main(int argc, char *argv[])
 	double tiempo_actual,tiempo_viejo=0;
 	bool enviarAlive;
 	msg_t msgToSrv;
-
+	GameControllerCliente * gameController = new GameControllerCliente();
 	Interprete interprete;
 	bool reiniciar=true;
-	while (reiniciar){
-			Yaml* reader=new Yaml("YAML/configuracion.yaml");
-			Juego* juego = reader->read();
-			delete reader;
-			juego->setEscenario("Orleans",100,100);
-			juego->setConfiguracion(200,1);
-			Modelo* modelo=new Modelo(juego);
-			//modelo->agregarEntidad("barraca",0,0);
 
-			Vista* vista=new Vista(modelo);
-			vista->init();
-			vista->loadMedia();
-			reiniciar = vista->run();
-			delete modelo;
-			delete vista;
-	}
 	MySocket myClient(PORTNUM);
 	myClient.connectToServer("127.0.0.1");
 
 	establecerLogin(&myClient, &interprete);
 
-	tiempo_viejo=SDL_GetTicks();
+	//lee el YAML antes de cargar el usuario y el modelo
+	Yaml* reader = new Yaml("YAML/configuracion.yaml");
+	Juego* juego = reader->read();
+	delete reader;
+	gameController->insertarJuego(juego);
 
+	//se lo deberia pasar el server
+	juego->setEscenario("Orlean",100,100);
+	juego->setConfiguracion(100,1);
+
+	//una vez que pudo ingresar deberia cargar el juego
+	//while (true){
+	 //msg_t mensaje = myClient.recieveMessage();
+	 //if (mensaje.type==finCarga){
+	 //		break;
+	 //}
+	 //interpretar mensaje
+	//}
+
+	gameController->crearModelo();
+	Modelo *modelo = gameController->devolverModelo();
+
+	//Inicia vista
+	Vista* vista=new Vista(modelo,gameController);
+	vista->init();
+	vista->loadMedia();
+
+	//comienza a jugar
+	tiempo_viejo=SDL_GetTicks();
+	bool fin;
 	while (1)
 	{
 		enviarAlive = true; //poner en false si mando otra cosa
@@ -83,16 +96,26 @@ int main(int argc, char *argv[])
 	   obtenerActualizacionesDelServer(&myClient, &interprete);
 	   //aca va toda la corrida del juego, puede devolver un string con el evento a notificar
 
-	   if (enviarAlive ){
-		   enviarKeepAlive(&myClient,&interprete);
-	   }else{
-		   enviarAccion(&myClient, msgToSrv);
+	   fin = vista->run(enviarAlive);
+
+	   if (fin){
+		   msg_t quit = interprete.getQuit();
+		   myClient.sendMessage(quit);
+		   break;
 	   }
+
+	   //si el juego no mando nada
+	   if (enviarAlive )
+		   enviarKeepAlive(&myClient,&interprete);
 
 	   usleep((40 - (tiempo_actual-tiempo_viejo))*1000);
 	   tiempo_actual= SDL_GetTicks();
 	   tiempo_viejo=tiempo_actual;
 	}
+
+	delete modelo;
+	delete vista;
+	delete gameController;
     return 0;
 }
 
