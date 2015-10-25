@@ -5,6 +5,7 @@
 #include <iostream>
 #include <unistd.h>
 #include "Yaml.h"
+#include "GameControllerSrc/mensaje.h"
 #include "VistaSrc/Vista.h"
 #include "ModeloSrc/Modelo.h"
 #include "ModeloSrc/Juego.h"
@@ -94,20 +95,21 @@ int main(int argc, char *argv[])
 				//myClient.reconnectToServer(); TE DEJO ACA PARA QUE VEAS COMO RECONECTAR ANTE UN MENSAJE DEL USUARIO
 		}
 	   obtenerActualizacionesDelServer(&myClient, &interprete);
-	   //aca va toda la corrida del juego, puede devolver un string con el evento a notificar
 
-	   fin = vista->run(enviarAlive);
+	   fin = vista->run(); //llama al game controller
 
 	   if (fin){
 		   msg_t quit = interprete.getQuit();
 		   myClient.sendMessage(quit);
 		   break;
 	   }
-
-	   //si el juego no mando nada
-	   if (enviarAlive )
+	   if (gameController->hayEventos()){
+		   msg_t mensaje = gameController->sacarMensaje();
+   		   myClient.sendMessage(mensaje);
+	   }
+	   else{
 		   enviarKeepAlive(&myClient,&interprete);
-
+	   }
 	   usleep((40 - (tiempo_actual-tiempo_viejo))*1000);
 	   tiempo_actual= SDL_GetTicks();
 	   tiempo_viejo=tiempo_actual;

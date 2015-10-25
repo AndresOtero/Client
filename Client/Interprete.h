@@ -7,10 +7,11 @@
 
 #ifndef INTERPRETE_H_
 #define INTERPRETE_H_
+#include "GameControllerSrc/mensaje.h"
 #include "GameControllerSrc/GameControllerCliente.h"
 #include <string>
 #include <string>
-#include "mensaje.h"
+
 
 using namespace std;
 
