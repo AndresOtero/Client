@@ -6168,3 +6168,5 @@
 2015-10-24 21:06:20.867 WARN  [8423] [Yaml::read@367] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
 2015-10-24 21:07:03.420 WARN  [8518] [Yaml::read@367] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
 2015-10-25 12:47:22.966 WARN  [9486] [Yaml::read@367] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-25 13:05:25.766 WARN  [10902] [Yaml::read@367] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-25 13:08:54.753 WARN  [11098] [Yaml::read@367] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
