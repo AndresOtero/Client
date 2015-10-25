@@ -49,15 +49,6 @@ int main(int argc, char *argv[])
 	GameControllerCliente * gameController = new GameControllerCliente();
 	Interprete interprete;
 	bool reiniciar=true;
-<<<<<<< HEAD
-=======
-	while (reiniciar){
-			Yaml* reader=new Yaml("YAML/configuracion.yaml");
-			Juego* juego = reader->read();
-			delete reader;
-			Modelo* modelo=new Modelo(juego);
-			//modelo->agregarEntidad("barraca",0,0);
->>>>>>> refs/remotes/origin/master
 
 	MySocket myClient(PORTNUM);
 	myClient.connectToServer("127.0.0.1");
