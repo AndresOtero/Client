@@ -6,6 +6,7 @@
  */
 
 #include "Yaml.h"
+#include "ModeloSrc/Jugador.h"
 #include "ModeloSrc/ObjetoMapa.h"
 #include "ModeloSrc/Pantalla.h"
 #include "ModeloSrc/Configuracion.h"
@@ -64,6 +65,11 @@ const std::string tag_escenario_protagonista_x = "x";
 const std::string tag_escenario_protagonista_y = "y";
 const std::string tag_escenario_protagonista_tipo = "tipo";
 
+const std::string tag_jugador = "jugador";
+const std::string tag_jugador_nombre = "nombre";
+const std::string tag_jugador_ip = "ip";
+
+
 
 
 Entidad* elegirEntidad(ObjetoMapa * objeto,Entidad_t entidad_t){
@@ -110,9 +116,6 @@ Entidad* Yaml::cargarEntidad(const
 	}
 	return ent;
 }
-
-
-
 Personaje* Yaml::cargarPersonaje(ConfiguracionJuego_t conf, const YAML::Node* pEscenario) {
 
 	Personaje* protagonista;
@@ -157,7 +160,6 @@ Personaje* Yaml::cargarPersonaje(ConfiguracionJuego_t conf, const YAML::Node* pE
 	return protagonista;
 
 }
-
 Escenario* Yaml::cargarEscenario(ConfiguracionJuego_t conf,const YAML::Node* pEscenario) {
 	Escenario* escenario;
 	if (const YAML::Node *pNombre = (*pEscenario).FindValue(
@@ -187,7 +189,6 @@ Escenario* Yaml::cargarEscenario(ConfiguracionJuego_t conf,const YAML::Node* pEs
 				return escenario;
 
 }
-
 void Yaml::cargarObjetoMapa(const YAML::Node* pTipos) {
 	Objeto_mapa_t tipo;
 	if (const YAML::Node *pTipoNombre =
@@ -309,6 +310,35 @@ Pantalla* Yaml::cargarPantalla(ConfiguracionJuego_t conf, YAML::Node* doc) {
 		pantalla = new Pantalla();
 	}
 	return pantalla;
+}
+Jugador* Yaml::cargarJugador( YAML::Node* doc,Personaje* pers) {
+	Jugador* jugador;
+	Jugador_t jug;
+	if (const YAML::Node *pJugador = doc->FindValue(tag_jugador)) {
+		if (const YAML::Node *pJugadorNombre = (*pJugador).FindValue(
+				tag_jugador_nombre)) {
+			(*pJugadorNombre) >> jug.nombre;
+			if (const YAML::Node *pJugadorIp = (*pJugador).FindValue(
+					tag_pantalla_alto)) {
+				(*pJugadorIp) >> jug.ip;
+				jugador = new Jugador(jug.nombre,
+						jug.ip,pers);
+			} else {
+				LOG_WARNING
+						<< "Se define configuracion de pantalla para el ancho pero no para el alto";
+			}
+		} else {
+			//log conf pantalla sin ancho
+			LOG_WARNING
+					<< "Se define configuracion de pantalla pero no su ancho";
+		}
+
+	} else {
+		// log no tiene pantalla
+		LOG_WARNING
+				<< "No se define configuracion de pantalla, se usa Default 1024x728";
+	}
+	return jugador;
 }
 
 Juego* Yaml::read() {
