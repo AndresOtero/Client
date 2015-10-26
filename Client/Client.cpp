@@ -63,8 +63,8 @@ int main(int argc, char *argv[])
 	gameController->insertarJuego(juego);
 
 	//se lo deberia pasar el server
-	juego->setEscenario("Orlean",100,100);
-	juego->setConfiguracion(100,1);
+	//juego->setEscenario("Orlean",100,100);
+	//juego->setConfiguracion(100,1);
 
 	//una vez que pudo ingresar deberia cargar el juego
 	//while (true){
