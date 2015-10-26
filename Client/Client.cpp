@@ -100,12 +100,12 @@ int main(int argc, char *argv[])
 
 	   if (fin){
 		   msg_t quit = interprete.getQuit();
-		   myClient.sendMessage(quit);
+		   enviarAccion(&myClient,quit);
 		   break;
 	   }
 	   if (gameController->hayEventos()){
 		   msg_t mensaje = gameController->sacarMensaje();
-   		   myClient.sendMessage(mensaje);
+   		   enviarAccion(&myClient,mensaje);
 	   }
 	   else{
 		   enviarKeepAlive(&myClient,&interprete);
