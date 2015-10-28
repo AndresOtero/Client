@@ -33,10 +33,9 @@ bool Interprete::isQuit(msg_t quit){
 	return (quit.type == QUIT);
 }
 msg_t Interprete::getLoginMsg(string nombre){
-	msg_t r;
-	r.type = LOGIN;
-	strcpy(r.paramNombre, string_to_char_array(nombre));
-	return r;
+	msg_t mensajeLogin;
+	memcpy(mensajeLogin.paramNombre,string_to_char_array(nombre),sizeof(mensajeLogin.paramNombre));
+	return mensajeLogin;
 }
 
 void Interprete::procesarMensajeDeServer(msg_t msg){
