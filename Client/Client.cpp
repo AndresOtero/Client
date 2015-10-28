@@ -20,7 +20,7 @@ void enviarKeepAlive(MySocket* myClient, Interprete* interprete){
 }
 void establecerLogin(MySocket* myClient, Interprete* interprete){
 
-	msg_t messageToServer = interprete->getLoginMsg();
+	msg_t messageToServer = interprete->getLoginMsg("pepe");
 
 	myClient->sendMessage(messageToServer);
 }
@@ -37,7 +37,7 @@ void obtenerActualizacionesDelServer(MySocket* myClient, Interprete* interprete)
 	if (myClient->isConnected() == true){
 		cout << "Server: Recive actualizacion de tipo: " << msgFromSrv.type << "\n";
 
-		interprete->notifyUpdate(msgFromSrv);
+		interprete->procesarMensajeDeServer(msgFromSrv);
 	}
 }
 
