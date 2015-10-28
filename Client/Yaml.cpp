@@ -479,6 +479,10 @@ Juego* Yaml::readCliente() {
 		configuracion = new Configuracion();
 		escenario = new Escenario();
 		escenario->protagonista=protagonista;
+
+		Jugador* jugador=cargarJugador(&doc,escenario->protagonista);
+		if(!jugador)return NULL;
+		escenario->jugador=jugador;
 		juego = new Juego(pantalla, configuracion, escenario, tipos);
 	} catch (YAML::Exception& e) {
 		juego = new Juego();
