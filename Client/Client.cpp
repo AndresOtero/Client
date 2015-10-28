@@ -67,12 +67,7 @@ int main(int argc, char *argv[])
 	//juego->setConfiguracion(100,1);
 
 	//una vez que pudo ingresar deberia cargar el juego
-	//while (true){
-	 //msg_t mensaje = myClient.recieveMessage();
-	 //if (mensaje.type==finCarga){
-	 //		break;
-	 //}
-	 //interpretar mensaje
+	//interpretar mensaje
 	//}
 
 	gameController->crearModelo();
@@ -80,15 +75,24 @@ int main(int argc, char *argv[])
 	myClient.connectToServer(gameController->ipJugador().c_str());
 	establecerLogin(&myClient, &interprete,gameController->nombreJugador());
 
+	while (true){
+
+	 msg_t mensaje = myClient.recieveMessage();
+	 if (mensaje.type==FIN_INICIALIZACION){
+	 		break;
+	 }
+	 printf("%d\n",mensaje.type);
+	}
+
 	Modelo *modelo = gameController->devolverModelo();
 
 	//Inicia vista
 	Vista* vista=new Vista(modelo,gameController);
 	vista->init();
 	vista->loadMedia();
-	 while(1){
+	 /*while(1){
 		   vista->run(); //llama al game controller
-	 }
+	 }*/
 	//comienza a jugar
 	tiempo_viejo=SDL_GetTicks();
 	bool fin;
@@ -101,6 +105,8 @@ int main(int argc, char *argv[])
 				//myClient.reconnectToServer(); TE DEJO ACA PARA QUE VEAS COMO RECONECTAR ANTE UN MENSAJE DEL USUARIO
 		}
 	   obtenerActualizacionesDelServer(&myClient, &interprete);
+
+	   fin = vista->run();
 
 	   if (fin){
 		   msg_t quit = interprete.getQuit();

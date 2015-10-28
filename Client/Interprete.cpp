@@ -54,10 +54,22 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		this->gameCtrl->desconectar(msg.paramNombre);
 		break;
 	case CREAR_ENTIDAD:
-		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1, msg.paramDouble2, msg.paramInt1);
+		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1, msg.paramDouble2, 0);
+		break;
+	case CREAR_RECURSO:
+		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1,msg.paramDouble2,msg.paramInt1);
 		break;
 	case RECONNECT:
 		this->gameCtrl->reconectar(msg.paramNombre);
+		break;
+	case PARAM_MAPA:
+		this->gameCtrl->setEscenario("NOMBRE",(int)msg.paramDouble1,(int)msg.paramDouble2);
+		break;
+	case CONFIGURACION:
+		this->gameCtrl->setConfiguracion((int)msg.paramDouble1,(int)msg.paramDouble2);
+		break;
+	case DISCONNECT:
+		this->gameCtrl->desconectar(msg.paramNombre);
 		break;
 	default:
 		break;
