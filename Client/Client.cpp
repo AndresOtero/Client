@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	bool enviarAlive;
 	msg_t msgToSrv;
 	GameControllerCliente * gameController = new GameControllerCliente();
-	Interprete nterprete;
+	Interprete interprete;
 	bool reiniciar=true;
 
 	MySocket myClient(PORTNUM);

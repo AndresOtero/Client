@@ -66,10 +66,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 	case PARAM_MAPA:
 		printf("llega\n");
-		//this->gameCtrl->juego->escenario->size_x = 100;//floor(msg.paramDouble1);
-		printf("cargo1\n");
-		//this->gameCtrl->juego->escenario->size_y =100;// floor(msg.paramDouble2);
-		printf("cargo2\n");
+		this->gameCtrl->setMapa(msg.paramDouble1,msg.paramDouble2);
 		break;
 	case CONFIGURACION:
 		this->gameCtrl->setConfiguracion((int)msg.paramDouble1,(int)msg.paramDouble2);
