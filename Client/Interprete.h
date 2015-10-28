@@ -24,14 +24,17 @@ public:
 	msg_t getQuit();
 	bool isQuit(msg_t quit);
 
-	msg_t getLoginMsg();
+	msg_t getLoginMsg(string nombre);
 
-	void notifyUpdate(msg_t msg);
+	void procesarMensajeDeServer(msg_t msg);
 
 	virtual ~Interprete();
 
 private:
 	GameControllerCliente* gameCtrl;
+
+	char* string_to_char_array(string str);
+
 };
 
 #endif /* INTERPRETE_H_ */

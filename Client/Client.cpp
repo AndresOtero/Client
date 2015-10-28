@@ -20,7 +20,7 @@ void enviarKeepAlive(MySocket* myClient, Interprete* interprete){
 }
 void establecerLogin(MySocket* myClient, Interprete* interprete,string nombre){
 
-	msg_t messageToServer = interprete->getLoginMsg();
+	msg_t messageToServer = interprete->getLoginMsg("pepe");
 
 	myClient->sendMessage(messageToServer);
 }
@@ -37,7 +37,7 @@ void obtenerActualizacionesDelServer(MySocket* myClient, Interprete* interprete)
 	if (myClient->isConnected() == true){
 		cout << "Server: Recive actualizacion de tipo: " << msgFromSrv.type << "\n";
 
-		interprete->notifyUpdate(msgFromSrv);
+		interprete->procesarMensajeDeServer(msgFromSrv);
 	}
 }
 
@@ -104,12 +104,12 @@ int main(int argc, char *argv[])
 
 	   if (fin){
 		   msg_t quit = interprete.getQuit();
-		   myClient.sendMessage(quit);
+		   enviarAccion(&myClient,quit);
 		   break;
 	   }
 	   if (gameController->hayEventos()){
 		   msg_t mensaje = gameController->sacarMensaje();
-   		   myClient.sendMessage(mensaje);
+   		   enviarAccion(&myClient,mensaje);
 	   }
 	   else{
 		   enviarKeepAlive(&myClient,&interprete);
