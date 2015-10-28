@@ -7,6 +7,7 @@
 
 #include "Interprete.h"
 
+
 char* Interprete::string_to_char_array(string str){
 	int str_size = str.size();
 	char charArray[PARAM_STRING_LEN];
