@@ -18,8 +18,8 @@ char* Interprete::string_to_char_array(string str){
 	return charArray;
 }
 
-Interprete::Interprete() {
-	this->gameCtrl = new GameControllerCliente();
+Interprete::Interprete(GameControllerCliente* gm) {
+	this->gameCtrl = gm;
 }
 msg_t Interprete:: getKeepAliveMsg(){
 	msg_t r;
@@ -66,7 +66,8 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 	case PARAM_MAPA:
 		printf("llega\n");
-		this->gameCtrl->setMapa(msg.paramDouble1,msg.paramDouble2);
+		this->gameCtrl->juego->escenario->size_x = msg.paramDouble1;
+		this->gameCtrl->juego->escenario->size_y = msg.paramDouble2;
 		break;
 	case CONFIGURACION:
 		this->gameCtrl->setConfiguracion((int)msg.paramDouble1,(int)msg.paramDouble2);

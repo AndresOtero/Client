@@ -17,7 +17,7 @@ using namespace std;
 
 class Interprete {
 public:
-	Interprete();
+	Interprete(GameControllerCliente* gm) ;
 
 	msg_t getKeepAliveMsg();
 
