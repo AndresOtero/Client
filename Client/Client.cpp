@@ -55,8 +55,8 @@ int main(int argc, char *argv[])
 
 
 	//lee el YAML antes de cargar el usuario y el modelo
-	Yaml* reader = new Yaml("YAML/configuracion.yaml");
-	Juego* juego = reader->read();
+	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
+	Juego* juego = reader->readCliente();
 	delete reader;
 	if(!juego)return -1;//No se crea el jugador
 	gameController->insertarJuego(juego);
@@ -76,12 +76,12 @@ int main(int argc, char *argv[])
 	establecerLogin(&myClient, &interprete,gameController->nombreJugador());
 
 	while (true){
-
-	 msg_t mensaje = myClient.recieveMessage();
-	 if (mensaje.type==FIN_INICIALIZACION){
-	 		break;
-	 }
-	 printf("%d\n",mensaje.type);
+		msg_t mensaje = myClient.recieveMessage();
+		if (mensaje.type == FIN_INICIALIZACION) {
+			printf("%d\n", mensaje.type);
+			break;
+		}
+		printf("%d\n", mensaje.type);
 	}
 
 	Modelo *modelo = gameController->devolverModelo();
