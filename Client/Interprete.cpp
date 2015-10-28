@@ -53,13 +53,12 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case QUIT:
 		this->gameCtrl->desconectar(msg.paramNombre);
 		break;
-
 	case CREAR_ENTIDAD:
 		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1, msg.paramDouble2, msg.paramInt1);
-
+		break;
 	case RECONNECT:
 		this->gameCtrl->reconectar(msg.paramNombre);
-
+		break;
 	default:
 		break;
 	}
