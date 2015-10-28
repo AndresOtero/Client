@@ -6,6 +6,7 @@
  */
 
 #include "Interprete.h"
+#include <math.h>
 
 
 char* Interprete::string_to_char_array(string str){
@@ -40,6 +41,7 @@ msg_t Interprete::getLoginMsg(string nombre){
 }
 
 void Interprete::procesarMensajeDeServer(msg_t msg){
+	printf("type %d\n",msg.type);
 	switch (msg.type) {
 
 	case KEEPALIVE:
@@ -63,7 +65,11 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		this->gameCtrl->reconectar(msg.paramNombre);
 		break;
 	case PARAM_MAPA:
-		this->gameCtrl->setEscenario("NOMBRE",(int)msg.paramDouble1,(int)msg.paramDouble2);
+		printf("llega\n");
+		//this->gameCtrl->juego->escenario->size_x = 100;//floor(msg.paramDouble1);
+		printf("cargo1\n");
+		//this->gameCtrl->juego->escenario->size_y =100;// floor(msg.paramDouble2);
+		printf("cargo2\n");
 		break;
 	case CONFIGURACION:
 		this->gameCtrl->setConfiguracion((int)msg.paramDouble1,(int)msg.paramDouble2);
@@ -77,5 +83,5 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 }
 
 Interprete::~Interprete() {
-
+	delete this->gameCtrl;
 }

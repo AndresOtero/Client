@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 	bool enviarAlive;
 	msg_t msgToSrv;
 	GameControllerCliente * gameController = new GameControllerCliente();
-	Interprete interprete;
+	Interprete nterprete;
 	bool reiniciar=true;
 
 	MySocket myClient(PORTNUM);
@@ -70,20 +70,29 @@ int main(int argc, char *argv[])
 	//interpretar mensaje
 	//}
 
-	gameController->crearModelo();
+
 
 	myClient.connectToServer(gameController->ipJugador().c_str());
 	establecerLogin(&myClient, &interprete,gameController->nombreJugador());
 
+	//recibe parametros mapa y configuracion
+
+	msg_t mensaje = myClient.recieveMessage();
+	interprete.procesarMensajeDeServer(mensaje);
+	printf("carga mapa\n");
+	mensaje = myClient.recieveMessage();
+	interprete.procesarMensajeDeServer(mensaje);
+	gameController->crearModelo();
+
 	while (true){
-		msg_t mensaje = myClient.recieveMessage();
 		if (mensaje.type == FIN_INICIALIZACION) {
 			printf("%d\n", mensaje.type);
 			break;
 		}
+		mensaje = myClient.recieveMessage();
+		interprete.procesarMensajeDeServer(mensaje);
 		printf("%d\n", mensaje.type);
 	}
-
 	Modelo *modelo = gameController->devolverModelo();
 
 	//Inicia vista
