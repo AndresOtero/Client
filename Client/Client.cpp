@@ -20,7 +20,7 @@ void enviarKeepAlive(MySocket* myClient, Interprete* interprete){
 }
 void establecerLogin(MySocket* myClient, Interprete* interprete,string nombre){
 
-	msg_t messageToServer = interprete->getLoginMsg("pepe");
+	msg_t messageToServer = interprete->getLoginMsg(interprete->getNombreJugador());
 
 	myClient->sendMessage(messageToServer);
 }
@@ -35,7 +35,7 @@ void obtenerActualizacionesDelServer(MySocket* myClient, Interprete* interprete)
 	msg_t msgFromSrv = myClient->recieveMessage();
 
 	if (myClient->isConnected() == true){
-		cout << "Server: Recive actualizacion de tipo: " << msgFromSrv.type << "\n";
+		//cout << "Server: Recive actualizacion de tipo: " << msgFromSrv.type << "\n";
 
 		interprete->procesarMensajeDeServer(msgFromSrv);
 	}
@@ -79,20 +79,16 @@ int main(int argc, char *argv[])
 
 	msg_t mensaje = myClient.recieveMessage();
 	interprete.procesarMensajeDeServer(mensaje);
-	printf("carga mapa\n");
+
 	mensaje = myClient.recieveMessage();
 	interprete.procesarMensajeDeServer(mensaje);
 
 	gameController->crearModelo();
-
-	while (true){
-		if (mensaje.type == FIN_INICIALIZACION) {
-			printf("%d\n", mensaje.type);
-			break;
-		}
+	mensaje = myClient.recieveMessage();
+	while ((mensaje.type != FIN_INICIALIZACION) && (myClient.isConnected()) ) {
 		mensaje = myClient.recieveMessage();
 		interprete.procesarMensajeDeServer(mensaje);
-		printf("%d\n", mensaje.type);
+		//printf("%d\n", mensaje.type);
 	}
 	Modelo *modelo = gameController->devolverModelo();
 
@@ -100,9 +96,7 @@ int main(int argc, char *argv[])
 	Vista* vista=new Vista(modelo,gameController);
 	vista->init();
 	vista->loadMedia();
-	 /*while(1){
-		   vista->run(); //llama al game controller
-	 }*/
+
 	//comienza a jugar
 	tiempo_viejo=SDL_GetTicks();
 	bool fin;
@@ -112,6 +106,8 @@ int main(int argc, char *argv[])
 
 		if (myClient.isConnected() == false){
 				printf("desconexion del servidor \n");
+				usleep(1000);
+				break;
 				//myClient.reconnectToServer(); TE DEJO ACA PARA QUE VEAS COMO RECONECTAR ANTE UN MENSAJE DEL USUARIO
 		}
 	   obtenerActualizacionesDelServer(&myClient, &interprete);
@@ -134,7 +130,6 @@ int main(int argc, char *argv[])
 	   tiempo_actual= SDL_GetTicks();
 	   tiempo_viejo=tiempo_actual;
 	}
-
 	delete modelo;
 	delete vista;
 	delete gameController;

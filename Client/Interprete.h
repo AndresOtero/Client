@@ -28,6 +28,8 @@ public:
 
 	void procesarMensajeDeServer(msg_t msg);
 
+	string getNombreJugador();
+
 	virtual ~Interprete();
 
 private:

@@ -34,6 +34,9 @@ msg_t Interprete:: getQuit(){
 bool Interprete::isQuit(msg_t quit){
 	return (quit.type == QUIT);
 }
+string Interprete::getNombreJugador(){
+	return this->gameCtrl->nombreJugador();
+}
 msg_t Interprete::getLoginMsg(string nombre){
 	msg_t mensajeLogin;
 	memcpy(mensajeLogin.paramNombre,string_to_char_array(nombre),sizeof(mensajeLogin.paramNombre));
@@ -41,7 +44,7 @@ msg_t Interprete::getLoginMsg(string nombre){
 }
 
 void Interprete::procesarMensajeDeServer(msg_t msg){
-	printf("type %d\n",msg.type);
+	//printf("type %d\n",msg.type);
 	switch (msg.type) {
 
 	case KEEPALIVE:
@@ -49,31 +52,41 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 
 	case MOVER_PERSONAJE:
+
 		this->gameCtrl->mover_personaje(msg.paramNombre, msg.paramDouble1, msg.paramDouble2);
 		break;
 
 	case QUIT:
+
 		this->gameCtrl->desconectar(msg.paramNombre);
 		break;
 	case CREAR_ENTIDAD:
+
 		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1, msg.paramDouble2, 0);
 		break;
 	case CREAR_RECURSO:
+
 		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1,msg.paramDouble2,msg.paramInt1);
 		break;
 	case RECONNECT:
+
 		this->gameCtrl->reconectar(msg.paramNombre);
 		break;
 	case PARAM_MAPA:
-		printf("llega\n");
+
 		this->gameCtrl->juego->escenario->size_x = msg.paramDouble1;
 		this->gameCtrl->juego->escenario->size_y = msg.paramDouble2;
 		break;
 	case CONFIGURACION:
+
 		this->gameCtrl->setConfiguracion((int)msg.paramDouble1,(int)msg.paramDouble2);
 		break;
 	case DISCONNECT:
+
 		this->gameCtrl->desconectar(msg.paramNombre);
+		break;
+	case FIN_INICIALIZACION:
+		printf("fin\n");
 		break;
 	default:
 		break;
