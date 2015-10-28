@@ -18,8 +18,8 @@ char* Interprete::string_to_char_array(string str){
 	return charArray;
 }
 
-Interprete::Interprete() {
-	this->gameCtrl = new GameControllerCliente();
+Interprete::Interprete(GameControllerCliente* gm) {
+	this->gameCtrl = gm;
 }
 msg_t Interprete:: getKeepAliveMsg(){
 	msg_t r;
