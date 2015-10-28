@@ -312,31 +312,30 @@ Pantalla* Yaml::cargarPantalla(ConfiguracionJuego_t conf, YAML::Node* doc) {
 	return pantalla;
 }
 Jugador* Yaml::cargarJugador( YAML::Node* doc,Personaje* pers) {
-	Jugador* jugador;
+	Jugador* jugador=NULL;
 	Jugador_t jug;
 	if (const YAML::Node *pJugador = doc->FindValue(tag_jugador)) {
 		if (const YAML::Node *pJugadorNombre = (*pJugador).FindValue(
 				tag_jugador_nombre)) {
 			(*pJugadorNombre) >> jug.nombre;
 			if (const YAML::Node *pJugadorIp = (*pJugador).FindValue(
-					tag_pantalla_alto)) {
+					tag_jugador_ip)) {
 				(*pJugadorIp) >> jug.ip;
 				jugador = new Jugador(jug.nombre,
 						jug.ip,pers);
 			} else {
 				LOG_WARNING
-						<< "Se define configuracion de pantalla para el ancho pero no para el alto";
+						<< "No se define un nombre para el jugador";
 			}
 		} else {
-			//log conf pantalla sin ancho
 			LOG_WARNING
-					<< "Se define configuracion de pantalla pero no su ancho";
+					<< "No se define Ip";
 		}
 
 	} else {
 		// log no tiene pantalla
 		LOG_WARNING
-				<< "No se define configuracion de pantalla, se usa Default 1024x728";
+				<< "No se define un jugador";
 	}
 	return jugador;
 }
@@ -388,7 +387,9 @@ Juego* Yaml::read() {
 		} else {
 			escenario = new Escenario();
 		}
-
+		Jugador* jugador=cargarJugador(&doc,escenario->protagonista);
+		if(!jugador)return NULL;
+		escenario->jugador=jugador;
 		juego = new Juego(pantalla, configuracion, escenario, tipos);
 	} catch(YAML::Exception& e) {
 			juego = new Juego();

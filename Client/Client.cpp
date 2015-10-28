@@ -18,7 +18,7 @@ void enviarKeepAlive(MySocket* myClient, Interprete* interprete){
 	myClient->sendMessage(messageToServer);
 
 }
-void establecerLogin(MySocket* myClient, Interprete* interprete){
+void establecerLogin(MySocket* myClient, Interprete* interprete,string nombre){
 
 	msg_t messageToServer = interprete->getLoginMsg();
 
@@ -52,15 +52,15 @@ int main(int argc, char *argv[])
 	bool reiniciar=true;
 
 	MySocket myClient(PORTNUM);
-	myClient.connectToServer("127.0.0.1");
 
-	establecerLogin(&myClient, &interprete);
 
 	//lee el YAML antes de cargar el usuario y el modelo
 	Yaml* reader = new Yaml("YAML/configuracion.yaml");
 	Juego* juego = reader->read();
 	delete reader;
+	if(!juego)return -1;//No se crea el jugador
 	gameController->insertarJuego(juego);
+
 
 	//se lo deberia pasar el server
 	//juego->setEscenario("Orlean",100,100);
@@ -76,13 +76,19 @@ int main(int argc, char *argv[])
 	//}
 
 	gameController->crearModelo();
+
+	myClient.connectToServer(gameController->ipJugador().c_str());
+	establecerLogin(&myClient, &interprete,gameController->nombreJugador());
+
 	Modelo *modelo = gameController->devolverModelo();
 
 	//Inicia vista
 	Vista* vista=new Vista(modelo,gameController);
 	vista->init();
 	vista->loadMedia();
-
+	 while(1){
+		   vista->run(); //llama al game controller
+	 }
 	//comienza a jugar
 	tiempo_viejo=SDL_GetTicks();
 	bool fin;
@@ -95,8 +101,6 @@ int main(int argc, char *argv[])
 				//myClient.reconnectToServer(); TE DEJO ACA PARA QUE VEAS COMO RECONECTAR ANTE UN MENSAJE DEL USUARIO
 		}
 	   obtenerActualizacionesDelServer(&myClient, &interprete);
-
-	   fin = vista->run(); //llama al game controller
 
 	   if (fin){
 		   msg_t quit = interprete.getQuit();

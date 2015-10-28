@@ -6170,3 +6170,5 @@
 2015-10-25 12:47:22.966 WARN  [9486] [Yaml::read@367] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
 2015-10-25 13:05:25.766 WARN  [10902] [Yaml::read@367] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
 2015-10-25 13:08:54.753 WARN  [11098] [Yaml::read@367] Problemas para abrir el archivoyaml-cpp: error at line 10, column 2: key not found: 12
+2015-10-28 00:34:19.872 WARN  [4792] [Yaml::cargarJugador@338] No se define configuracion de pantalla, se usa Default 1024x728
+2015-10-28 00:35:54.103 WARN  [4873] [Yaml::cargarJugador@327] Se define configuracion de pantalla para el ancho pero no para el alto
