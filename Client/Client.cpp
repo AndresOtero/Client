@@ -57,7 +57,9 @@ int main(int argc, char *argv[])
 	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
 	Juego* juego = reader->readCliente();
 	delete reader;
+	printf("Lee");
 	if(!juego)return -1;//No se crea el jugador
+	printf(" Lo hace bien\n");
 	gameController->insertarJuego(juego);
 
 
