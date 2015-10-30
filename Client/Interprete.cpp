@@ -56,6 +56,14 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		this->gameCtrl->mover_personaje(msg.paramNombre, msg.paramDouble1, msg.paramDouble2);
 		break;
 
+	case LOGIN:
+		//TODO SACAR EL HARCODEO
+		//meto algo que se supone que no crea si ya esta hecho
+		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2);
+		if(this->gameCtrl->nombreJugador()==msg.paramNombre){
+			//setear referencia de la vista no se como.
+		}
+		break;
 	case QUIT:
 
 		this->gameCtrl->desconectar(msg.paramNombre);
@@ -88,6 +96,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case FIN_INICIALIZACION:
 		printf("fin\n");
 		break;
+
 	default:
 		break;
 	}
