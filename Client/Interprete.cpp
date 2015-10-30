@@ -94,7 +94,6 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		this->gameCtrl->desconectar(msg.paramNombre);
 		break;
 	case FIN_INICIALIZACION:
-		printf("fin\n");
 		break;
 
 	default:
