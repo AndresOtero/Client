@@ -64,6 +64,11 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 			//setear referencia de la vista no se como.
 		}
 		break;
+	case NUEVO_PERSONAJE:
+		//TODO SACAR EL HARCODEO
+		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2);
+
+
 	case QUIT:
 
 		this->gameCtrl->desconectar(msg.paramNombre);

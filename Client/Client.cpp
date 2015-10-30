@@ -31,13 +31,12 @@ void enviarAccion(MySocket* myClient, msg_t msg){
 }
 
 void obtenerActualizacionesDelServer(MySocket* myClient, Interprete* interprete) {
+	msg_t msgFromSrv;
 
-	msg_t msgFromSrv = myClient->recieveMessage();
-
-	if (myClient->isConnected() == true){
-		//cout << "Server: Recive actualizacion de tipo: " << msgFromSrv.type << "\n";
-
+	msgFromSrv = myClient->recieveMessage();
+	while ((myClient->isConnected() == true) && (msgFromSrv.type != KEEPALIVE)){
 		interprete->procesarMensajeDeServer(msgFromSrv);
+		msgFromSrv = myClient->recieveMessage();
 	}
 }
 
@@ -85,7 +84,13 @@ int main(int argc, char *argv[])
 
 	gameController->crearModelo();
 	mensaje = myClient.recieveMessage();
+	double referencia_x,referencia_y;
+	printf("llego hasta aca");
 	while ((mensaje.type != FIN_INICIALIZACION) && (myClient.isConnected()) ) {
+		if(mensaje.type==LOGIN){
+			referencia_x=mensaje.paramDouble1;
+			referencia_y=mensaje.paramDouble2;
+		}
 		mensaje = myClient.recieveMessage();
 		interprete.procesarMensajeDeServer(mensaje);
 		//printf("%d\n", mensaje.type);
@@ -96,7 +101,7 @@ int main(int argc, char *argv[])
 	Vista* vista=new Vista(modelo,gameController);
 	vista->init();
 	vista->loadMedia();
-
+	vista->setear_referencia(referencia_x,referencia_y);
 	//comienza a jugar
 	tiempo_viejo=SDL_GetTicks();
 	bool fin;
