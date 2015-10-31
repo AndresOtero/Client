@@ -63,15 +63,6 @@ int main(int argc, char *argv[])
 	gameController->insertarJuego(juego);
 
 
-	//se lo deberia pasar el server
-	//juego->setEscenario("Orlean",100,100);
-	//juego->setConfiguracion(100,1);
-
-	//una vez que pudo ingresar deberia cargar el juego
-	//interpretar mensaje
-	//}
-
-
 
 	myClient.connectToServer(gameController->ipJugador().c_str());
 	establecerLogin(&myClient, &interprete,gameController->nombreJugador());
@@ -86,16 +77,10 @@ int main(int argc, char *argv[])
 
 	gameController->crearModelo();
 	mensaje = myClient.recieveMessage();
-	double referencia_x,referencia_y;
 	printf("llego hasta aca");
 	while ((mensaje.type != FIN_INICIALIZACION) && (myClient.isConnected()) ) {
-		if(mensaje.type==LOGIN){
-			referencia_x=mensaje.paramDouble1;
-			referencia_y=mensaje.paramDouble2;
-		}
 		mensaje = myClient.recieveMessage();
 		interprete.procesarMensajeDeServer(mensaje);
-		//printf("%d\n", mensaje.type);
 	}
 	Modelo *modelo = gameController->devolverModelo();
 
@@ -103,7 +88,7 @@ int main(int argc, char *argv[])
 	Vista* vista=new Vista(modelo,gameController);
 	vista->init();
 	vista->loadMedia();
-	vista->setear_referencia(referencia_x,referencia_y);
+	interprete.setVista(vista);
 	//comienza a jugar
 	tiempo_viejo=SDL_GetTicks();
 	bool fin;

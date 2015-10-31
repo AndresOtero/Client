@@ -60,9 +60,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		//TODO SACAR EL HARCODEO
 		//meto algo que se supone que no crea si ya esta hecho
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2);
-		if(this->gameCtrl->nombreJugador()==msg.paramNombre){
-			//setear referencia de la vista no se como.
-		}
+		this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
 		break;
 	case NUEVO_PERSONAJE:
 		//TODO SACAR EL HARCODEO

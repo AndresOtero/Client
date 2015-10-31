@@ -11,11 +11,12 @@
 #include "GameControllerSrc/GameControllerCliente.h"
 #include <string>
 #include <string>
-
+#include "VistaSrc/Vista.h"
 
 using namespace std;
 
 class Interprete {
+
 public:
 	Interprete(GameControllerCliente* gm) ;
 
@@ -32,8 +33,13 @@ public:
 
 	virtual ~Interprete();
 
+	void setVista(Vista* vista) {
+		this->vista = vista;
+	}
+
 private:
 	GameControllerCliente* gameCtrl;
+	Vista* vista;
 
 	char* string_to_char_array(string str);
 
