@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 
 
 	//lee el YAML antes de cargar el usuario y el modelo
-	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
+	Yaml* reader = new Yaml("YAML/configuracionCliente2.yaml");
 	Juego* juego = reader->readCliente();
 	delete reader;
 	printf("Lee");
@@ -77,7 +77,6 @@ int main(int argc, char *argv[])
 
 	gameController->crearModelo();
 	mensaje = myClient.recieveMessage();
-	printf("llego hasta aca");
 	while ((mensaje.type != FIN_INICIALIZACION) && (myClient.isConnected()) ) {
 		mensaje = myClient.recieveMessage();
 		interprete.procesarMensajeDeServer(mensaje);
