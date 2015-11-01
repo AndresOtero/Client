@@ -45,6 +45,7 @@ msg_t Interprete::getLoginMsg(string nombre){
 
 void Interprete::procesarMensajeDeServer(msg_t msg){
 	//printf("type %d\n",msg.type);
+	dibujo_t dibujo;
 	switch (msg.type) {
 
 	case KEEPALIVE:
@@ -59,13 +60,20 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case LOGIN:
 		//TODO SACAR EL HARCODEO
 		//meto algo que se supone que no crea si ya esta hecho
-		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2);
+		printf("Login");
+		dibujo=this->vista->crearPersonaje("soldado");
+		dibujo=0;
+		printf("Dibujo %d",dibujo);
+		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
 		this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
 		break;
 	case NUEVO_PERSONAJE:
 		//TODO SACAR EL HARCODEO
 		printf("crear Personaje\n");
-		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2);
+		//dibujo=this->vista->crearPersonaje("soldado");
+		dibujo=0;
+		printf("Dibujo %d",dibujo);
+		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
 		break;
 
 	case QUIT:
