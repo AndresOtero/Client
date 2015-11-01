@@ -73,6 +73,13 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		//dibujo=this->vista->crearPersonaje("soldado");
 		//printf("Dibujo %d\n",dibujo);
 		dibujo=0;
+		if(this->gameCtrl->esNombre(msg.paramNombre)){
+			printf("Es el mismo \n");
+			printf("Referencia x: %g",msg.paramDouble1);
+			printf("Referencia y: %g",msg.paramDouble2);
+			printf((this->vista!=NULL) ? "Vista Existe": "Vista No Existe");
+			//this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
+		}
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
 		printf("creado\n");
 		break;

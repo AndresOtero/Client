@@ -97,26 +97,27 @@ int main(int argc, char *argv[])
 
 		if (myClient.isConnected() == false){
 				printf("desconexion del servidor \n");
-				usleep(1000);
-				break;
-				//myClient.reconnectToServer(); TE DEJO ACA PARA QUE VEAS COMO RECONECTAR ANTE UN MENSAJE DEL USUARIO
+				return 0;
 		}
 	   obtenerActualizacionesDelServer(&myClient, &interprete);
-
+	   printf("Mando a dibujar\n");
 	   fin = vista->run();
-
+	   printf("Dibuja Ok \n");
 	   if (fin){
 		   msg_t quit = interprete.getQuit();
 		   enviarAccion(&myClient,quit);
 		   break;
 	   }
+	   printf("No hay fin \n");
 	   if (gameController->hayEventos()){
+		   printf("hay evento\n");
 		   msg_t mensaje = gameController->sacarMensaje();
    		   enviarAccion(&myClient,mensaje);
 	   }
 	   else{
 		   enviarKeepAlive(&myClient,&interprete);
 	   }
+	   printf("Pasa los eventos \n");
 	   usleep((40 - (tiempo_actual-tiempo_viejo))*1000);
 	   tiempo_actual= SDL_GetTicks();
 	   tiempo_viejo=tiempo_actual;

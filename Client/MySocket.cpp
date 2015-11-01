@@ -133,13 +133,11 @@ msg_t MySocket::recieveMessage()
 	msg_t msg_buffer;
 	int n = 0;
 	int bytes_read = 0;
-	while ((bytes_read < msg_size) && (n >= 0)){
+	while ((bytes_read < msg_size) && (connected)){
 		n = read(socketId, &(msg_buffer) + bytes_read, msg_size - bytes_read);
-
+		verifyNumbytes(n);
 		bytes_read += n;
 	}
-	verifyNumbytes(n);
-
     return msg_buffer;
 }
 
