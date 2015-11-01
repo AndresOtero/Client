@@ -65,7 +65,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case NUEVO_PERSONAJE:
 		//TODO SACAR EL HARCODEO
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2);
-
+		break;
 
 	case QUIT:
 
@@ -76,7 +76,6 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1, msg.paramDouble2, 0);
 		break;
 	case CREAR_RECURSO:
-
 		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1,msg.paramDouble2,msg.paramInt1);
 		break;
 	case RECONNECT:
@@ -95,6 +94,11 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case DISCONNECT:
 
 		this->gameCtrl->desconectar(msg.paramNombre);
+		break;
+	case ACTUALIZACION_RECURSOS:
+		if(this->gameCtrl->nombreJugador()==msg.paramNombre){
+			this->gameCtrl->acutalizarRecursos(msg.paramInt1,msg.paramDouble1,msg.paramDouble2);
+		}
 		break;
 	case FIN_INICIALIZACION:
 		break;
