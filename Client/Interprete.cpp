@@ -64,11 +64,12 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 	case NUEVO_PERSONAJE:
 		//TODO SACAR EL HARCODEO
+		printf("crear Personaje\n");
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2);
 		break;
 
 	case QUIT:
-
+		printf("recibe QUIT\n");
 		this->gameCtrl->desconectar(msg.paramNombre);
 		break;
 	case CREAR_ENTIDAD:
@@ -92,6 +93,8 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		this->gameCtrl->setConfiguracion((int)msg.paramDouble1,(int)msg.paramDouble2);
 		break;
 	case DISCONNECT:
+
+		printf("manda DISCONNECT");
 
 		this->gameCtrl->desconectar(msg.paramNombre);
 		break;
