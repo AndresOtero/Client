@@ -60,10 +60,10 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case LOGIN:
 		//TODO SACAR EL HARCODEO
 		//meto algo que se supone que no crea si ya esta hecho
-		printf("Login");
-		dibujo=this->vista->crearPersonaje("soldado");
+		printf("\n Login\n");
+		//dibujo=this->vista->crearPersonaje("soldado");
+		//printf("Dibujo %d \n",dibujo);
 		dibujo=0;
-		printf("Dibujo %d",dibujo);
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
 		this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
 		break;
@@ -71,9 +71,10 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		//TODO SACAR EL HARCODEO
 		printf("crear Personaje\n");
 		//dibujo=this->vista->crearPersonaje("soldado");
+		//printf("Dibujo %d\n",dibujo);
 		dibujo=0;
-		printf("Dibujo %d",dibujo);
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
+		printf("creado\n");
 		break;
 
 	case QUIT:
