@@ -12,6 +12,8 @@
 #include <string>
 #include <string>
 #include "VistaSrc/Vista.h"
+#include <plog/Log.h>
+
 
 using namespace std;
 
