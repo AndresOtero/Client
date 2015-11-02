@@ -122,7 +122,6 @@ int main(int argc, char *argv[])
 	   tiempo_actual= SDL_GetTicks();
 	   tiempo_viejo=tiempo_actual;
 	}
-	delete modelo;
 	delete vista;
 	delete gameController;
     return 0;
