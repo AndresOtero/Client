@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 
 
 	//lee el YAML antes de cargar el usuario y el modelo
-	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
+	Yaml* reader = new Yaml("YAML/configuracionCliente2.yaml");
 	Juego* juego = reader->readCliente();
 	delete reader;
 	printf("Lee");
@@ -74,20 +74,22 @@ int main(int argc, char *argv[])
 
 	mensaje = myClient.recieveMessage();
 	interprete.procesarMensajeDeServer(mensaje);
-
 	gameController->crearModelo();
+	//Inicia vista
+	Modelo *modelo = gameController->devolverModelo();
+		Vista* vista=new Vista(modelo,gameController);
+		vista->init();
+		interprete.setVista(vista);
+
 	mensaje = myClient.recieveMessage();
 	while ((mensaje.type != FIN_INICIALIZACION) && (myClient.isConnected()) ) {
 		mensaje = myClient.recieveMessage();
 		interprete.procesarMensajeDeServer(mensaje);
 	}
-	Modelo *modelo = gameController->devolverModelo();
 
-	//Inicia vista
-	Vista* vista=new Vista(modelo,gameController);
-	vista->init();
 	vista->loadMedia();
-	interprete.setVista(vista);
+
+
 	//comienza a jugar
 	tiempo_viejo=SDL_GetTicks();
 	bool fin;
