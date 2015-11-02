@@ -9,6 +9,8 @@
 #include "VistaSrc/Vista.h"
 #include "ModeloSrc/Modelo.h"
 #include "ModeloSrc/Juego.h"
+#include <plog/Log.h>
+
 using namespace std;
 
 void enviarKeepAlive(MySocket* myClient, Interprete* interprete){
@@ -43,6 +45,7 @@ void obtenerActualizacionesDelServer(MySocket* myClient, Interprete* interprete)
 
 int main(int argc, char *argv[])
 {
+	plog::init(plog::error, "Log.txt");
 	double tiempo_actual,tiempo_viejo=0;
 	bool enviarAlive;
 	msg_t msgToSrv;
@@ -82,6 +85,7 @@ int main(int argc, char *argv[])
 		interprete.procesarMensajeDeServer(mensaje);
 	}
 	Modelo *modelo = gameController->devolverModelo();
+	LOG_INFO << "Cargo datos del Server";
 
 	//Inicia vista
 	Vista* vista=new Vista(modelo,gameController);
@@ -96,7 +100,9 @@ int main(int argc, char *argv[])
 		enviarAlive = true; //poner en false si mando otra cosa
 
 		if (myClient.isConnected() == false){
+				LOG_ERROR << "Desconexcion del server";
 				printf("desconexion del servidor \n");
+				//vista->serverDisconnect();
 				return 0;
 		}
 	   obtenerActualizacionesDelServer(&myClient, &interprete);
