@@ -61,18 +61,15 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		//TODO SACAR EL HARCODEO
 		//meto algo que se supone que no crea si ya esta hecho
 		printf("\n Login\n");
-		//dibujo=this->vista->crearPersonaje("soldado");
-		//printf("Dibujo %d \n",dibujo);
-		dibujo=0;
+		dibujo=this->vista->crearPersonaje("soldado");
+		printf("Dibujo %d \n",dibujo);
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
 		this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
 		break;
 	case NUEVO_PERSONAJE:
 		//TODO SACAR EL HARCODEO
 		printf("crear Personaje\n");
-		//dibujo=this->vista->crearPersonaje("soldado");
-		//printf("Dibujo %d\n",dibujo);
-		dibujo=0;
+		dibujo=this->vista->crearPersonaje("soldado");
 		if(this->gameCtrl->esNombre(msg.paramNombre)){
 			printf("Es el mismo \n");
 			printf("Referencia x: %g",msg.paramDouble1);
