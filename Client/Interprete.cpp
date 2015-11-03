@@ -119,6 +119,9 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case FIN_INICIALIZACION:
 		break;
 
+	/*case ELIMINAR_ENTIDAD:
+		this->gameCtrl->eliminarEntidad(msg.paramDouble1,msg.paramDouble2);
+		break;*/
 	default:
 		break;
 	}

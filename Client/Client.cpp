@@ -108,24 +108,24 @@ int main(int argc, char *argv[])
 				return 0;
 		}
 	   obtenerActualizacionesDelServer(&myClient, &interprete);
-	   printf("Mando a dibujar\n");
+	   //printf("Mando a dibujar\n");
 	   fin = vista->run();
-	   printf("Dibuja Ok \n");
+	   //printf("Dibuja Ok \n");
 	   if (fin){
 		   msg_t quit = interprete.getQuit();
 		   enviarAccion(&myClient,quit);
 		   break;
 	   }
-	   printf("No hay fin \n");
+	   //printf("No hay fin \n");
 	   if (gameController->hayEventos()){
-		   printf("hay evento\n");
+		   //printf("hay evento\n");
 		   msg_t mensaje = gameController->sacarMensaje();
    		   enviarAccion(&myClient,mensaje);
 	   }
 	   else{
 		   enviarKeepAlive(&myClient,&interprete);
 	   }
-	   printf("Pasa los eventos \n");
+	   //printf("Pasa los eventos \n");
 	   usleep((40 - (tiempo_actual-tiempo_viejo))*1000);
 	   tiempo_actual= SDL_GetTicks();
 	   tiempo_viejo=tiempo_actual;

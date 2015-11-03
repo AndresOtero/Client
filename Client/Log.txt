@@ -43156,3 +43156,7 @@
 2015-11-02 19:40:47.819 ERROR [18607] [main@103] Desconexcion del server
 2015-11-02 19:40:47.819 ERROR [18607] [main@103] Desconexcion del server
 2015-11-02 19:40:47.819 ERROR [18607] [main@103] Desconexcion del server
+2015-11-02 20:11:11.021 ERROR [10980] [MySocket::connectToServer@83] SocketError: error al conectar con el server
+2015-11-02 20:11:11.021 ERROR [10980] [MySocket::connectToServer@83] SocketError: error al conectar con el server
+2015-11-02 20:38:31.723 ERROR [12226] [MySocket::connectToServer@83] SocketError: error al conectar con el server
+2015-11-02 20:38:31.723 ERROR [12226] [MySocket::connectToServer@83] SocketError: error al conectar con el server
