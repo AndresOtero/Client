@@ -65,23 +65,19 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		//printf("Dibujo %d \n",dibujo);
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
 
-		if(this->gameCtrl->esNombre(msg.paramNombre)){
-					this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
+		if (this->gameCtrl->esNombre(msg.paramNombre)) {
+			this->vista->setear_referencia(msg.paramDouble1, msg.paramDouble2);
 		}
 		break;
 	case NUEVO_PERSONAJE:
 		//TODO SACAR EL HARCODEO
 		//printf("crear Personaje\n");
 		dibujo=this->vista->crearPersonaje("soldado");
-		/**if(this->gameCtrl->esNombre(msg.paramNombre)){
-			printf("Es el mismo \n");
-			printf("Referencia x: %g",msg.paramDouble1);
-			printf("Referencia y: %g",msg.paramDouble2);
-			printf((this->vista!=NULL) ? "Vista Existe": "Vista No Existe");
-			//this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
-		}**/
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
 		//printf("creado\n");
+		if(this->gameCtrl->esNombre(msg.paramNombre)){
+			this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
+		}
 		break;
 
 	case QUIT:
