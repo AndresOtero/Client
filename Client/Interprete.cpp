@@ -64,7 +64,10 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		dibujo=this->vista->crearPersonaje("soldado");
 		printf("Dibujo %d \n",dibujo);
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
-		this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
+
+		if(this->gameCtrl->esNombre(msg.paramNombre)){
+					this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
+		}
 		break;
 	case NUEVO_PERSONAJE:
 		//TODO SACAR EL HARCODEO
