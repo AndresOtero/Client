@@ -60,9 +60,9 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case LOGIN:
 		//TODO SACAR EL HARCODEO
 		//meto algo que se supone que no crea si ya esta hecho
-		printf("\n Login\n");
+		//printf("\n Login\n");
 		dibujo=this->vista->crearPersonaje("soldado");
-		printf("Dibujo %d \n",dibujo);
+		//printf("Dibujo %d \n",dibujo);
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
 
 		if(this->gameCtrl->esNombre(msg.paramNombre)){
@@ -71,7 +71,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 	case NUEVO_PERSONAJE:
 		//TODO SACAR EL HARCODEO
-		printf("crear Personaje\n");
+		//printf("crear Personaje\n");
 		dibujo=this->vista->crearPersonaje("soldado");
 		/**if(this->gameCtrl->esNombre(msg.paramNombre)){
 			printf("Es el mismo \n");
@@ -81,15 +81,15 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 			//this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
 		}**/
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
-		printf("creado\n");
+		//printf("creado\n");
 		break;
 
 	case QUIT:
-		printf("recibe QUIT\n");
+		//printf("recibe QUIT\n");
 		this->gameCtrl->desconectar(msg.paramNombre);
 		break;
 	case CREAR_ENTIDAD:
-		printf("Crear Entidad\n");
+		//printf("Crear Entidad\n");
 		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1, msg.paramDouble2, 0);
 		break;
 	case CREAR_RECURSO:
@@ -100,18 +100,13 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		this->gameCtrl->reconectar(msg.paramNombre);
 		break;
 	case PARAM_MAPA:
-		printf("Parametros del mapa \n");
 		this->gameCtrl->juego->escenario->size_x = msg.paramDouble1;
 		this->gameCtrl->juego->escenario->size_y = msg.paramDouble2;
 		break;
 	case CONFIGURACION:
-		printf("COnfiguracion\n");
 		this->gameCtrl->setConfiguracion((int)msg.paramDouble1,(int)msg.paramDouble2);
 		break;
 	case DISCONNECT:
-
-		printf("manda DISCONNECT");
-
 		this->gameCtrl->desconectar(msg.paramNombre);
 		break;
 	case ACTUALIZACION_RECURSOS:

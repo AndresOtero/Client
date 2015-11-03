@@ -45,7 +45,7 @@ void obtenerActualizacionesDelServer(MySocket* myClient, Interprete* interprete)
 
 int main(int argc, char *argv[])
 {
-	plog::init(plog::error, "Log.txt");
+	plog::init(plog::warning, "Log.txt");
 	double tiempo_actual,tiempo_viejo=0;
 	bool enviarAlive;
 	msg_t msgToSrv;
@@ -60,9 +60,7 @@ int main(int argc, char *argv[])
 	Yaml* reader = new Yaml("YAML/configuracionCliente2.yaml");
 	Juego* juego = reader->readCliente();
 	delete reader;
-	printf("Lee");
-	if(!juego)return -1;//No se crea el jugador
-	printf(" Lo hace bien\n");
+	if(!juego)return -1;//No se crea el jugadors
 	gameController->insertarJuego(juego);
 
 
@@ -89,7 +87,7 @@ int main(int argc, char *argv[])
 		mensaje = myClient.recieveMessage();
 		interprete.procesarMensajeDeServer(mensaje);
 	}
-	LOG_INFO << "Cargo datos del Server";
+	LOG_WARNING << "Cargo datos del Server";
 
 	vista->loadMedia();
 
@@ -101,7 +99,7 @@ int main(int argc, char *argv[])
 	{
 
 		if (myClient.isConnected() == false){
-				LOG_ERROR << "Desconexcion del server";
+				LOG_WARNING << "Desconexcion del server";
 				printf("desconexion del servidor \n");
 				//vista->serverDisconnect();
 				return 0;
