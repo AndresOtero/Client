@@ -84,6 +84,7 @@ void MySocket::connectToServer(const char* serverAddr)
 		errorLog("error al conectar con el server /n");
 	}
 	connected = true;
+
 }
 
 void MySocket::reconnectToServer(){
@@ -93,6 +94,8 @@ void MySocket::reconnectToServer(){
 	}
 	connected = true;
 }
+
+
 
 MySocket* MySocket::acceptClient(std::string& clientName)
 {
@@ -130,6 +133,7 @@ int MySocket::sendMessage(msg_t& message)
 	int n;
 
 	n = write(socketId, &message, msg_size);
+	if(n<0) connected = false;
 
 	return n;
 }
@@ -141,6 +145,7 @@ msg_t MySocket::recieveMessage()
 	int bytes_read = 0;
 	int error_counter = 0;
 	while ((bytes_read < msg_size) && (connected)){
+		setKeepAlive(2);
 		n = read(socketId, &(msg_buffer) + bytes_read, msg_size - bytes_read);
 		verifyNumbytes(error_counter, n);
 		bytes_read += n;
