@@ -19,7 +19,7 @@ tipos:
    pixel_ref_x: 57
    pixel_ref_y: 25
    fps: 20
-   delay: 5
+   delay: 0
 
  - nombre: herreria
    imagen: img/dibujo_dinamico/mirador.png
