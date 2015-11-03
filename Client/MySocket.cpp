@@ -73,7 +73,7 @@ void MySocket::connectToServer(const char* serverAddr)
     bcopy((char *)server->h_addr,(char *)&serverAddress.sin_addr.s_addr, server->h_length);
     serverAddress.sin_port = htons(portNumber);
 
-
+    setKeepAlive(2);
 	if (connect(socketId,(struct sockaddr *)&serverAddress,sizeof(serverAddress)) < 0)
 	{
 		LOG_WARNING << "SocketError: error al conectar con el server";
