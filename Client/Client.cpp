@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 
 
 	//lee el YAML antes de cargar el usuario y el modelo
-	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
+	Yaml* reader = new Yaml("YAML/configuracionCliente2.yaml");
 	Juego* juego = reader->readCliente();
 	delete reader;
 	printf("Lee");
@@ -99,7 +99,6 @@ int main(int argc, char *argv[])
 	bool fin;
 	while (1)
 	{
-		enviarAlive = true; //poner en false si mando otra cosa
 
 		if (myClient.isConnected() == false){
 				LOG_ERROR << "Desconexcion del server";
