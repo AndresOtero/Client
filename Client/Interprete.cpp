@@ -44,7 +44,6 @@ msg_t Interprete::getLoginMsg(string nombre){
 }
 
 void Interprete::procesarMensajeDeServer(msg_t msg){
-	//printf("type %d\n",msg.type);
 	dibujo_t dibujo;
 	switch (msg.type) {
 
@@ -60,9 +59,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case LOGIN:
 		//TODO SACAR EL HARCODEO
 		//meto algo que se supone que no crea si ya esta hecho
-		//printf("\n Login\n");
 		dibujo=this->vista->crearPersonaje("soldado");
-		//printf("Dibujo %d \n",dibujo);
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
 
 		if (this->gameCtrl->esNombre(msg.paramNombre)) {
@@ -71,21 +68,17 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 	case NUEVO_PERSONAJE:
 		//TODO SACAR EL HARCODEO
-		//printf("crear Personaje\n");
 		dibujo=this->vista->crearPersonaje("soldado");
 		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
-		//printf("creado\n");
 		if(this->gameCtrl->esNombre(msg.paramNombre)){
 			this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
 		}
 		break;
 
 	case QUIT:
-		//printf("recibe QUIT\n");
 		this->gameCtrl->desconectar(msg.paramNombre);
 		break;
 	case CREAR_ENTIDAD:
-		//printf("Crear Entidad\n");
 		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1, msg.paramDouble2, 0);
 		break;
 	case CREAR_RECURSO:

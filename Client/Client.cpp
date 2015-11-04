@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 
 
 	//lee el YAML antes de cargar el usuario y el modelo
-	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
+	Yaml* reader = new Yaml("YAML/configuracionCliente2.yaml");
 	Juego* juego = reader->readCliente();
 	delete reader;
 	if(!juego)return -1;//No se crea el jugadors
@@ -107,28 +107,22 @@ int main(int argc, char *argv[])
 
 			if (myClient.isConnected() == false) {
 				LOG_WARNING << "Desconexcion del server";
-				printf("desconexion del servidor \n");
-				//vista->serverDisconnect();
+
 				return 0;
 			}
 			obtenerActualizacionesDelServer(&myClient, &interprete);
-			//printf("Mando a dibujar\n");
 			fin = vista->run();
-			//printf("Dibuja Ok \n");
 			if (fin) {
 				msg_t quit = interprete.getQuit();
 				enviarAccion(&myClient, quit);
 				break;
 			}
-			//printf("No hay fin \n");
 			if (gameController->hayEventos()) {
-				//printf("hay evento\n");
 				msg_t mensaje = gameController->sacarMensaje();
 				enviarAccion(&myClient, mensaje);
 			} else {
 				enviarKeepAlive(&myClient, &interprete);
 			}
-			//printf("Pasa los eventos \n");
 			usleep((40 - (tiempo_actual - tiempo_viejo)) * 1000);
 			tiempo_actual = SDL_GetTicks();
 			tiempo_viejo = tiempo_actual;
