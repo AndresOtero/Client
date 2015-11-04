@@ -19,14 +19,23 @@ tipos:
    pixel_ref_x: 57
    pixel_ref_y: 25
    fps: 20
-   delay: 5
+<<<<<<< HEAD
+   delay: 0
+=======
+   delay: 50
+>>>>>>> refs/remotes/origin/master
 
  - nombre: herreria
    imagen: img/dibujo_dinamico/mirador.png
    pixel_ref_x: 60
    pixel_ref_y: 50   
+<<<<<<< HEAD
    fps: 50
-   delay: 5
+   delay: 0
+=======
+   fps: 20
+   delay: 50
+>>>>>>> refs/remotes/origin/master
 
  - nombre: pino
    imagen: img/dibujo_estatico/arbol/pinetree.png

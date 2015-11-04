@@ -21,6 +21,7 @@ tipos:
    fps: 20
    delay: 50
 
+
  - nombre: herreria
    imagen: img/dibujo_dinamico/mirador.png
    pixel_ref_x: 60
@@ -70,5 +71,5 @@ protagonista:
 
 jugador:
  nombre: german
- ip: 127.0.0.1
+ ip: 192.168.1.101
 
