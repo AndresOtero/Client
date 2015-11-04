@@ -77,6 +77,7 @@ void MySocket::connectToServer(const char* serverAddr)
 	if (connect(socketId,(struct sockaddr *)&serverAddress,sizeof(serverAddress)) < 0)
 	{
 		LOG_WARNING << "SocketError: error al conectar con el server";
+		return;
 	}
 	connected = true;
 

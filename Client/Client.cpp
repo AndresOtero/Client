@@ -74,69 +74,78 @@ int main(int argc, char *argv[])
 
 
 	myClient.connectToServer(gameController->ipJugador().c_str());
-	bool nombreDeUsuarioDisponible = establecerLogin(&myClient, &interprete,gameController->nombreJugador());
 
-	if (nombreDeUsuarioDisponible) {
-		//recibe parametros mapa y configuracion
+	if (myClient.isConnected()){
 
-		msg_t mensaje = myClient.recieveMessage();
-		interprete.procesarMensajeDeServer(mensaje);
+		bool nombreDeUsuarioDisponible = establecerLogin(&myClient, &interprete,gameController->nombreJugador());
 
-		mensaje = myClient.recieveMessage();
-		interprete.procesarMensajeDeServer(mensaje);
-		gameController->crearModelo();
-		//Inicia vista
-		Modelo *modelo = gameController->devolverModelo();
-		Vista* vista = new Vista(modelo, gameController);
-		vista->init();
-		interprete.setVista(vista);
+		if (nombreDeUsuarioDisponible) {
+			//recibe parametros mapa y configuracion
 
-		mensaje = myClient.recieveMessage();
-		while ((mensaje.type != FIN_INICIALIZACION) && (myClient.isConnected())) {
+			msg_t mensaje = myClient.recieveMessage();
+			interprete.procesarMensajeDeServer(mensaje);
+
 			mensaje = myClient.recieveMessage();
 			interprete.procesarMensajeDeServer(mensaje);
+			gameController->crearModelo();
+			//Inicia vista
+			Modelo *modelo = gameController->devolverModelo();
+			Vista* vista = new Vista(modelo, gameController);
+			vista->init();
+			interprete.setVista(vista);
+
+			mensaje = myClient.recieveMessage();
+			while ((mensaje.type != FIN_INICIALIZACION) && (myClient.isConnected())) {
+				mensaje = myClient.recieveMessage();
+				interprete.procesarMensajeDeServer(mensaje);
+			}
+			LOG_WARNING << "Cargo datos del Server";
+
+			vista->loadMedia();
+
+			//comienza a jugar
+			tiempo_viejo = SDL_GetTicks();
+			bool fin;
+			while (1) {
+
+				if (myClient.isConnected() == false) {
+					LOG_WARNING << "Desconexcion del server";
+					printf("desconexion del servidor \n");
+					//vista->serverDisconnect();
+					return 0;
+				}
+				obtenerActualizacionesDelServer(&myClient, &interprete);
+				//printf("Mando a dibujar\n");
+				fin = vista->run();
+				//printf("Dibuja Ok \n");
+				if (fin) {
+					msg_t quit = interprete.getQuit();
+					enviarAccion(&myClient, quit);
+					break;
+				}
+				//printf("No hay fin \n");
+				if (gameController->hayEventos()) {
+					//printf("hay evento\n");
+					msg_t mensaje = gameController->sacarMensaje();
+					enviarAccion(&myClient, mensaje);
+				} else {
+					enviarKeepAlive(&myClient, &interprete);
+				}
+				//printf("Pasa los eventos \n");
+				usleep((40 - (tiempo_actual - tiempo_viejo)) * 1000);
+				tiempo_actual = SDL_GetTicks();
+				tiempo_viejo = tiempo_actual;
+			}
+			delete vista;
+
+		}else{
+			LOG_ERROR << "Otro usuario ya uso el loginName";
+			printf("Exisita el nombre de usuario\n");
 		}
-		LOG_WARNING << "Cargo datos del Server";
 
-		vista->loadMedia();
-
-		//comienza a jugar
-		tiempo_viejo = SDL_GetTicks();
-		bool fin;
-		while (1) {
-
-			if (myClient.isConnected() == false) {
-				LOG_WARNING << "Desconexcion del server";
-				printf("desconexion del servidor \n");
-				//vista->serverDisconnect();
-				return 0;
-			}
-			obtenerActualizacionesDelServer(&myClient, &interprete);
-			//printf("Mando a dibujar\n");
-			fin = vista->run();
-			//printf("Dibuja Ok \n");
-			if (fin) {
-				msg_t quit = interprete.getQuit();
-				enviarAccion(&myClient, quit);
-				break;
-			}
-			//printf("No hay fin \n");
-			if (gameController->hayEventos()) {
-				//printf("hay evento\n");
-				msg_t mensaje = gameController->sacarMensaje();
-				enviarAccion(&myClient, mensaje);
-			} else {
-				enviarKeepAlive(&myClient, &interprete);
-			}
-			//printf("Pasa los eventos \n");
-			usleep((40 - (tiempo_actual - tiempo_viejo)) * 1000);
-			tiempo_actual = SDL_GetTicks();
-			tiempo_viejo = tiempo_actual;
-		}
-		delete vista;
 	}else{
-		LOG_ERROR << "Otro usuario ya uso el loginName";
-		printf("Exisita el nombre de usuario\n");
+		LOG_ERROR << "Error al conectarse con el server.";
+		printf("Error al conectarse con el server.\n");
 	}
 	delete gameController;
     return 0;
