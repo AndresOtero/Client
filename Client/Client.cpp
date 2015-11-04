@@ -74,7 +74,9 @@ int main(int argc, char *argv[])
 
 
 	myClient.connectToServer(gameController->ipJugador().c_str());
-	bool nombreDeUsuarioDisponible = establecerLogin(&myClient, &interprete,gameController->nombreJugador());
+
+	bool nombreDeUsuarioDisponible = establecerLogin(&myClient, &interprete,
+			gameController->nombreJugador());
 
 	if (nombreDeUsuarioDisponible) {
 		//recibe parametros mapa y configuracion
@@ -127,13 +129,12 @@ int main(int argc, char *argv[])
 			tiempo_actual = SDL_GetTicks();
 			tiempo_viejo = tiempo_actual;
 		}
-		delete vista;
-	}else{
-		LOG_ERROR << "Otro usuario ya uso el loginName";
-		printf("Exisita el nombre de usuario\n");
+
+	} else {
+		LOG_ERROR << "Nombre de usuario ya en uso.\n";
+		printf("Nombre de usuario ya en uso.\n");
 	}
 	delete gameController;
-    return 0;
+	return 0;
 }
-
 
