@@ -53,7 +53,7 @@ void obtenerActualizacionesDelServer(MySocket* myClient, Interprete* interprete)
 
 int main(int argc, char *argv[])
 {
-	plog::init(plog::warning, "Log.txt");
+	//plog::init(plog::warning, "Log.txt");
 	double tiempo_actual,tiempo_viejo=0;
 	bool enviarAlive;
 	msg_t msgToSrv;
@@ -74,65 +74,71 @@ int main(int argc, char *argv[])
 
 
 	myClient.connectToServer(gameController->ipJugador().c_str());
+	if(myClient.isConnected()){
 
-	bool nombreDeUsuarioDisponible = establecerLogin(&myClient, &interprete,
-			gameController->nombreJugador());
+		bool nombreDeUsuarioDisponible = establecerLogin(&myClient, &interprete,
+				gameController->nombreJugador());
 
-	if (nombreDeUsuarioDisponible) {
-		//recibe parametros mapa y configuracion
+		if (nombreDeUsuarioDisponible) {
+			//recibe parametros mapa y configuracion
 
-		msg_t mensaje = myClient.recieveMessage();
-		interprete.procesarMensajeDeServer(mensaje);
+			msg_t mensaje = myClient.recieveMessage();
+			interprete.procesarMensajeDeServer(mensaje);
 
-		mensaje = myClient.recieveMessage();
-		interprete.procesarMensajeDeServer(mensaje);
-		gameController->crearModelo();
-		//Inicia vista
-		Modelo *modelo = gameController->devolverModelo();
-		Vista* vista = new Vista(modelo, gameController);
-		vista->init();
-		interprete.setVista(vista);
-
-		mensaje = myClient.recieveMessage();
-		while ((mensaje.type != FIN_INICIALIZACION) && (myClient.isConnected())) {
 			mensaje = myClient.recieveMessage();
 			interprete.procesarMensajeDeServer(mensaje);
-		}
-		LOG_WARNING << "Cargo datos del Server";
+			gameController->crearModelo();
+			//Inicia vista
+			Modelo *modelo = gameController->devolverModelo();
+			Vista* vista = new Vista(modelo, gameController);
+			vista->init();
+			interprete.setVista(vista);
 
-		vista->loadMedia();
-
-		//comienza a jugar
-		tiempo_viejo = SDL_GetTicks();
-		bool fin;
-		while (1) {
-
-			if (myClient.isConnected() == false) {
-				LOG_WARNING << "Desconexcion del server";
-
-				return 0;
+			mensaje = myClient.recieveMessage();
+			while ((mensaje.type != FIN_INICIALIZACION) && (myClient.isConnected())) {
+				mensaje = myClient.recieveMessage();
+				interprete.procesarMensajeDeServer(mensaje);
 			}
-			obtenerActualizacionesDelServer(&myClient, &interprete);
-			fin = vista->run();
-			if (fin) {
-				msg_t quit = interprete.getQuit();
-				enviarAccion(&myClient, quit);
-				break;
+			//LOG_WARNING << "Cargo datos del Server";
+
+			vista->loadMedia();
+
+			//comienza a jugar
+			tiempo_viejo = SDL_GetTicks();
+			bool fin;
+			while (1) {
+
+				if (myClient.isConnected() == false) {
+					LOG_WARNING << "Desconexcion del server";
+
+					return 0;
+				}
+				obtenerActualizacionesDelServer(&myClient, &interprete);
+				fin = vista->run();
+				if (fin) {
+					msg_t quit = interprete.getQuit();
+					enviarAccion(&myClient, quit);
+					break;
+				}
+				if (gameController->hayEventos()) {
+					msg_t mensaje = gameController->sacarMensaje();
+					enviarAccion(&myClient, mensaje);
+				} else {
+					enviarKeepAlive(&myClient, &interprete);
+				}
+				usleep((40 - (tiempo_actual - tiempo_viejo)) * 1000);
+				tiempo_actual = SDL_GetTicks();
+				tiempo_viejo = tiempo_actual;
 			}
-			if (gameController->hayEventos()) {
-				msg_t mensaje = gameController->sacarMensaje();
-				enviarAccion(&myClient, mensaje);
-			} else {
-				enviarKeepAlive(&myClient, &interprete);
-			}
-			usleep((40 - (tiempo_actual - tiempo_viejo)) * 1000);
-			tiempo_actual = SDL_GetTicks();
-			tiempo_viejo = tiempo_actual;
+			delete vista;
+		} else {
+			LOG_ERROR << "Nombre de usuario ya en uso.\n";
+			printf("Nombre de usuario ya en uso.\n");
 		}
 
 	} else {
-		LOG_ERROR << "Nombre de usuario ya en uso.\n";
-		printf("Nombre de usuario ya en uso.\n");
+		LOG_ERROR << "Error al conectarse con el server.\n";
+		printf("Error al conectarse con el server.\n");
 	}
 	delete gameController;
 	return 0;
