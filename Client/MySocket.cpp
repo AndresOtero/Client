@@ -74,10 +74,8 @@ void MySocket::connectToServer(const char* serverAddr)
     serverAddress.sin_port = htons(portNumber);
 
     setKeepAlive(2);
-	if (connect(socketId,(struct sockaddr *)&serverAddress,sizeof(serverAddress)) < 0)
+	if (connect(socketId,(struct sockaddr *)&serverAddress,sizeof(serverAddress)) >= 0)
 	{
-		//LOG_WARNING << "SocketError: error al conectar con el server";
-	} else {
 		connected = true;
 	}
 }

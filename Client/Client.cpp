@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 
 
 	//lee el YAML antes de cargar el usuario y el modelo
-	Yaml* reader = new Yaml("YAML/configuracionCliente2.yaml");
+	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
 	Juego* juego = reader->readCliente();
 	delete reader;
 	if(!juego)return -1;//No se crea el jugadors
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
 				mensaje = myClient.recieveMessage();
 				interprete.procesarMensajeDeServer(mensaje);
 			}
-			//LOG_WARNING << "Cargo datos del Server";
+
 
 			vista->loadMedia();
 
@@ -131,15 +131,7 @@ int main(int argc, char *argv[])
 				tiempo_viejo = tiempo_actual;
 			}
 			delete vista;
-		} else {
-			LOG_ERROR << "Nombre de usuario ya en uso.\n";
-			printf("Nombre de usuario ya en uso.\n");
-		}
-
-	} else {
-		LOG_ERROR << "Error al conectarse con el server.\n";
-		printf("Error al conectarse con el server.\n");
-	}
+		}}
 	delete gameController;
 	return 0;
 }
