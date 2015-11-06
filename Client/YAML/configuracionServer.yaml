@@ -16,6 +16,7 @@ tipos:
    imagen: img/protagonista/spartan_small.png
    fps: 10
    delay: 5
+   velocidad: 10
 
  - nombre: wheel
    imagen: img/dibujo_dinamico/wheel.png
