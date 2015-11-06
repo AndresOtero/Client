@@ -52,15 +52,15 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 
 	case MOVER_PERSONAJE:
-
-		this->gameCtrl->mover_personaje(msg.paramNombre, msg.paramDouble1, msg.paramDouble2);
+		printf("Id: %d",msg.paramInt1);
+		this->gameCtrl->mover_personaje(msg.paramInt1, msg.paramDouble1, msg.paramDouble2);
 		break;
 
 	case LOGIN:
 		//TODO SACAR EL HARCODEO
 		//meto algo que se supone que no crea si ya esta hecho
 		dibujo=this->vista->crearPersonaje("soldado");
-		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
+		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo,msg.paramInt1);
 
 		if (this->gameCtrl->esNombre(msg.paramNombre)) {
 			this->vista->setear_referencia(msg.paramDouble1, msg.paramDouble2);
@@ -69,7 +69,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case NUEVO_PERSONAJE:
 		//TODO SACAR EL HARCODEO
 		dibujo=this->vista->crearPersonaje("soldado");
-		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo);
+		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo,msg.paramInt1);
 		if(this->gameCtrl->esNombre(msg.paramNombre)){
 			this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
 		}
