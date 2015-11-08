@@ -52,7 +52,6 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 
 	case MOVER_PERSONAJE:
-		printf("Id: %d",msg.paramInt1);
 		this->gameCtrl->mover_personaje(msg.paramInt1, msg.paramDouble1, msg.paramDouble2);
 		break;
 
