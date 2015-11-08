@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
 			while (1) {
 
 				if (myClient.isConnected() == false) {
-					LOG_WARNING << "Desconexcion del server";
+					//LOG_WARNING << "Desconexcion del server";
 
 					return 0;
 				}
