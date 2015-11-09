@@ -52,7 +52,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 
 	case MOVER_PERSONAJE:
-		printf("Id: %d\n",msg.paramInt1);
+		//printf("Id: %d\n",msg.paramInt1);
 		this->gameCtrl->mover_personaje(msg.paramInt1, msg.paramDouble1, msg.paramDouble2);
 		break;
 
@@ -80,6 +80,8 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 	case CREAR_ENTIDAD:
 		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1, msg.paramDouble2, 0);
+		//setear id de entidades
+		this->gameCtrl->setId(msg.paramDouble1,msg.paramDouble2,msg.paramInt1);
 		break;
 	case CREAR_RECURSO:
 		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1,msg.paramDouble2,msg.paramInt1);
@@ -103,12 +105,14 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 			this->gameCtrl->acutalizarRecursos(msg.paramInt1,msg.paramDouble1,msg.paramDouble2);
 		}
 		break;
+	case SET_ID_RECURSO:
+		this->gameCtrl->setId(msg.paramDouble1,msg.paramDouble2,msg.paramInt1);
+		break;
+	case ELIMINAR_ENTIDAD:
+		this->gameCtrl->eliminarEntidad(msg.paramInt1);
+		break;
 	case FIN_INICIALIZACION:
 		break;
-
-	/*case ELIMINAR_ENTIDAD:
-		this->gameCtrl->eliminarEntidad(msg.paramDouble1,msg.paramDouble2);
-		break;*/
 	default:
 		break;
 	}
