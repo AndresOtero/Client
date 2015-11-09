@@ -13,6 +13,10 @@ tipos:
    imagen: img/protagonista/spartan_small.png
    fps: 10
    delay: 0
+   velocidad: 10
+   fuerza: 0
+   armadura: 0
+   recoleccion: 25
 
  - nombre: wheel
    imagen: img/dibujo_dinamico/wheel.png
@@ -71,5 +75,5 @@ protagonista:
 
 jugador:
  nombre: german
- ip: 192.168.1.101
+ ip: 127.0.0.1
 

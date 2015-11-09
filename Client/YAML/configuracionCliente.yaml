@@ -10,8 +10,8 @@ tipos:
    pixel_ref_y: 95
 
  - nombre: soldado
-   imagen: img/protagonista/spartan_small.png
-   fps: 10
+   imagen: img/protagonista/WALK.png
+   fps: 5
    delay: 0
    velocidad: 10
    vida: 50
