@@ -29,8 +29,10 @@ bool establecerLogin(MySocket* myClient, Interprete* interprete,string nombre){
 	msg_t msgFromSrv = myClient->recieveMessage();
 
 	if (msgFromSrv.type == ERROR_NOMBRE_TOMADO){
+		printf("Usuario con nombre de usuario ya tomado \n");
 		return false;
 	}else{
+		printf("Usuario conectado con el nombre %s \n", interprete->getNombreJugador().c_str());
 		return true;
 	}
 }
@@ -65,17 +67,18 @@ int main(int argc, char *argv[])
 
 
 	//lee el YAML antes de cargar el usuario y el modelo
+	printf("Comienza a leer archivo\n");
 	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
 	Juego* juego = reader->readCliente();
-
+	printf("Lee archivo\n");
 	delete reader;
 	if(!juego)return -1;//No se crea el jugadors
 	gameController->insertarJuego(juego);
 
-
+	printf("Inserta juego\n");
 	myClient.connectToServer(gameController->ipJugador().c_str());
 	if(myClient.isConnected()){
-
+		printf("Usuario conectado \n");
 		bool nombreDeUsuarioDisponible = establecerLogin(&myClient, &interprete,
 				gameController->nombreJugador());
 
