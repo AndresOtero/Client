@@ -67,10 +67,10 @@ int main(int argc, char *argv[])
 	//lee el YAML antes de cargar el usuario y el modelo
 	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
 	Juego* juego = reader->readCliente();
+
 	delete reader;
 	if(!juego)return -1;//No se crea el jugadors
 	gameController->insertarJuego(juego);
-
 
 
 	myClient.connectToServer(gameController->ipJugador().c_str());
@@ -81,7 +81,6 @@ int main(int argc, char *argv[])
 
 		if (nombreDeUsuarioDisponible) {
 			//recibe parametros mapa y configuracion
-
 			msg_t mensaje = myClient.recieveMessage();
 			interprete.procesarMensajeDeServer(mensaje);
 
@@ -94,12 +93,12 @@ int main(int argc, char *argv[])
 			vista->init();
 			interprete.setVista(vista);
 
+
 			mensaje = myClient.recieveMessage();
 			while ((mensaje.type != FIN_INICIALIZACION) && (myClient.isConnected())) {
 				mensaje = myClient.recieveMessage();
 				interprete.procesarMensajeDeServer(mensaje);
 			}
-
 
 			vista->loadMedia();
 
@@ -133,6 +132,7 @@ int main(int argc, char *argv[])
 			delete vista;
 		}}
 	delete gameController;
+
 	return 0;
 }
 
