@@ -104,6 +104,12 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 	case FIN_INICIALIZACION:
 		break;
+	case ATACAR:
+		this->gameCtrl->ataque(msg.paramDouble1,msg.paramDouble2);
+		break;
+	case ELIMINAR_PERSONAJE:
+		this->gameCtrl->eliminar_personaje(msg.paramInt1);
+		break;
 
 	/*case ELIMINAR_ENTIDAD:
 		this->gameCtrl->eliminarEntidad(msg.paramDouble1,msg.paramDouble2);
