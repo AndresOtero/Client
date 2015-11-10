@@ -5,15 +5,17 @@ pantalla:
 
 tipos:
  - nombre: barraca
-   imagen: img/dibujo_estatico/construcciones/barraks/barraks.png
-   pixel_ref_x: 45
-   pixel_ref_y: 95
+   imagen: img/elfos/CASA.png
+   ancho_base: 2
+   alto_base: 2
+   pixel_ref_x: 0
+   pixel_ref_y: 0
 
  - nombre: soldado
    imagen: img/protagonista/WALK.png
-   fps: 5
+   fps: 4
    delay: 0
-   velocidad: 10
+   velocidad: 14
    vida: 50
    armadura: 10
    construccion: 10

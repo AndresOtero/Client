@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 
 	//lee el YAML antes de cargar el usuario y el modelo
 	printf("Comienza a leer archivo\n");
-	Yaml* reader = new Yaml("YAML/configuracionCliente2.yaml");
+	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
 	Juego* juego = reader->readCliente();
 	printf("Lee archivo\n");
 	delete reader;
