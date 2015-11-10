@@ -1,0 +1,11 @@
+BASES
+______
+
+arqueria= 3 x 3
+caballeria = 2 x 3
+casa  = 2x2
+castillo = 3x3ç
+molino = 2x2
+muelle = 3x3
+
+tile = ancho y alto del piso

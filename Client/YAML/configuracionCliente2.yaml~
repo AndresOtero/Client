@@ -5,7 +5,7 @@ pantalla:
 
 tipos:
  - nombre: barraca
-   imagen: img/dibujo_estatico/construcciones/barraks/barraks.png
+   imagen: img/elfos/CASA.png
    pixel_ref_x: 45
    pixel_ref_y: 95
 
@@ -14,9 +14,11 @@ tipos:
    fps: 10
    delay: 0
    velocidad: 10
-   fuerza: 0
-   armadura: 0
-   recoleccion: 25
+   vida: 50
+   armadura: 10
+   construccion: 10
+   recoleccion: 10   
+   fuerza: 10
 
  - nombre: wheel
    imagen: img/dibujo_dinamico/wheel.png
