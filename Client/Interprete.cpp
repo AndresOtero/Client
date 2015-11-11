@@ -114,10 +114,14 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case FIN_INICIALIZACION:
 		break;
 	case ATACAR:
+		printf("Atacar \n");
 		this->gameCtrl->ataque(msg.paramDouble1,msg.paramDouble2);
 		break;
 	case ELIMINAR_PERSONAJE:
 		this->gameCtrl->eliminar_personaje(msg.paramInt1);
+		break;
+	case ELIMINAR:
+		this->gameCtrl->eliminar(msg.paramInt1);
 		break;
 
 
