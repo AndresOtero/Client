@@ -71,7 +71,6 @@ int main(int argc, char *argv[])
 	delete reader;
 	if(!juego)return -1;//No se crea el jugadors
 	gameController->insertarJuego(juego);
-
 	myClient.connectToServer(gameController->ipJugador().c_str());
 	if(myClient.isConnected()){
 		bool nombreDeUsuarioDisponible = establecerLogin(&myClient, &interprete,
