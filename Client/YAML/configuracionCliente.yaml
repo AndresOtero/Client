@@ -8,8 +8,8 @@ tipos:
    imagen: img/elfos/CASA.png
    ancho_base: 2
    alto_base: 2
-   pixel_ref_x: 0
-   pixel_ref_y: 0
+   pixel_ref_x: -50
+   pixel_ref_y: 150
 
  - nombre: soldado
    imagen: img/protagonista/WALK.png

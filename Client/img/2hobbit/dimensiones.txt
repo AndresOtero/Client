@@ -1,0 +1,4 @@
+casa gandalf : 3x3
+casa 3x3
+CENTRO-CIVICO: 4X4
+CUARTEL: 3X3
