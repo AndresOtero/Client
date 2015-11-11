@@ -24,11 +24,10 @@ tipos:
 
  - nombre: wheel
    imagen: img/dibujo_dinamico/wheel.png
-   pixel_ref_x: 57
-   pixel_ref_y: 25
+   pixel_ref_x: -47
+   pixel_ref_y: 50
    fps: 20
    delay: 50
-
 
  - nombre: herreria
    imagen: img/dibujo_dinamico/mirador.png
@@ -49,23 +48,23 @@ tipos:
 
  - nombre: oro
    imagen: img/oro.png
-   pixel_ref_x: 65
-   pixel_ref_y: 10 
+   pixel_ref_x: 10
+   pixel_ref_y: 0 
 
  - nombre: piedra
    imagen: img/piedra.png
-   pixel_ref_x: 60
-   pixel_ref_y: 7
+   pixel_ref_x: 10
+   pixel_ref_y: 3
 
  - nombre: madera
-   imagen: img/madera.png
-   pixel_ref_x: 61
-   pixel_ref_y: 0
+   imagen: img/dibujo_estatico/arbol/pinetree.png
+   pixel_ref_x: 16
+   pixel_ref_y: 120
 
  - nombre: firestation
    imagen: img/dibujo_estatico/construcciones/firestation.png
-   pixel_ref_x: 62
-   pixel_ref_y: 35
+   pixel_ref_x: 0
+   pixel_ref_y: 44
 
  - nombre: arbol
    imagen: img/dibujo_estatico/arbol/firtree.png
@@ -80,4 +79,5 @@ protagonista:
 jugador:
  nombre: andy
  ip: 127.0.0.1
+ raza: Elfo
 
