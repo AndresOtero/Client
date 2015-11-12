@@ -10,6 +10,7 @@ tipos:
    alto_base: 2
    pixel_ref_x: -50
    pixel_ref_y: 150
+   raza: Elfo
 
  - nombre: soldado
    imagen: img/protagonista/WALK.png
@@ -64,7 +65,7 @@ tipos:
  - nombre: firestation
    imagen: img/dibujo_estatico/construcciones/firestation.png
    pixel_ref_x: 0
-   pixel_ref_y: -44
+   pixel_ref_y: 44
 
  - nombre: arbol
    imagen: img/dibujo_estatico/arbol/firtree.png
