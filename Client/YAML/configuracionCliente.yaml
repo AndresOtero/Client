@@ -11,6 +11,7 @@ tipos:
    pixel_ref_x: -50
    pixel_ref_y: 150
    raza: Elfo
+   velocidad_de_construccion: 20
 
  - nombre: soldado
    imagen: img/elfos/units/legolas a caballo/WALK.png
@@ -24,6 +25,7 @@ tipos:
    construccion: 10
    recoleccion: 10   
    fuerza: 10
+   raza: Elfo
 
  - nombre: wheel
    imagen: img/dibujo_dinamico/wheel.png

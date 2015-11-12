@@ -122,7 +122,24 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case ELIMINAR:
 		this->gameCtrl->eliminar(msg.paramInt1);
 		break;
-
+	case CONSTRUIR:
+		printf("LLega construir\n");
+		this->gameCtrl->construir(msg.paramInt1,msg.paramDouble1,msg.paramDouble2);
+		break;
+	case EMPEZAR_ACCION:
+		this->gameCtrl->empezarAccion(msg.paramInt1);
+		break;
+	case TERMINAR_ACCION:
+		this->gameCtrl->terminarAccion(msg.paramInt1);
+		break;
+	case CREAR_ENTIDAD_CONSTRUIDA:
+		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1,
+				msg.paramDouble2, 0);
+		//setear id de entidades
+		this->gameCtrl->setId(msg.paramDouble1, msg.paramDouble2,
+				msg.paramInt1);
+		this->gameCtrl->finalizarConstruccion(msg.paramInt1);
+		break;
 
 	default:
 		break;

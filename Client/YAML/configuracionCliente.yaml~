@@ -11,9 +11,12 @@ tipos:
    pixel_ref_x: -50
    pixel_ref_y: 150
    raza: Elfo
+   velocidad_de_construccion: 20
 
  - nombre: soldado
-   imagen: img/protagonista/WALK.png
+   imagen: img/elfos/units/legolas a caballo/WALK.png
+   imagen_quieto: img/elfos/units/legolas a caballo/STAND.png
+   imagen_atacar: img/elfos/units/legolas a caballo/ATACK.png
    fps: 4
    delay: 0
    velocidad: 14
