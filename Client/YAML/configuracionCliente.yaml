@@ -44,9 +44,9 @@ tipos:
    raza: Elfo
 
  - nombre: soldado
-   imagen: img/1elfos/aldeano/WALK.png
-   imagen_quieto: img/1elfos/aldeano/STAND.png
-   imagen_atacar: img/1elfos/aldeano/ATACK.png
+   imagen: img/1elfos/legolas/WALK.png
+   imagen_quieto: img/1elfos/legolas/STAND.png
+   imagen_atacar: img/1elfos/legolas/ATACK.png
    fps: 4
    delay: 0
    velocidad: 8
