@@ -1,0 +1,11 @@
+BASES
+______
+
+arqueria= 4 x 4 (pixel_ref_x: -90 pixel_ref_y: 360)
+caballeria = 3 x 3 (  pixel_ref_x: -70 pixel_ref_y: 320)
+casa  = 2x2 - (pixels -50 x 150)
+centro civico= 4x4 (   pixel_ref_x: -90 pixel_ref_y: 270)
+molino = 2x2
+muelle = 3x3
+
+tile = ancho y alto del piso
