@@ -45,6 +45,8 @@ const std::string tag_config_margen_scroll = "margen_scroll";
 const std::string tag_tipos = "tipos";
 const std::string tag_tipos_nombre = "nombre";
 const std::string tag_tipos_imagen = "imagen";
+const std::string tag_tipos_imagen_atacar = "imagen_atacar";
+const std::string tag_tipos_imagen_quieto = "imagen_quieto";
 const std::string tag_tipos_ancho_base = "ancho_base";
 const std::string tag_tipos_alto_base = "alto_base";
 const std::string tag_tipos_pixel_ref_x = "pixel_ref_x";
@@ -277,6 +279,18 @@ void Yaml::cargarObjetoMapa(const YAML::Node* pTipos) {
 							tag_tipos_velocidad_construccion)) {
 				*pDelay >> tipo.velocidad_construcccion;
 				objeto->velocidad_construcccion = tipo.velocidad_construcccion;
+			}
+			if (const YAML::Node *pDelay =
+					((*pTipos)[cantidad_de_objetos]).FindValue(
+							tag_tipos_imagen_atacar)) {
+				*pDelay >> tipo.imagen_atacando;
+				objeto->imagen_atacando = tipo.imagen_atacando;
+			}
+			if (const YAML::Node *pDelay =
+					((*pTipos)[cantidad_de_objetos]).FindValue(
+							tag_tipos_imagen_quieto)) {
+				*pDelay >> tipo.imagen_quieto;
+				objeto->imagen_quieto = tipo.imagen_quieto;
 			}
 			tipos[tipo.nombre] = objeto;
 			cantidad_de_objetos ++;
