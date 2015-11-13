@@ -85,6 +85,7 @@ int main(int argc, char *argv[])
 			interprete.procesarMensajeDeServer(mensaje);
 			gameController->crearModelo();
 			//Inicia vista
+			printf("Inicio vista\n");
 			Modelo *modelo = gameController->devolverModelo();
 			Vista* vista = new Vista(modelo, gameController);
 			vista->init();
@@ -98,7 +99,7 @@ int main(int argc, char *argv[])
 			}
 
 			vista->loadMedia();
-
+			printf("Inicializa vista/n");
 			//comienza a jugar
 			tiempo_viejo = SDL_GetTicks();
 			bool fin;
