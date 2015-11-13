@@ -13,18 +13,51 @@ tipos:
    raza: Elfo
    velocidad_de_construccion: 20
 
+ - nombre: arqueriaElfos
+   imagen: img/1elfos/ARQUERIA.png
+   ancho_base: 4
+   alto_base: 4
+   pixel_ref_x: -90
+   pixel_ref_y: 360
+   raza: Elfos
+
+ - nombre: caballeriaElfos
+   imagen: img/1elfos/CABALLERIA.png
+   ancho_base: 3
+   alto_base: 3
+   pixel_ref_x: -70
+   pixel_ref_y: 320
+   raza: Elfo
+
+ - nombre: centro civico Elfos
+   imagen: img/1elfos/CENTRO-CIVICO.png
+   ancho_base: 4
+   alto_base: 4
+   pixel_ref_x: -90
+   pixel_ref_y: 270
+   raza: Elfo
+
+ - nombre: molElfos
+   imagen: img/1elfos/MOLINO.png
+   ancho_base: 2
+   alto_base: 2
+   pixel_ref_x: -50
+   pixel_ref_y: 80
+   raza: Elfo
+
  - nombre: soldado
-   imagen: img/elfos/units/legolas a caballo/WALK.png
-   imagen_quieto: img/elfos/units/legolas a caballo/STAND.png
-   imagen_atacar: img/elfos/units/legolas a caballo/ATACK.png
+   imagen: img/1elfos/legolas/WALK.png
+   imagen_quieto: img/1elfos/legolas/STAND.png
+   imagen_atacar: img/1elfos/legolas/ATACK.png
    fps: 4
    delay: 0
-   velocidad: 14
+   velocidad: 8
    vida: 50
    armadura: 10
    construccion: 10
    recoleccion: 10   
    fuerza: 10
+   raza: Elfo
 
  - nombre: wheel
    imagen: img/dibujo_dinamico/wheel.png
