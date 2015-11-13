@@ -20,6 +20,7 @@ tipos:
    pixel_ref_x: -90
    pixel_ref_y: 360
    raza: Elfo
+   velocidad_de_construccion: 30
 
  - nombre: caballeriaElfos
    imagen: img/1elfos/CABALLERIA.png
@@ -28,6 +29,7 @@ tipos:
    pixel_ref_x: -70
    pixel_ref_y: 320
    raza: Elfo
+   velocidad_de_construccion: 20
 
  - nombre: centrocivicoElfos
    imagen: img/1elfos/CENTRO-CIVICO.png
@@ -36,6 +38,7 @@ tipos:
    pixel_ref_x: -90
    pixel_ref_y: 270
    raza: Elfo
+   velocidad_de_construccion: 50
 
  - nombre: molElfos
    imagen: img/1elfos/MOLINO.png
@@ -44,6 +47,7 @@ tipos:
    pixel_ref_x: -50
    pixel_ref_y: 80
    raza: Elfo
+   velocidad_de_construccion: 20
 
  - nombre: centroCivicoHobbit
    imagen: img/2hobbit/CENTRO-CIVICO.png
@@ -52,6 +56,7 @@ tipos:
    pixel_ref_x: -145
    pixel_ref_y: 120
    raza: Hobbit
+   velocidad_de_construccion: 20
 
  - nombre: cuartelHobbit
    imagen: img/2hobbit/CUARTEL.png
@@ -60,6 +65,7 @@ tipos:
    pixel_ref_x: -100
    pixel_ref_y: 80
    raza: Hobbit
+   velocidad_de_construccion: 20
 
  - nombre: banderaHobbit
    imagen: img/2hobbit/bandera/flag.png
@@ -68,6 +74,7 @@ tipos:
    pixel_ref_x: 25
    pixel_ref_y: 0
    raza: Hobbit
+   velocidad_de_construccion: 20
 
  - nombre: escuderiaHumano
    imagen: img/3humanos/ESCUDERIA.png
@@ -76,6 +83,7 @@ tipos:
    pixel_ref_x: -125
    pixel_ref_y: 120
    raza: Humano
+   velocidad_de_construccion: 20
 
  - nombre: centroCivicoHumano
    imagen: img/3humanos/CENTRO-CIVICO.png
@@ -84,6 +92,7 @@ tipos:
    pixel_ref_x: -125
    pixel_ref_y: 120
    raza: Humano
+   velocidad_de_construccion: 20
 
  - nombre: caballeriaHumano
    imagen: img/3humanos/CABALLERIA.png
@@ -92,6 +101,7 @@ tipos:
    pixel_ref_x: -115
    pixel_ref_y: 130
    raza: Humano
+   velocidad_de_construccion: 20
 
  - nombre: banderaHumano
    imagen: img/3humanos/bandera/flag.png
@@ -100,6 +110,7 @@ tipos:
    pixel_ref_x: -5
    pixel_ref_y: 70
    raza: Humano
+   velocidad_de_construccion: 20
 
  - nombre: molinoMordor
    imagen: img/4mordor/MOLINO.png
