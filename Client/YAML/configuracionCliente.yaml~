@@ -5,11 +5,11 @@ pantalla:
 
 tipos:
  - nombre: barraca
-   imagen: img/elfos/CASA.png
-   ancho_base: 2
-   alto_base: 2
-   pixel_ref_x: -50
-   pixel_ref_y: 150
+   imagen: img/1elfos/ARQUERIA.png
+   ancho_base: 4
+   alto_base: 4
+   pixel_ref_x: -90
+   pixel_ref_y: 360
    raza: Elfo
    velocidad_de_construccion: 20
 
@@ -19,7 +19,7 @@ tipos:
    alto_base: 4
    pixel_ref_x: -90
    pixel_ref_y: 360
-   raza: Elfos
+   raza: Elfo
 
  - nombre: caballeriaElfos
    imagen: img/1elfos/CABALLERIA.png
@@ -45,6 +45,71 @@ tipos:
    pixel_ref_y: 80
    raza: Elfo
 
+ - nombre: centroCivicoHobbit
+   imagen: img/2hobbit/CENTRO-CIVICO.png
+   ancho_base: 5
+   alto_base: 5
+   pixel_ref_x: -145
+   pixel_ref_y: 120
+   raza: Hobbit
+
+ - nombre: cuartelHobbit
+   imagen: img/2hobbit/CUARTEL.png
+   ancho_base: 4
+   alto_base: 4
+   pixel_ref_x: -100
+   pixel_ref_y: 80
+   raza: Hobbit
+
+ - nombre: banderaHobbit
+   imagen: img/2hobbit/bandera/flag.png
+   ancho_base: 1
+   alto_base: 1
+   pixel_ref_x: 25
+   pixel_ref_y: 0
+   raza: Hobbit
+
+ - nombre: escuderiaHumano
+   imagen: img/3humanos/ESCUDERIA.png
+   ancho_base: 4
+   alto_base: 4
+   pixel_ref_x: -125
+   pixel_ref_y: 120
+   raza: Humano
+
+ - nombre: centroCivicoHumano
+   imagen: img/3humanos/CENTRO-CIVICO.png
+   ancho_base: 5
+   alto_base: 5
+   pixel_ref_x: -125
+   pixel_ref_y: 120
+   raza: Humano
+
+ - nombre: caballeriaHumano
+   imagen: img/3humanos/CABALLERIA.png
+   ancho_base: 4
+   alto_base: 4
+   pixel_ref_x: -115
+   pixel_ref_y: 130
+   raza: Humano
+
+ - nombre: banderaHumano
+   imagen: img/3humanos/bandera/flag.png
+   ancho_base: 1
+   alto_base: 1
+   pixel_ref_x: -5
+   pixel_ref_y: 70
+   raza: Humano
+
+ - nombre: molinoMordor
+   imagen: img/4mordor/MOLINO.png
+   ancho_base: 3
+   alto_base: 3
+   pixel_ref_x: -20
+   pixel_ref_y: 100
+   fps: 6
+   delay: 1
+
  - nombre: soldado
    imagen: img/1elfos/legolas/WALK.png
    imagen_quieto: img/1elfos/legolas/STAND.png
@@ -60,11 +125,11 @@ tipos:
    raza: Elfo
 
  - nombre: wheel
-   imagen: img/dibujo_dinamico/wheel.png
+   imagen: img/2hobbit/wheel.png
    pixel_ref_x: -47
    pixel_ref_y: 50
    fps: 20
-   delay: 50
+   delay: 1
 
  - nombre: herreria
    imagen: img/dibujo_dinamico/mirador.png
