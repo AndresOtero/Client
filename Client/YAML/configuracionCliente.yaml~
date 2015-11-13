@@ -74,7 +74,6 @@ tipos:
    pixel_ref_x: 25
    pixel_ref_y: 0
    raza: Hobbit
-   velocidad_de_construccion: 20
 
  - nombre: escuderiaHumano
    imagen: img/3humanos/ESCUDERIA.png
@@ -110,7 +109,6 @@ tipos:
    pixel_ref_x: -5
    pixel_ref_y: 70
    raza: Humano
-   velocidad_de_construccion: 20
 
  - nombre: molinoMordor
    imagen: img/4mordor/MOLINO.png
@@ -121,13 +119,42 @@ tipos:
    fps: 6
    delay: 1
 
- - nombre: soldado
-   imagen: img/1elfos/legolas/WALK.png
-   imagen_quieto: img/1elfos/legolas/STAND.png
-   imagen_atacar: img/1elfos/legolas/ATACK.png
+ - nombre: cuartelMordor
+   imagen: img/4mordor/CUARTEL.png
+   ancho_base: 5
+   alto_base: 5
+   pixel_ref_x: -140
+   pixel_ref_y: 120
+   velocidad_de_construccion: 20
+
+ - nombre: centroCivicoMordor
+   imagen: img/4mordor/CENTRO-CIVICO.png
+   ancho_base: 5
+   alto_base: 5
+   pixel_ref_x: -150
+   pixel_ref_y: 450
+
+ - nombre: cuartelBestiaMordor
+   imagen: img/4mordor/CUARTEL-ESPECIAL.png
+   ancho_base: 3
+   alto_base: 3
+   pixel_ref_x: -60
+   pixel_ref_y: 60
+
+ - nombre: banderaMordor
+   imagen: img/4mordor/bandera/flag.png
+   ancho_base: 1
+   alto_base: 1
+   pixel_ref_x: 20
+   pixel_ref_y: 45
+
+ - nombre: gandalf
+   imagen: img/2hobbit/gandalf/WALK.png
+   imagen_quieto: img/2hobbit/gandalf/STAND.png
+   imagen_atacar: img/2hobbit/gandalf/ATACK.png
    fps: 4
    delay: 0
-   velocidad: 8
+   velocidad: 14
    vida: 50
    armadura: 10
    construccion: 10
@@ -137,6 +164,8 @@ tipos:
 
  - nombre: wheel
    imagen: img/2hobbit/wheel.png
+   ancho_base: 1
+   alto_base: 2
    pixel_ref_x: -47
    pixel_ref_y: 50
    fps: 20
@@ -160,17 +189,17 @@ tipos:
    pixel_ref_y: 52
 
  - nombre: oro
-   imagen: img/oro.png
+   imagen: img/extras/terrain/gold.png
    pixel_ref_x: 10
    pixel_ref_y: 0 
 
  - nombre: piedra
-   imagen: img/piedra.png
+   imagen: img/extras/terrain/roca/roca1.png
    pixel_ref_x: 10
    pixel_ref_y: 3
 
  - nombre: madera
-   imagen: img/dibujo_estatico/arbol/pinetree.png
+   imagen: img/extras/terrain/arboles/arbol1.png
    pixel_ref_x: 16
    pixel_ref_y: 120
 
@@ -181,16 +210,16 @@ tipos:
 
  - nombre: arbol
    imagen: img/dibujo_estatico/arbol/firtree.png
-   pixel_ref_x: 60
-   pixel_ref_y: 20
+   pixel_ref_x: 20
+   pixel_ref_y: 45
 
 protagonista:
-   - tipo: soldado
+   - tipo: gandalf
      x: 10
      y: 10
 
 jugador:
  nombre: andy
  ip: 127.0.0.1
- raza: Humano
+ raza: Elfo
 

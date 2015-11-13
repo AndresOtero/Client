@@ -74,7 +74,6 @@ tipos:
    pixel_ref_x: 25
    pixel_ref_y: 0
    raza: Hobbit
-   velocidad_de_construccion: 20
 
  - nombre: escuderiaHumano
    imagen: img/3humanos/ESCUDERIA.png
@@ -110,7 +109,6 @@ tipos:
    pixel_ref_x: -5
    pixel_ref_y: 70
    raza: Humano
-   velocidad_de_construccion: 20
 
  - nombre: molinoMordor
    imagen: img/4mordor/MOLINO.png
@@ -127,6 +125,7 @@ tipos:
    alto_base: 5
    pixel_ref_x: -140
    pixel_ref_y: 120
+   velocidad_de_construccion: 20
 
  - nombre: centroCivicoMordor
    imagen: img/4mordor/CENTRO-CIVICO.png
@@ -141,6 +140,7 @@ tipos:
    alto_base: 3
    pixel_ref_x: -60
    pixel_ref_y: 60
+   velocidad_de_construccion: 20
 
  - nombre: banderaMordor
    imagen: img/4mordor/bandera/flag.png
