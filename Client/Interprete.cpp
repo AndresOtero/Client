@@ -39,6 +39,9 @@ string Interprete::getNombreJugador(){
 }
 msg_t Interprete::getLoginMsg(string nombre){
 	msg_t mensajeLogin;
+
+	memcpy(mensajeLogin.paramTipo,string_to_char_array(this->gameCtrl->juego->escenario->protagonista->objetoMapa->nombre), sizeof(mensajeLogin.paramTipo));
+
 	memcpy(mensajeLogin.paramNombre,string_to_char_array(nombre),sizeof(mensajeLogin.paramNombre));
 	return mensajeLogin;
 }
@@ -60,15 +63,15 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 	case LOGIN:
 		//TODO SACAR EL HARCODEO
 		//meto algo que se supone que no crea si ya esta hecho
-		 p=this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo,msg.paramInt1);
-		this->vista->crearPersonaje(string("soldado"),p);
+		 p=this->gameCtrl->conectarCliente(msg.paramNombre, msg.paramTipo, msg.paramDouble1, msg.paramDouble2,dibujo,msg.paramInt1);
+		this->vista->crearPersonaje(string(msg.paramTipo),p);
 		if (this->gameCtrl->esNombre(msg.paramNombre)) {
 			this->vista->setear_referencia(msg.paramDouble1, msg.paramDouble2);
 		}
 		break;
 	case NUEVO_PERSONAJE:
 		//TODO SACAR EL HARCODEO
-		this->gameCtrl->conectarCliente(msg.paramNombre, "soldado", msg.paramDouble1, msg.paramDouble2,dibujo,msg.paramInt1);
+		this->gameCtrl->conectarCliente(msg.paramNombre, msg.paramTipo, msg.paramDouble1, msg.paramDouble2,dibujo,msg.paramInt1);
 		if(this->gameCtrl->esNombre(msg.paramNombre)){
 			this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
 		}
