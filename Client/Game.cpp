@@ -17,7 +17,7 @@ Game::Game() {
 	myClient = NULL;
 	vista = NULL;
 }
-bool Game::init(MySocket* socket, string userName){
+bool Game::init(MySocket* socket, string userName, string raza){
 
 	myClient = socket;
 
@@ -26,6 +26,7 @@ bool Game::init(MySocket* socket, string userName){
 	delete reader;
 
 	juego->escenario->jugador->nombre = userName;
+	juego->escenario->jugador->raza = raza;
 
 	if (!juego)return false;
 

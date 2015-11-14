@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
 			myClient.connectToServer(IPserver.c_str());
 
 			if (myClient.isConnected()) {
-				if (game.init(&myClient, userName)) {
+				if (game.init(&myClient, userName, raza)) {
 					game.jugar();
 					reiniciar = false;
 				}else{

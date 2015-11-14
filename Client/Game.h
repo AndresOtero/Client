@@ -21,7 +21,7 @@ class Game {
 public:
 	Game();
 	void jugar();
-	bool init(MySocket* myClient, string userName);
+	bool init(MySocket* myClient, string userName, string raza);
 	virtual ~Game();
 
 private:
