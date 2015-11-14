@@ -118,10 +118,8 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 	case ACTUALIZACION_RECURSOS:
 		printf("ACTUALIZACION_RECURSOS\n");
+		this->gameCtrl->acutalizarRecursos(msg.paramNombre,msg.paramInt1,msg.paramDouble1,msg.paramDouble2);
 
-		if(this->gameCtrl->nombreJugador()==msg.paramNombre){
-			this->gameCtrl->acutalizarRecursos(msg.paramInt1,msg.paramDouble1,msg.paramDouble2);
-		}
 		break;
 	case SET_ID_RECURSO:
 		printf("SET_ID_RECURSO\n");
