@@ -105,24 +105,53 @@ tipos:
    imagen: img/4mordor/MOLINO.png
    ancho_base: 3
    alto_base: 3
-   pixel_ref_x: -20
-   pixel_ref_y: 100
+   pixel_ref_x: -50
+   pixel_ref_y: 75
    fps: 6
    delay: 1
 
+ - nombre: cuartelMordor
+   imagen: img/4mordor/CUARTEL.png
+   ancho_base: 5
+   alto_base: 5
+   pixel_ref_x: -140
+   pixel_ref_y: 120
+
+ - nombre: centroCivicoMordor
+   imagen: img/4mordor/CENTRO-CIVICO.png
+   ancho_base: 5
+   alto_base: 5
+   pixel_ref_x: -150
+   pixel_ref_y: 450
+
+ - nombre: cuartelBestiaMordor
+   imagen: img/4mordor/CUARTEL-ESPECIAL.png
+   ancho_base: 3
+   alto_base: 3
+   pixel_ref_x: -60
+   pixel_ref_y: 60
+
+ - nombre: banderaMordor
+   imagen: img/4mordor/bandera/flag.png
+   ancho_base: 1
+   alto_base: 1
+   pixel_ref_x: 20
+   pixel_ref_y: 45
+
  - nombre: soldado
-   imagen: img/1elfos/legolas/WALK.png
-   imagen_quieto: img/1elfos/legolas/STAND.png
-   imagen_atacar: img/1elfos/legolas/ATACK.png
+   imagen: img/2hobbit/gandalf/WALK.png
+   imagen_quieto: img/2hobbit/gandalf/STAND.png
+   imagen_atacar: img/2hobbit/gandalf/ATACK.png
    fps: 4
    delay: 0
-   velocidad: 8
+   velocidad: 14
    vida: 50
    armadura: 10
    construccion: 10
    recoleccion: 10   
    fuerza: 10
    raza: Elfo
+   edificio_creador: barraca
 
  - nombre: wheel
    imagen: img/2hobbit/wheel.png
@@ -149,17 +178,17 @@ tipos:
    pixel_ref_y: 52
 
  - nombre: oro
-   imagen: img/oro.png
+   imagen: img/extras/terrain/gold.png
    pixel_ref_x: 10
    pixel_ref_y: 0 
 
  - nombre: piedra
-   imagen: img/piedra.png
+   imagen: img/extras/terrain/roca/roca1.png
    pixel_ref_x: 10
    pixel_ref_y: 3
 
  - nombre: madera
-   imagen: img/dibujo_estatico/arbol/pinetree.png
+   imagen: img/extras/terrain/arboles/arbol1.png
    pixel_ref_x: 16
    pixel_ref_y: 120
 
@@ -170,8 +199,8 @@ tipos:
 
  - nombre: arbol
    imagen: img/dibujo_estatico/arbol/firtree.png
-   pixel_ref_x: 60
-   pixel_ref_y: 20
+   pixel_ref_x: 20
+   pixel_ref_y: 45
 
 protagonista:
    - tipo: soldado

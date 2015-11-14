@@ -61,6 +61,8 @@ const std::string tag_tipos_recoleccion = "recoleccion";
 const std::string tag_tipos_construccion = "construccion";
 const std::string tag_tipos_raza = "raza";
 const std::string tag_tipos_velocidad_construccion = "velocidad_de_construccion";
+const std::string tag_tipos_edificio_constructor = "edificio_constructor";
+
 
 
 const std::string tag_escenario = "escenario";
@@ -184,12 +186,10 @@ void Yaml::cargarObjetoMapa(const YAML::Node* pTipos) {
 	if (const YAML::Node *pTipoNombre =
 			((*pTipos)[cantidad_de_objetos]).FindValue(tag_tipos_nombre)) {
 		(*pTipoNombre) >> tipo.nombre;
-		printf("%s\n",tipo.nombre.c_str());
 
 		if (const YAML::Node *pTipoImagen =
 				((*pTipos)[cantidad_de_objetos]).FindValue(tag_tipos_imagen)) {
 			*pTipoImagen >> tipo.imagen;
-			printf("%s\n",tipo.imagen.c_str());
 
 			ObjetoMapa* objeto = new ObjetoMapa(tipo.nombre, tipo.imagen);
 
@@ -294,6 +294,12 @@ void Yaml::cargarObjetoMapa(const YAML::Node* pTipos) {
 				*pDelay >> tipo.imagen_quieto;
 				objeto->imagen_quieto = tipo.imagen_quieto;
 			}
+			if (const YAML::Node *pDelay =
+								((*pTipos)[cantidad_de_objetos]).FindValue(
+										tag_tipos_edificio_constructor)) {
+							*pDelay >> tipo.edificio_constructor;
+							objeto->edificio_constructor = tipo.edificio_constructor;
+						}
 			tipos[tipo.nombre] = objeto;
 			cantidad_de_objetos ++;
 		} else {
