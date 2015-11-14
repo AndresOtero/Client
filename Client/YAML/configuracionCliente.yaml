@@ -158,6 +158,7 @@ tipos:
    imagen: img/2hobbit/gandalf/WALK.png
    imagen_quieto: img/2hobbit/gandalf/STAND.png
    imagen_atacar: img/2hobbit/gandalf/ATACK.png
+   icono: img/2hobbit/gandalf/icon.bmp
    fps: 4
    delay: 0
    velocidad: 14

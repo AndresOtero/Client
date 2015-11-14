@@ -84,7 +84,17 @@ class Yaml {
 public:
 	Yaml();
 	Yaml(string path);
-	Juego* read();
+
+	Juego* readServer();
+	Juego* readCliente();
+	virtual ~Yaml();
+
+private:
+	std::map<std::string, ObjetoMapa*> tipos;
+	int cantidad_de_objetos;
+	std::vector< Entidad*> entidades;
+	int cantidad_de_entidades;
+
 	Pantalla* cargarPantalla(ConfiguracionJuego_t conf, YAML::Node* doc);
 	Configuracion* cargarConfiguracion(ConfiguracionJuego_t conf, YAML::Node* doc);
 	void cargarObjetoMapa(const YAML::Node* pTipos);
@@ -92,14 +102,6 @@ public:
 	Personaje* cargarPersonaje(ConfiguracionJuego_t conf,const  YAML::Node* pEscenario);
 	Jugador* cargarJugador( YAML::Node* doc,Personaje* pers);
 	Entidad* cargarEntidad(const YAML::Node* pEntidades);
-	Juego* readServer();
-	Juego* readCliente();
-	virtual ~Yaml();
-private:
-	std::map<std::string, ObjetoMapa*> tipos;
-	int cantidad_de_objetos;
-	std::vector< Entidad*> entidades;
-		int cantidad_de_entidades;
 
 };
 
