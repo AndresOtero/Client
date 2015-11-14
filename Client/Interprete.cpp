@@ -71,13 +71,11 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		}
 		break;
 	case NUEVO_PERSONAJE:
-		printf("NUEVO_PERSONAJE\n");
-
+		printf("NUEVO PERSONAJE\n");
 		//TODO SACAR EL HARCODEO
-		this->gameCtrl->conectarCliente(msg.paramNombre, msg.paramTipo, msg.paramDouble1, msg.paramDouble2,dibujo,msg.paramInt1);
-		if(this->gameCtrl->esNombre(msg.paramNombre)){
-			this->vista->setear_referencia(msg.paramDouble1,msg.paramDouble2);
-		}
+		p=this->gameCtrl->conectarCliente(msg.paramNombre, msg.paramTipo, msg.paramDouble1, msg.paramDouble2,dibujo,msg.paramInt1);
+		this->vista->crearPersonaje(string(msg.paramTipo),p);
+		printf("termino NUEVO PERSONAJE\n");
 		break;
 
 	case QUIT:
