@@ -77,8 +77,6 @@ const std::string tag_escenario_protagonista_y = "y";
 const std::string tag_escenario_protagonista_tipo = "tipo";
 
 const std::string tag_jugador = "jugador";
-const std::string tag_jugador_nombre = "nombre";
-const std::string tag_jugador_ip = "ip";
 const std::string tag_jugador_raza = "raza";
 
 Entidad* elegirEntidad(ObjetoMapa * objeto, Entidad_t entidad_t) {
@@ -358,26 +356,11 @@ Jugador* Yaml::cargarJugador(YAML::Node* doc, Personaje* pers) {
 
 	if (const YAML::Node *pJugador = doc->FindValue(tag_jugador)) {
 
-		if (const YAML::Node *pJugadorNombre = (*pJugador).FindValue(tag_jugador_nombre)) {
+		if (const YAML::Node *pJugadorRaza = (*pJugador).FindValue(tag_jugador_raza)) {
 
-			(*pJugadorNombre) >> jug.nombre;
-
-			if (const YAML::Node *pJugadorIp = (*pJugador).FindValue(tag_jugador_ip)) {
-
-				(*pJugadorIp) >> jug.ip;
-
-				if (const YAML::Node *pJugadorRaza = (*pJugador).FindValue(tag_jugador_raza)) {
-
-					(*pJugadorRaza) >> jug.raza;
-					jugador = new Jugador(jug.nombre, jug.ip, jug.raza);
-				}
-			} else {
-				LOG_WARNING	<< "No se define un nombre para el jugador";
-			}
-		} else {
-			LOG_WARNING	<< "No se define Ip";
+			(*pJugadorRaza) >> jug.raza;
+			jugador = new Jugador(jug.nombre, jug.raza);
 		}
-
 	} else {
 		// log no tiene pantalla
 		LOG_WARNING				<< "No se define un jugador";
@@ -385,61 +368,6 @@ Jugador* Yaml::cargarJugador(YAML::Node* doc, Personaje* pers) {
 	return jugador;
 }
 
-Juego* Yaml::readServer() {
-	Juego* juego;
-	remove( "Log.txt" );
-	plog::init(plog::warning, "LogYAML.txt");
-
-	try {
-		std::ifstream fin(config_filepath);
-		YAML::Parser parser(fin);
-		YAML::Node doc;
-		parser.GetNextDocument(doc);
-
-		ConfiguracionJuego_t conf;
-		Pantalla* pantalla;
-		Configuracion* configuracion;
-		Escenario* escenario;
-		Personaje* protagonista;
-
-		pantalla = cargarPantalla(conf, &doc);
-		configuracion = cargarConfiguracion(conf, &doc);
-		const YAML::Node *pTipos = doc.FindValue(tag_tipos);
-		if (pTipos) {
-			for (unsigned i = 0; i < (*pTipos).size(); i++) {
-				cargarObjetoMapa(pTipos);
-			}
-		} else {
-			LOG_WARNING << "No se define ningun tipo";
-		}
-
-		if (const YAML::Node *pEscenario = doc.FindValue(tag_escenario)) {
-			escenario = cargarEscenario(conf, pEscenario);
-			if (const YAML::Node *pEntidades = (*pEscenario).FindValue(tag_escenario_entidades)) {
-				for (unsigned i = 0; i < (*pEntidades).size(); i++) {
-					Entidad* ent = cargarEntidad(pEntidades);
-					if (ent != NULL) {
-						entidades.push_back(ent);
-						cantidad_de_entidades++;
-
-					}
-				}
-				escenario->entidades = entidades;
-
-			} else {
-				LOG_WARNING << "No hay entidades a instanciar inicialmente";
-			}
-		} else {
-			escenario = new Escenario();
-		}
-
-		juego = new Juego(pantalla, configuracion, escenario, tipos);
-	} catch (YAML::Exception& e) {
-		juego = new Juego();
-		LOG_WARNING << "Problemas para abrir el archivo" << e.what();
-	}
-	return juego;
-}
 Juego* Yaml::readCliente() {
 	Juego* juego;
 	remove( "Log.txt" );
