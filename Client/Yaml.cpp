@@ -63,6 +63,10 @@ const std::string tag_tipos_construccion = "construccion";
 const std::string tag_tipos_raza = "raza";
 const std::string tag_tipos_velocidad_construccion = "velocidad_de_construccion";
 const std::string tag_tipos_edificio_constructor = "edificio_constructor";
+const std::string tag_tipos_comida = "comida";
+const std::string tag_tipos_piedra = "piedra";
+const std::string tag_tipos_oro = "oro";
+const std::string tag_tipos_madera = "madera";
 
 
 
@@ -295,18 +299,48 @@ void Yaml::cargarObjetoMapa(const YAML::Node* pTipos) {
 				*pDelay >> tipo.imagen_quieto;
 				objeto->imagen_quieto = tipo.imagen_quieto;
 			}
-			if (const YAML::Node *pIcono =((*pTipos)[cantidad_de_objetos]).FindValue(
-										tag_tipos_imagen_icono)) {
+			if (const YAML::Node *pIcono =
+					((*pTipos)[cantidad_de_objetos]).FindValue(
+							tag_tipos_imagen_icono)) {
 
-							*pIcono >> tipo.imagen_atacando;
-							objeto->icono = tipo.imagen_atacando ;
-						}
+				*pIcono >> tipo.imagen_atacando;
+				objeto->icono = tipo.imagen_atacando;
+			}
 			if (const YAML::Node *pDelay =
-								((*pTipos)[cantidad_de_objetos]).FindValue(
-										tag_tipos_edificio_constructor)) {
-							*pDelay >> tipo.edificio_constructor;
-							objeto->edificio_constructor = tipo.edificio_constructor;
-						}
+					((*pTipos)[cantidad_de_objetos]).FindValue(
+							tag_tipos_edificio_constructor)) {
+				*pDelay >> tipo.edificio_constructor;
+				objeto->edificio_constructor = tipo.edificio_constructor;
+			}
+			if (const YAML::Node *pIcono =
+					((*pTipos)[cantidad_de_objetos]).FindValue(tag_tipos_oro)) {
+
+				*pIcono >> tipo.oro;
+				objeto->oro = tipo.oro;
+			}
+
+			if (const YAML::Node *pIcono =
+					((*pTipos)[cantidad_de_objetos]).FindValue(
+							tag_tipos_piedra)) {
+
+				*pIcono >> tipo.piedra;
+				objeto->piedra = tipo.piedra;
+			}
+
+			if (const YAML::Node *pIcono =
+					((*pTipos)[cantidad_de_objetos]).FindValue(
+							tag_tipos_madera)) {
+
+				*pIcono >> tipo.madera;
+				objeto->madera = tipo.madera;
+			}
+			if (const YAML::Node *pIcono =
+					((*pTipos)[cantidad_de_objetos]).FindValue(
+							tag_tipos_comida)) {
+
+				*pIcono >> tipo.comida;
+				objeto->comida = tipo.comida;
+			}
 			tipos[tipo.nombre] = objeto;
 			cantidad_de_objetos ++;
 		} else {

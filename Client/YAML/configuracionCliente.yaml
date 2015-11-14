@@ -6,27 +6,29 @@ pantalla:
 tipos:
  - nombre: barraca
    imagen: img/1elfos/ARQUERIA.png
-   icono:  img/1elfos/icon-arqueria.png
-   ancho_base: 4
-   alto_base: 4
-   pixel_ref_x: -90
-   pixel_ref_y: 360
-   raza: Elfo
-   velocidad_de_construccion: 20
-
- - nombre: arqueriaElfos
-   imagen: img/1elfos/ARQUERIA.png
-   icono:  img/1elfos/icon-arqueria.png
+   icono:  img/1elfos/icon-arqueria.bmp
    ancho_base: 4
    alto_base: 4
    pixel_ref_x: -90
    pixel_ref_y: 360
    raza: Elfo
    velocidad_de_construccion: 30
+   oro: 50
+   piedra: 50
+   madera: 50
+
+ - nombre: arqueriaElfos
+   imagen: img/1elfos/ARQUERIA.png
+   icono:  img/1elfos/icon-arqueria.bmp
+   ancho_base: 4
+   alto_base: 4
+   pixel_ref_x: -90
+   pixel_ref_y: 360
+   raza: Elfo   
 
  - nombre: caballeriaElfos
    imagen: img/1elfos/CABALLERIA.png
-   icono:  img/1elfos/icon-caballeria.png
+   icono:  img/1elfos/icon-caballeria.bmp
    ancho_base: 3
    alto_base: 3
    pixel_ref_x: -70
@@ -41,11 +43,10 @@ tipos:
    pixel_ref_x: -90
    pixel_ref_y: 270
    raza: Elfo
-   velocidad_de_construccion: 50
 
  - nombre: molElfos
    imagen: img/1elfos/MOLINO.png
-   imagen: img/1elfos/icon-molino.png
+   icono: img/1elfos/icon-molino.bmp
    ancho_base: 2
    alto_base: 2
    pixel_ref_x: -50
@@ -167,6 +168,8 @@ tipos:
    fuerza: 10
    raza: Elfo
    edificio_constructor: barraca
+   oro: 50
+   comida: 50
 
  - nombre: wheel
    imagen: img/2hobbit/wheel.png
@@ -228,4 +231,3 @@ jugador:
  nombre: andy
  ip: 127.0.0.1
  raza: Elfo
-

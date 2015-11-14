@@ -64,6 +64,10 @@ typedef struct {
 	int recoleccion;
 	int construccion;
 	int vida;
+	int comida;
+	int oro;
+	int piedra;
+	int madera;
 	string raza;
 	int velocidad_construcccion;
 	string edificio_constructor;
