@@ -350,25 +350,8 @@ Pantalla* Yaml::cargarPantalla(ConfiguracionJuego_t conf, YAML::Node* doc) {
 	}
 	return pantalla;
 }
-Jugador* Yaml::cargarJugador(YAML::Node* doc, Personaje* pers) {
-	Jugador* jugador = NULL;
-	Jugador_t jug;
 
-	if (const YAML::Node *pJugador = doc->FindValue(tag_jugador)) {
-
-		if (const YAML::Node *pJugadorRaza = (*pJugador).FindValue(tag_jugador_raza)) {
-
-			(*pJugadorRaza) >> jug.raza;
-			jugador = new Jugador(jug.nombre, jug.raza);
-		}
-	} else {
-		// log no tiene pantalla
-		LOG_WARNING				<< "No se define un jugador";
-	}
-	return jugador;
-}
-
-Juego* Yaml::readCliente() {
+Juego* Yaml::readCliente(string userName, string raza) {
 	Juego* juego;
 	remove( "Log.txt" );
 	plog::init(plog::warning, "LogYAML.txt");
@@ -399,7 +382,7 @@ Juego* Yaml::readCliente() {
 		escenario = new Escenario();
 		escenario->protagonista = protagonista;
 
-		Jugador* jugador = cargarJugador(&doc, escenario->protagonista);
+		Jugador* jugador = jugador = new Jugador(userName, raza);
 		if (!jugador)
 			return NULL;
 		escenario->jugador = jugador;

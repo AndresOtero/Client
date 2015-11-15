@@ -22,11 +22,8 @@ bool Game::init(MySocket* socket, string userName, string raza){
 	myClient = socket;
 
 	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
-	Juego* juego = reader->readCliente();
+	Juego* juego = reader->readCliente(userName, raza);
 	delete reader;
-
-	juego->escenario->jugador->nombre = userName;
-	juego->escenario->jugador->raza = raza;
 
 	if (!juego){
 		error = " No se pudo cargar los datos del juego (revise Log.txt)";
