@@ -21,6 +21,7 @@ class Game {
 public:
 	Game();
 	void jugar();
+	string getStringError();
 	bool init(MySocket* myClient, string userName, string raza);
 	virtual ~Game();
 
@@ -29,6 +30,8 @@ private:
 	MySocket* myClient;
 	GameControllerCliente * gameController;
 	Interprete* interprete;
+	string error;
+
 	double tiempo_actual, tiempo_viejo;
 	void obtenerActualizacionesDelServer();
 	void enviarAccion( msg_t msg);

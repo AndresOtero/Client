@@ -28,7 +28,10 @@ bool Game::init(MySocket* socket, string userName, string raza){
 	juego->escenario->jugador->nombre = userName;
 	juego->escenario->jugador->raza = raza;
 
-	if (!juego)return false;
+	if (!juego){
+		error = " No se pudo cargar los datos del juego (revise Log.txt)";
+		return false;
+	}
 
 	gameController->insertarJuego(juego);
 
@@ -112,6 +115,7 @@ bool Game::establecerLogin() {
 	msg_t msgFromSrv = myClient->recieveMessage();
 
 	if (msgFromSrv.type == ERROR_NOMBRE_TOMADO) {
+		error = " El nombre de usuario ya fue tomado por otro jugador";
 		return false;
 	} else {
 		return true;
@@ -131,6 +135,9 @@ void Game::obtenerActualizacionesDelServer() {
 		interprete->procesarMensajeDeServer(msgFromSrv);
 		msgFromSrv = myClient->recieveMessage();
 	}
+}
+string Game::getStringError(){
+	return this->error;
 }
 Game::~Game() {
 	if (interprete) delete interprete;

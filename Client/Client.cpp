@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
 					game.jugar();
 					reiniciar = false;
 				}else{
-					//clientConnectionView.onServerError(game.getStringError());
+					clientConnectionView.onServerError(game.getStringError());
 				}
 			} else {
 				clientConnectionView.onServerError(" No se pudo conectar al servidor");
