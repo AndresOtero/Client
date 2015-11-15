@@ -64,10 +64,9 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		printf("LOGIN\n");
 		//TODO SACAR EL HARCODEO
 		//meto algo que se supone que no crea si ya esta hecho
-		 p=this->gameCtrl->conectarCliente(msg.paramNombre, msg.paramTipo, msg.paramDouble1, msg.paramDouble2,dibujo,msg.paramInt1);
-		this->vista->crearPersonaje(string(msg.paramTipo),p);
 		if (this->gameCtrl->esNombre(msg.paramNombre)) {
-			this->vista->setear_referencia(msg.paramDouble1, msg.paramDouble2);
+			this->vista->setear_vista(msg.paramNombre);
+			//this->vista->setear_referencia(msg.paramDouble1, msg.paramDouble2);
 		}
 		break;
 	case NUEVO_PERSONAJE:
