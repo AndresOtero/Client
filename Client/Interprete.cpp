@@ -20,6 +20,8 @@ char* Interprete::string_to_char_array(string str){
 
 Interprete::Interprete(GameControllerCliente* gm) {
 	this->gameCtrl = gm;
+	this->start = false;
+	this->vista = NULL;
 }
 msg_t Interprete:: getKeepAliveMsg(){
 	msg_t r;
@@ -78,6 +80,11 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		printf("termino NUEVO PERSONAJE\n");
 		break;
 
+	case COMENZAR_PARTIDA:
+
+		this->start = true;
+
+		break;
 	case QUIT:
 		printf("QUIT\n");
 

@@ -35,9 +35,9 @@ public:
 
 	virtual ~Interprete();
 
-	void setVista(Vista* vista) {
-		this->vista = vista;
-	}
+	void setVista(Vista* vista) {this->vista = vista;}
+
+	bool start;
 
 private:
 	GameControllerCliente* gameCtrl;
