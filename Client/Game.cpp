@@ -47,6 +47,7 @@ bool Game::init(MySocket* socket, string userName, string raza) {
 
 	vista->loadMedia();
 
+
 	return true;
 }
 
