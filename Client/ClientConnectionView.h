@@ -8,8 +8,8 @@
 #ifndef CLIENTCONNECTIONVIEW_H_
 #define CLIENTCONNECTIONVIEW_H_
 
-#include <string>
 
+#include <string>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
@@ -22,8 +22,9 @@ public:
 	string getIp();
 	int getPort();
 	string getUsername();
+	string getRaza();
 
-	void showForm();
+	bool showForm();
 	void onServerError(string error);
 
 	virtual ~ClientConnectionView();
@@ -32,6 +33,7 @@ private:
 	string ip;
 	string port;
 	string username;
+	string raza;
 
 	SDL_Window* window;
 	SDL_Renderer* renderer;
@@ -48,14 +50,21 @@ private:
 	SDL_Texture* userForm;
 	SDL_Rect userRect;
 
+	SDL_Rect elfosButton;
+	SDL_Rect hobbitButton;
+	SDL_Rect humanosButton;
+	SDL_Rect mordorButton;
+
 	SDL_Rect submitButton;
+
 	int currentInput;
 	bool shouldQuit;
+	bool shouldStay ;
 	bool showingError;
 
 	bool init();
 	void quit();
-	void pullChanges();
+	bool pullChanges();
 	void connectToServer();
 
 	void eraseCurrentInput();

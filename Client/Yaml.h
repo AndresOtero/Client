@@ -86,7 +86,7 @@ public:
 	Yaml(string path);
 
 	Juego* readServer();
-	Juego* readCliente();
+	Juego* readCliente(string userName, string raza);
 	virtual ~Yaml();
 
 private:

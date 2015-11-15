@@ -8,24 +8,36 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 	Game game;
-	ClientConnectionView clientConnectionView;
+	bool reiniciar = true;
 
-	clientConnectionView.showForm();
+	while (reiniciar) {
 
-	int portNumber= clientConnectionView.getPort();
-	string IPserver = clientConnectionView.getIp();
-	string userName = clientConnectionView.getUsername();
+		ClientConnectionView clientConnectionView;
 
-	MySocket myClient(portNumber);
+		reiniciar = clientConnectionView.showForm();
+		if (reiniciar) {
 
-	myClient.connectToServer(IPserver.c_str());
+			int portNumber= clientConnectionView.getPort();
+			string IPserver = clientConnectionView.getIp();
+			string userName = clientConnectionView.getUsername();
+			string raza = clientConnectionView.getRaza();
 
-	if (myClient.isConnected()) {
+			MySocket myClient(portNumber);
 
-		if (!game.init(&myClient, userName)) return -1;
-		game.jugar();
+			myClient.connectToServer(IPserver.c_str());
+
+			if (myClient.isConnected()) {
+				if (game.init(&myClient, userName, raza)) {
+					game.jugar();
+					reiniciar = false;
+				}else{
+					clientConnectionView.onServerError(game.getStringError());
+				}
+			} else {
+				clientConnectionView.onServerError(" No se pudo conectar al servidor");
+			}
+		}
 	}
-
 	return 0;
 }
 

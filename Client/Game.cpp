@@ -17,17 +17,18 @@ Game::Game() {
 	myClient = NULL;
 	vista = NULL;
 }
-bool Game::init(MySocket* socket, string userName){
+bool Game::init(MySocket* socket, string userName, string raza){
 
 	myClient = socket;
 
 	Yaml* reader = new Yaml("YAML/configuracionCliente.yaml");
-	Juego* juego = reader->readCliente();
+	Juego* juego = reader->readCliente(userName, raza);
 	delete reader;
 
-	juego->escenario->jugador->nombre = userName;
-
-	if (!juego)return false;
+	if (!juego){
+		error = " No se pudo cargar los datos del juego (revise Log.txt)";
+		return false;
+	}
 
 	gameController->insertarJuego(juego);
 
@@ -111,6 +112,7 @@ bool Game::establecerLogin() {
 	msg_t msgFromSrv = myClient->recieveMessage();
 
 	if (msgFromSrv.type == ERROR_NOMBRE_TOMADO) {
+		error = " El nombre de usuario ya fue tomado por otro jugador";
 		return false;
 	} else {
 		return true;
@@ -130,6 +132,9 @@ void Game::obtenerActualizacionesDelServer() {
 		interprete->procesarMensajeDeServer(msgFromSrv);
 		msgFromSrv = myClient->recieveMessage();
 	}
+}
+string Game::getStringError(){
+	return this->error;
 }
 Game::~Game() {
 	if (interprete) delete interprete;
