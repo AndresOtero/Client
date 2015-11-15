@@ -10,14 +10,14 @@
 namespace std {
 
 Game::Game() {
-	tiempo_actual= 0;
+	tiempo_actual = 0;
 	tiempo_viejo = 0;
 	gameController = new GameControllerCliente();
 	interprete = new Interprete(gameController);
 	myClient = NULL;
 	vista = NULL;
 }
-bool Game::init(MySocket* socket, string userName, string raza){
+bool Game::init(MySocket* socket, string userName, string raza) {
 
 	myClient = socket;
 
@@ -25,7 +25,7 @@ bool Game::init(MySocket* socket, string userName, string raza){
 	Juego* juego = reader->readCliente(userName, raza);
 	delete reader;
 
-	if (!juego){
+	if (!juego) {
 		error = " No se pudo cargar los datos del juego (revise Log.txt)";
 		return false;
 	}
@@ -38,7 +38,8 @@ bool Game::init(MySocket* socket, string userName, string raza){
 	vista->init();
 	interprete->setVista(vista);
 
-	if (!establecerLogin()) return false;
+	if (!establecerLogin())
+		return false;
 
 	recibirParametrosConfiguracionYMapa();
 
@@ -49,18 +50,23 @@ bool Game::init(MySocket* socket, string userName, string raza){
 	return true;
 }
 
-void Game::jugar(){
+void Game::jugar() {
 	tiempo_viejo = SDL_GetTicks();
 	bool fin;
 	while (1) {
 
 		if (myClient->isConnected() == false) {
-			return ;
+			return;
 		}
 		obtenerActualizacionesDelServer();
 
-		fin = vista->run();
+		if (interprete->start == true) {
 
+			fin = vista->run();
+
+		} else {
+			fin = vista->mostrarPantallaEspera();
+		}
 		if (fin) {
 			msg_t quit = interprete->getQuit();
 			enviarAccion(quit);
@@ -80,7 +86,7 @@ void Game::jugar(){
 	}
 }
 
-void Game::recibirInicializacionMapa(){
+void Game::recibirInicializacionMapa() {
 	msg_t mensaje = myClient->recieveMessage();
 	while ((mensaje.type != FIN_INICIALIZACION) && (myClient->isConnected())) {
 		mensaje = myClient->recieveMessage();
@@ -88,7 +94,7 @@ void Game::recibirInicializacionMapa(){
 	}
 }
 
-void Game::recibirParametrosConfiguracionYMapa(){
+void Game::recibirParametrosConfiguracionYMapa() {
 	msg_t mensaje = myClient->recieveMessage();
 	interprete->procesarMensajeDeServer(mensaje);
 
@@ -133,11 +139,13 @@ void Game::obtenerActualizacionesDelServer() {
 		msgFromSrv = myClient->recieveMessage();
 	}
 }
-string Game::getStringError(){
+string Game::getStringError() {
 	return this->error;
 }
 Game::~Game() {
-	if (interprete) delete interprete;
-	if (vista) delete vista;
+	if (interprete)
+		delete interprete;
+	if (vista)
+		delete vista;
 }
 }

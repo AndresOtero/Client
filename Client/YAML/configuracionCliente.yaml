@@ -250,8 +250,3 @@ protagonista:
    - tipo: gandalf
      x: 10
      y: 10
-
-jugador:
- nombre: ger
- ip: 127.0.0.1
- raza: Elfo

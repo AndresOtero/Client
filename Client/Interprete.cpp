@@ -20,6 +20,8 @@ char* Interprete::string_to_char_array(string str){
 
 Interprete::Interprete(GameControllerCliente* gm) {
 	this->gameCtrl = gm;
+	this->start = false;
+	this->vista = NULL;
 }
 msg_t Interprete:: getKeepAliveMsg(){
 	msg_t r;
@@ -40,7 +42,7 @@ string Interprete::getNombreJugador(){
 msg_t Interprete::getLoginMsg(string nombre){
 	msg_t mensajeLogin;
 
-	memcpy(mensajeLogin.paramTipo,string_to_char_array(this->gameCtrl->juego->escenario->protagonista->objetoMapa->nombre), sizeof(mensajeLogin.paramTipo));
+	memcpy(mensajeLogin.paramTipo,string_to_char_array(this->gameCtrl->juego->escenario->jugador->raza), sizeof(mensajeLogin.paramTipo));
 
 	memcpy(mensajeLogin.paramNombre,string_to_char_array(nombre),sizeof(mensajeLogin.paramNombre));
 	return mensajeLogin;
@@ -77,6 +79,11 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		printf("termino NUEVO PERSONAJE\n");
 		break;
 
+	case COMENZAR_PARTIDA:
+
+		this->start = true;
+
+		break;
 	case QUIT:
 		printf("QUIT\n");
 
