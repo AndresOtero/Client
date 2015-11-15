@@ -64,11 +64,13 @@ void Game::jugar() {
 
 			fin = vista->run();
 
-			if (fin) {
-				msg_t quit = interprete->getQuit();
-				enviarAccion(quit);
-				break;
-			}
+		} else {
+			fin = vista->mostrarPantallaEspera();
+		}
+		if (fin) {
+			msg_t quit = interprete->getQuit();
+			enviarAccion(quit);
+			break;
 		}
 		if (gameController->hayEventos()) {
 
