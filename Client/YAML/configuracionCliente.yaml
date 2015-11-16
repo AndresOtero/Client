@@ -91,16 +91,20 @@ tipos:
    piedra: 50
    madera: 50 
 
- - nombre: wheel
+ - nombre: molinoHobbit
    imagen: img/2hobbit/wheel.png
    icono: img/2hobbit/icon-molino.bmp
-   ancho_base: 1
-   alto_base: 2
+   ancho_base: 2
+   alto_base: 1
    pixel_ref_x: -47
    pixel_ref_y: 50
+   velocidad_de_construccion: 20
    fps: 20
    delay: 1
    vida: 50
+   oro: 50
+   piedra: 50
+   madera: 50 
    raza: Hobbit
 
  - nombre: banderaHobbit
@@ -158,15 +162,37 @@ tipos:
    vida: 50
    raza: Humano
 
+ - nombre: molinoHumano
+   imagen: img/3humanos/wheel.png
+   icono: img/3humanos/icon-molino.bmp
+   ancho_base: 2
+   alto_base: 1
+   pixel_ref_x: -47
+   pixel_ref_y: 50
+   velocidad_de_construccion: 20
+   fps: 20
+   delay: 1
+   vida: 50
+   oro: 50
+   piedra: 50
+   madera: 50 
+   raza: Humano
+
  - nombre: molinoMordor
    imagen: img/4mordor/MOLINO.png
+   icono: img/4mordor/icon-molino.bmp
    ancho_base: 3
    alto_base: 3
    pixel_ref_x: -50
    pixel_ref_y: 75
+   velocidad_de_construccion: 20
    fps: 6
    delay: 1
    vida: 50
+   oro: 50
+   piedra: 50
+   madera: 50
+   raza: Mordor
 
  - nombre: cuartelMordor
    imagen: img/4mordor/CUARTEL.png
@@ -184,7 +210,6 @@ tipos:
 
  - nombre: centroCivicoMordor
    imagen: img/4mordor/CENTRO-CIVICO.png
-   icono: img/4mordor/icon-cuartel-especial.bmp
    ancho_base: 5
    alto_base: 5
    pixel_ref_x: -150
@@ -194,6 +219,7 @@ tipos:
 
  - nombre: cuartelBestiaMordor
    imagen: img/4mordor/CUARTEL-ESPECIAL.png
+   icono: img/4mordor/icon-cuartel-especial.bmp
    ancho_base: 3
    alto_base: 3
    pixel_ref_x: -60
@@ -450,26 +476,6 @@ tipos:
    oro: 50
    comida: 50
 
- - nombre: herreria
-   imagen: img/dibujo_dinamico/mirador.png
-   pixel_ref_x: 60
-   pixel_ref_y: 50   
-   fps: 20
-   delay: 50
-   vida: 50
-
- - nombre: pino
-   imagen: img/dibujo_estatico/arbol/pinetree.png
-   pixel_ref_x: 85
-   pixel_ref_y: 88
-   vida: 50
-
- - nombre: church
-   imagen: img/dibujo_estatico/construcciones/church.png
-   pixel_ref_x: 60
-   pixel_ref_y: 52
-   vida: 50
-
  - nombre: oro
    imagen: img/extras/terrain/gold.png
    pixel_ref_x: 10
@@ -484,12 +490,6 @@ tipos:
    imagen: img/extras/terrain/arboles/arbol1.png
    pixel_ref_x: 16
    pixel_ref_y: 120
-
- - nombre: firestation
-   imagen: img/dibujo_estatico/construcciones/firestation.png
-   pixel_ref_x: 0
-   pixel_ref_y: 44
-   vida: 50
 
  - nombre: arbol
    imagen: img/dibujo_estatico/arbol/firtree.png
