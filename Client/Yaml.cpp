@@ -14,6 +14,7 @@
 #include "ModeloSrc/Oro.h"
 #include "ModeloSrc/Piedra.h"
 #include "ModeloSrc/Madera.h"
+#include "ModeloSrc/Comida.h"
 #include <plog/Log.h>
 
 #include <map>
@@ -88,6 +89,8 @@ Entidad* elegirEntidad(ObjetoMapa * objeto, Entidad_t entidad_t) {
 		entidad = new Piedra(objeto, x, y);
 	else if (objeto->nombre.compare("madera") == 0)
 		entidad = new Madera(objeto, x, y);
+	else if (objeto->nombre.compare("comida") == 0)
+		entidad = new Comida(objeto, x, y);
 	else
 		entidad = new Entidad(objeto, x, y);
 	return entidad;
@@ -152,7 +155,7 @@ Escenario* Yaml::cargarEscenario(ConfiguracionJuego_t conf, const YAML::Node* pE
 			(*pSizeY) >> conf.escenario.size_y;
 			escenario = new Escenario(conf.escenario.nombre, conf.escenario.size_x, conf.escenario.size_y);
 		} else {
-			LOG_WARNING								<< "Se define el tamaño en x del escenario pero no el y ";
+			LOG_WARNING << "Se define el tamaño en x del escenario pero no el y ";
 			escenario = new Escenario();
 		}
 	} else {
@@ -186,7 +189,7 @@ void Yaml::cargarObjetoMapa(const YAML::Node* pTipos) {
 					objeto->baseLogica->alto = tipo.alto_base;
 
 				} else {
-					LOG_WARNING	<< "Se define el ancho pero no el alto para la base logica";
+					LOG_WARNING << "Se define el ancho pero no el alto para la base logica";
 				}
 			}
 
@@ -199,7 +202,7 @@ void Yaml::cargarObjetoMapa(const YAML::Node* pTipos) {
 					objeto->pixelsReferencia->x = tipo.pixel_ref_x;
 					objeto->pixelsReferencia->y = tipo.pixel_ref_y;
 				} else {
-					LOG_WARNING	<< "Se define el pixel de referencia x pero no el pixel de referencia y";
+					LOG_WARNING << "Se define el pixel de referencia x pero no el pixel de referencia y";
 				}
 			}
 
@@ -314,7 +317,7 @@ Configuracion* Yaml::cargarConfiguracion(ConfiguracionJuego_t conf, YAML::Node* 
 			configuracion = new Configuracion();
 		}
 	} else {
-		LOG_WARNING	<< "No se define configuracion para el margen del scroll y velocidad del personaje";
+		LOG_WARNING << "No se define configuracion para el margen del scroll y velocidad del personaje";
 		configuracion = new Configuracion();
 	}
 	return configuracion;
@@ -334,18 +337,18 @@ Pantalla* Yaml::cargarPantalla(ConfiguracionJuego_t conf, YAML::Node* doc) {
 				pantalla = new Pantalla(conf.pantalla.ancho, conf.pantalla.alto);
 
 			} else {
-				LOG_WARNING	<< "Se define configuracion de pantalla para el ancho pero no para el alto";
+				LOG_WARNING << "Se define configuracion de pantalla para el ancho pero no para el alto";
 				pantalla = new Pantalla();
 			}
 		} else {
 			//log conf pantalla sin ancho
-			LOG_WARNING	<< "Se define configuracion de pantalla pero no su ancho";
+			LOG_WARNING << "Se define configuracion de pantalla pero no su ancho";
 			pantalla = new Pantalla();
 		}
 
 	} else {
 		// log no tiene pantalla
-		LOG_WARNING<< "No se define configuracion de pantalla, se usa Default 1024x728";
+		LOG_WARNING << "No se define configuracion de pantalla, se usa Default 1024x728";
 		pantalla = new Pantalla();
 	}
 	return pantalla;
@@ -353,7 +356,7 @@ Pantalla* Yaml::cargarPantalla(ConfiguracionJuego_t conf, YAML::Node* doc) {
 
 Juego* Yaml::readCliente(string userName, string raza) {
 	Juego* juego;
-	remove( "Log.txt" );
+	remove("Log.txt");
 	plog::init(plog::warning, "LogYAML.txt");
 
 	try {
