@@ -385,9 +385,9 @@ tipos:
    imagen_quieto: img/4mordor/heroe mordor/STAND.png
    imagen_atacar: img/4mordor/heroe mordor/STAND.png
    icono: img/4mordor/heroe mordor/icon.bmp
-   fps: 4
+   fps: 6
    delay: 0
-   velocidad: 24
+   velocidad: 30
    vida: 50
    raza: Mordor
 
@@ -396,9 +396,9 @@ tipos:
    imagen_quieto: img/4mordor/orco/STAND.png
    imagen_atacar: img/4mordor/orco/ATACK.png
    icono: img/4mordor/orco/icon.bmp
-   fps: 4
+   fps: 6
    delay: 0
-   velocidad: 24
+   velocidad: 30
    vida: 50
    fuerza: 10
    armadura: 10
@@ -412,7 +412,7 @@ tipos:
    imagen_quieto: img/4mordor/orco grande/STAND.png
    imagen_atacar: img/4mordor/orco grande/ATACK.png
    icono: img/4mordor/orco grande/icon.bmp
-   fps: 4
+   fps: 6
    delay: 0
    velocidad: 24
    vida: 50
