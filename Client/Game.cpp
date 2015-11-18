@@ -47,7 +47,6 @@ bool Game::init(MySocket* socket, string userName, string raza) {
 
 	vista->loadMedia();
 
-
 	return true;
 }
 
@@ -63,7 +62,12 @@ void Game::jugar() {
 
 		if (interprete->start == true) {
 
-			fin = vista->run();
+			if (gameController->devolverModelo()->getJugador()->perdi) {
+				vista->mostrarPantallaEspera();
+			} else if (gameController->devolverModelo()->getJugador()->gane){
+				vista->mostrarPantallaEspera();
+			}else
+				fin = vista->run();
 
 		} else {
 			fin = vista->mostrarPantallaEspera();
