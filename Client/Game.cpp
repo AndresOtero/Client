@@ -45,6 +45,7 @@ bool Game::init(MySocket* socket, string userName, string raza) {
 
 	recibirInicializacionMapa();
 
+	vista->setBarra(gameController->devolverModelo());
 	vista->loadMedia();
 
 	return true;

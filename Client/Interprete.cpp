@@ -97,6 +97,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg) {
 
 		this->gameCtrl->juego->escenario->size_x = msg.paramDouble1;
 		this->gameCtrl->juego->escenario->size_y = msg.paramDouble2;
+		this->gameCtrl->setMapa(msg.paramDouble1,msg.paramDouble2);
 		break;
 	case CONFIGURACION:
 
