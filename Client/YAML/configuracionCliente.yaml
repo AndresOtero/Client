@@ -16,6 +16,7 @@ tipos:
    oro: 164
    piedra: 47
    madera: 82   
+     
 
  - nombre: caballeriaElfos
    imagen: img/1elfos/CABALLERIA.png
@@ -201,6 +202,7 @@ tipos:
    edificio_constructor: centrocivicoElfos
    oro: 25
    comida: 25
+   musica: img/1elfos/aldeano/ATTACK.wav
 
  - nombre: arwen
    imagen: img/1elfos/heroe - Noblewoman/WALK.png
@@ -212,6 +214,8 @@ tipos:
    velocidad: 25
    vida: 100
    raza: Elfo
+   musica: img/1elfos/heroe - Noblewoman/ATTACK.wav
+
 
  - nombre: legolas
    imagen: img/1elfos/legolas/WALK.png
@@ -230,6 +234,7 @@ tipos:
    madera: 50
    comida: 80
    rango: 6
+   musica: img/1elfos/legolas/ATTACK.wav
 
  - nombre: cirdan
    imagen: img/1elfos/legolas a caballo/WALK.png
@@ -248,6 +253,7 @@ tipos:
    madera: 50
    comida: 80
    rango: 5
+   musica: img/1elfos/legolas a caballo/ATTACK.wav
 
  - nombre: hobbit
    imagen: img/2hobbit/frodo-aldeano/WALK.png
@@ -264,6 +270,8 @@ tipos:
    edificio_constructor: centroCivicoHobbit
    oro: 25
    comida: 25
+   musica: img/2hobbit/frodo-aldeano/ATTACK.wav
+
 
  - nombre: enano
    imagen: img/2hobbit/enano/WALK.png
@@ -282,6 +290,8 @@ tipos:
    piedra: 50
    madera: 50
    comida: 50
+   musica: img/2hobbit/enano/ATTACK.wav
+
 
  - nombre: gandalf
    imagen: img/2hobbit/gandalf/WALK.png
@@ -299,6 +309,8 @@ tipos:
    oro: 500
    madera: 100
    comida: 100
+   musica: img/2hobbit/gandalf/ATTACK.wav
+
 
  - nombre: aragon
    imagen: img/2hobbit/heroe/WALK.PNG
@@ -310,6 +322,8 @@ tipos:
    velocidad: 25
    vida: 100
    raza: Hobbit
+   musica: img/2hobbit/heroe/ATTACK.wav
+
 
  - nombre: aldeano
    imagen: img/3humanos/aldeano/WALK.png
@@ -326,6 +340,8 @@ tipos:
    edificio_constructor: centroCivicoHumano
    oro: 25
    comida: 25
+   musica: img/3humanos/aldeano/ATTACK.wav
+
 
  - nombre: soldado
    imagen: img/3humanos/caballero/WALK.png
@@ -342,6 +358,8 @@ tipos:
    edificio_constructor: caballeriaHumano
    oro: 50
    comida: 50
+   musica: img/3humanos/caballero/ATTACK.wav
+
 
  - nombre: knight
    imagen: img/3humanos/espadachin/WALK.png
@@ -359,6 +377,8 @@ tipos:
    oro: 100
    piedra: 50
    comida: 80
+   musica: img/3humanos/espadachin/ATTACK.wav
+
 
  - nombre: king
    imagen: img/3humanos/Prince John - heroe/WALK.png
@@ -370,6 +390,8 @@ tipos:
    velocidad: 24
    vida: 100
    raza: Humano
+   musica: img/3humanos/Prince John - heroe/ATTACK.wav
+
 
  - nombre: trasgo
    imagen: img/4mordor/aldeano/WALK.png
@@ -386,6 +408,8 @@ tipos:
    edificio_constructor: centroCivicoMordor
    oro: 25
    comida: 25
+   musica: img/4mordor/aldeano/ATTACK.wav
+
 
  - nombre: sauron
    imagen: img/4mordor/heroe mordor/WALK.png
@@ -397,6 +421,8 @@ tipos:
    velocidad: 30
    vida: 100
    raza: Mordor
+   musica: img/4mordor/heroe mordor/ATTACK.wav
+
 
  - nombre: orco
    imagen: img/4mordor/orco/WALK.png
@@ -412,6 +438,8 @@ tipos:
    raza: Mordor
    edificio_constructor: cuartelMordor
    oro: 20
+   musica: img/4mordor/orco/ATTACK.wav
+
 
  - nombre: troll
    imagen: img/4mordor/orco grande/WALK.png
@@ -429,6 +457,8 @@ tipos:
    oro: 200
    piedra: 100
    comida: 200
+   musica: img/4mordor/orco grande/ATTACK.wav
+
    
  - nombre: oro
    imagen: img/extras/terrain/gold.png
