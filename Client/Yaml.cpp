@@ -385,7 +385,7 @@ Juego* Yaml::readCliente(string userName, string raza) {
 		escenario = new Escenario();
 		escenario->protagonista = protagonista;
 
-		Jugador* jugador = jugador = new Jugador(userName, raza);
+		Jugador* jugador = new Jugador(userName, raza);
 		if (!jugador)
 			return NULL;
 		escenario->jugador = jugador;

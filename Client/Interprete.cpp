@@ -65,7 +65,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg) {
 		}
 		break;
 	case NUEVO_PERSONAJE:
-		p = this->gameCtrl->conectarCliente(msg.paramNombre, msg.paramTipo, msg.paramDouble1, msg.paramDouble2, dibujo, msg.paramInt1);
+		p = this->gameCtrl->conectarCliente(msg.paramNombre, msg.paramTipo, msg.paramDouble1, msg.paramDouble2, msg.paramInt1);
 		this->vista->crearPersonaje(string(msg.paramTipo), p);
 		printf("termino NUEVO PERSONAJE\n");
 		break;
