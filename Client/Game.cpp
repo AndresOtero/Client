@@ -64,7 +64,9 @@ void Game::jugar() {
 
 			if (gameController->devolverModelo()->getJugador()->perdi) {
 				vista->mostrarPantallaEspera();
-			} else
+			} else if (gameController->devolverModelo()->getJugador()->gane){
+				vista->mostrarPantallaEspera();
+			}else
 				fin = vista->run();
 
 		} else {
