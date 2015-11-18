@@ -65,9 +65,9 @@ void Interprete::procesarMensajeDeServer(msg_t msg) {
 		}
 		break;
 	case NUEVO_PERSONAJE:
-		p = this->gameCtrl->conectarCliente(msg.paramNombre, msg.paramTipo, msg.paramDouble1, msg.paramDouble2, dibujo, msg.paramInt1);
+		p = this->gameCtrl->conectarCliente(msg.paramNombre, msg.paramTipo, msg.paramDouble1, msg.paramDouble2, msg.paramInt1);
 		this->vista->crearPersonaje(string(msg.paramTipo), p);
-		printf("termino NUEVO PERSONAJE\n");
+		//printf("termino NUEVO PERSONAJE\n");
 		break;
 
 	case COMENZAR_PARTIDA:
@@ -112,7 +112,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg) {
 
 		break;
 	case SET_ID_RECURSO:
-		printf("SET_ID_RECURSO\n");
+		//printf("SET_ID_RECURSO\n");
 
 		this->gameCtrl->setId(msg.paramDouble1, msg.paramDouble2, msg.paramInt1);
 		break;
@@ -155,13 +155,11 @@ void Interprete::procesarMensajeDeServer(msg_t msg) {
 		this->gameCtrl->finalizarConstruccion(msg.paramInt1);
 		break;
 
-	case CAPTURA_BANDERA:
-		printf("me sacaron la bandera, ganadores: %s, perdedores: %s\n",msg.paramNombre,msg.paramTipo );
-		this->gameCtrl->capturaBandera(msg.paramNombre,msg.paramTipo);
+	case CAMBIAR_PERSONAJE:
+		this->gameCtrl->cambiar_personaje(msg.paramInt1,msg.paramNombre,msg.paramTipo);
 		break;
 
 	case ELIMINAR_TODOS:
-
 		this->gameCtrl->eliminarTodos(msg.paramTipo);
 		break;
 	default:

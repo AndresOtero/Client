@@ -15,7 +15,7 @@ ClientConnectionView::ClientConnectionView() {
 	this->ip = "127.0.0.1";
 	this->port = "51717";
 	this->raza = "Elfo";
-	this->username = "ger";
+	this->username = "ander";
 	this->currentInput = 1;
 
 	this->font = NULL;
