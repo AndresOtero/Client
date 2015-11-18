@@ -229,6 +229,7 @@ tipos:
    oro: 100
    madera: 50
    comida: 80
+   rango: 10
 
  - nombre: cirdan
    imagen: img/1elfos/legolas a caballo/WALK.png
