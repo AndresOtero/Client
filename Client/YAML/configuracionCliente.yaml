@@ -285,7 +285,7 @@ tipos:
    icono: img/2hobbit/gandalf/icon.bmp
    fps: 4
    delay: 0
-   velocidad: 20
+   velocidad: 40
    vida: 50
    fuerza: 10
    armadura: 10

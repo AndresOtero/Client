@@ -8,8 +8,7 @@
 #include "Interprete.h"
 #include <math.h>
 
-
-char* Interprete::string_to_char_array(string str){
+char* Interprete::string_to_char_array(string str) {
 	int str_size = str.size();
 	char charArray[PARAM_STRING_LEN];
 	for (int a = 0; a <= str_size; a++) {
@@ -23,32 +22,32 @@ Interprete::Interprete(GameControllerCliente* gm) {
 	this->start = false;
 	this->vista = NULL;
 }
-msg_t Interprete:: getKeepAliveMsg(){
+msg_t Interprete::getKeepAliveMsg() {
 	msg_t r;
 	r.type = KEEPALIVE;
 	return r;
 }
-msg_t Interprete:: getQuit(){
+msg_t Interprete::getQuit() {
 	msg_t r;
 	r.type = QUIT;
 	return r;
 }
-bool Interprete::isQuit(msg_t quit){
+bool Interprete::isQuit(msg_t quit) {
 	return (quit.type == QUIT);
 }
-string Interprete::getNombreJugador(){
+string Interprete::getNombreJugador() {
 	return this->gameCtrl->nombreJugador();
 }
-msg_t Interprete::getLoginMsg(string nombre){
+msg_t Interprete::getLoginMsg(string nombre) {
 	msg_t mensajeLogin;
 
-	memcpy(mensajeLogin.paramTipo,string_to_char_array(this->gameCtrl->juego->escenario->jugador->raza), sizeof(mensajeLogin.paramTipo));
+	memcpy(mensajeLogin.paramTipo, string_to_char_array(this->gameCtrl->juego->escenario->jugador->raza), sizeof(mensajeLogin.paramTipo));
 
-	memcpy(mensajeLogin.paramNombre,string_to_char_array(nombre),sizeof(mensajeLogin.paramNombre));
+	memcpy(mensajeLogin.paramNombre, string_to_char_array(nombre), sizeof(mensajeLogin.paramNombre));
 	return mensajeLogin;
 }
 
-void Interprete::procesarMensajeDeServer(msg_t msg){
+void Interprete::procesarMensajeDeServer(msg_t msg) {
 	dibujo_t dibujo;
 	Personaje* p;
 	switch (msg.type) {
@@ -61,18 +60,13 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 
 	case LOGIN:
-
-		//TODO SACAR EL HARCODEO
-		//meto algo que se supone que no crea si ya esta hecho
 		if (this->gameCtrl->esNombre(msg.paramNombre)) {
 			this->vista->setear_vista(msg.paramNombre);
-			//this->vista->setear_referencia(msg.paramDouble1, msg.paramDouble2);
 		}
 		break;
 	case NUEVO_PERSONAJE:
-		//TODO SACAR EL HARCODEO
-		p=this->gameCtrl->conectarCliente(msg.paramNombre, msg.paramTipo, msg.paramDouble1, msg.paramDouble2,dibujo,msg.paramInt1);
-		this->vista->crearPersonaje(string(msg.paramTipo),p);
+		p = this->gameCtrl->conectarCliente(msg.paramNombre, msg.paramTipo, msg.paramDouble1, msg.paramDouble2, dibujo, msg.paramInt1);
+		this->vista->crearPersonaje(string(msg.paramTipo), p);
 		printf("termino NUEVO PERSONAJE\n");
 		break;
 
@@ -89,11 +83,11 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 
 		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1, msg.paramDouble2, 0);
 		//setear id de entidades
-		this->gameCtrl->setId(msg.paramDouble1,msg.paramDouble2,msg.paramInt1);
+		this->gameCtrl->setId(msg.paramDouble1, msg.paramDouble2, msg.paramInt1);
 		break;
 	case CREAR_RECURSO:
 
-		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1,msg.paramDouble2,msg.paramInt1);
+		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1, msg.paramDouble2, msg.paramInt1);
 		break;
 	case RECONNECT:
 
@@ -106,7 +100,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 	case CONFIGURACION:
 
-		this->gameCtrl->setConfiguracion((int)msg.paramDouble1,(int)msg.paramDouble2);
+		this->gameCtrl->setConfiguracion((int) msg.paramDouble1, (int) msg.paramDouble2);
 		break;
 	case DISCONNECT:
 		printf("DISCONNECT\n");
@@ -114,13 +108,13 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		this->gameCtrl->desconectar(msg.paramNombre);
 		break;
 	case ACTUALIZACION_RECURSOS:
-		this->gameCtrl->acutalizarRecursos(msg.paramNombre,msg.paramInt1,msg.paramDouble1,msg.paramDouble2);
+		this->gameCtrl->acutalizarRecursos(msg.paramNombre, msg.paramInt1, msg.paramDouble1, msg.paramDouble2);
 
 		break;
 	case SET_ID_RECURSO:
 		printf("SET_ID_RECURSO\n");
 
-		this->gameCtrl->setId(msg.paramDouble1,msg.paramDouble2,msg.paramInt1);
+		this->gameCtrl->setId(msg.paramDouble1, msg.paramDouble2, msg.paramInt1);
 		break;
 	case ELIMINAR_ENTIDAD:
 
@@ -131,7 +125,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 	case ATACAR:
 
-		this->gameCtrl->ataque(msg.paramInt1,msg.paramDouble1,msg.paramDouble2);
+		this->gameCtrl->ataque(msg.paramInt1, msg.paramDouble1, msg.paramDouble2);
 		break;
 	case ELIMINAR_PERSONAJE:
 
@@ -143,30 +137,33 @@ void Interprete::procesarMensajeDeServer(msg_t msg){
 		break;
 	case CONSTRUIR:
 
-
-		this->gameCtrl->construir(msg.paramInt1,msg.paramDouble1,msg.paramDouble2);
+		this->gameCtrl->construir(msg.paramInt1, msg.paramDouble1, msg.paramDouble2);
 		break;
 	case EMPEZAR_ACCION:
-
 
 		this->gameCtrl->empezarAccion(msg.paramInt1);
 		break;
 	case TERMINAR_ACCION:
 
-
 		this->gameCtrl->terminarAccion(msg.paramInt1);
 		break;
 	case CREAR_ENTIDAD_CONSTRUIDA:
 
-
-		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1,
-				msg.paramDouble2, 0);
+		this->gameCtrl->agregarEntidad(msg.paramNombre, msg.paramDouble1, msg.paramDouble2, 0);
 		//setear id de entidades
-		this->gameCtrl->setId(msg.paramDouble1, msg.paramDouble2,
-				msg.paramInt1);
+		this->gameCtrl->setId(msg.paramDouble1, msg.paramDouble2, msg.paramInt1);
 		this->gameCtrl->finalizarConstruccion(msg.paramInt1);
 		break;
 
+	case CAPTURA_BANDERA:
+		printf("me sacaron la bandera, ganadores: %s, perdedores: %s\n",msg.paramNombre,msg.paramTipo );
+		this->gameCtrl->capturaBandera(msg.paramNombre,msg.paramTipo);
+		break;
+
+	case ELIMINAR_TODOS:
+
+		this->gameCtrl->eliminarTodos(msg.paramTipo);
+		break;
 	default:
 		break;
 	}
