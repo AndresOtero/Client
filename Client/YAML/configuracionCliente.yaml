@@ -229,7 +229,7 @@ tipos:
    oro: 100
    madera: 50
    comida: 80
-   rango: 10
+   rango: 6
 
  - nombre: cirdan
    imagen: img/1elfos/legolas a caballo/WALK.png
@@ -247,6 +247,7 @@ tipos:
    oro: 200
    madera: 50
    comida: 80
+   rango: 5
 
  - nombre: hobbit
    imagen: img/2hobbit/frodo-aldeano/WALK.png
