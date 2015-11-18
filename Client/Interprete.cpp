@@ -156,11 +156,16 @@ void Interprete::procesarMensajeDeServer(msg_t msg) {
 		break;
 
 	case CAMBIAR_PERSONAJE:
-		this->gameCtrl->cambiar_personaje(msg.paramInt1,msg.paramNombre,msg.paramTipo);
+		this->gameCtrl->cambiar_personaje(msg.paramInt1, msg.paramNombre, msg.paramTipo);
 		break;
 
 	case ELIMINAR_TODOS:
 		this->gameCtrl->eliminarTodos(msg.paramTipo);
+
+		break;
+
+	case PIERDE:
+		this->gameCtrl->meFijoSiPerdi(msg.paramNombre);
 		break;
 	default:
 		break;
