@@ -1,6 +1,6 @@
 pantalla: 
- ancho: 1300
- alto: 900
+ ancho: 1000
+ alto: 700
 
 tipos:
  - nombre: arqueriaElfos
