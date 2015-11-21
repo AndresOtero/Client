@@ -160,8 +160,7 @@ void Interprete::procesarMensajeDeServer(msg_t msg) {
 		break;
 	case EMPEZAR_ACCION:
 		printf("EMPEZAR_ACCION\n");
-
-		this->gameCtrl->empezarAccion(msg.paramInt1);
+		this->gameCtrl->empezarAccion(msg.paramInt1,Posicion(msg.paramDouble1,msg.paramDouble2));
 		break;
 	case TERMINAR_ACCION:
 		printf("TERMINAR_ACCION\n");
