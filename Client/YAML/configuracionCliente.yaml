@@ -248,7 +248,7 @@ tipos:
    imagen_quieto: img/1elfos/aldeano/STAND.png
    imagen_atacar: img/1elfos/aldeano/ATACK.png
    icono: img/1elfos/aldeano/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 24
    vida: 30
@@ -266,7 +266,7 @@ tipos:
    imagen_quieto: img/1elfos/heroe - Noblewoman/STAND.png
    imagen_atacar: img/1elfos/heroe - Noblewoman/STAND.png
    icono: img/1elfos/heroe - Noblewoman/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 25
    vida: 100
@@ -278,7 +278,7 @@ tipos:
    imagen_quieto: img/1elfos/barcoElfos.png
    imagen_atacar: img/1elfos/barcoElfos.png
    icono: img/1elfos/aldeano/icon.bmp
-   fps: 3
+   fps: 2
    delay: 0
    velocidad: 24
    vida: 100
@@ -298,7 +298,7 @@ tipos:
    imagen_quieto: img/1elfos/legolas/STAND.png
    imagen_atacar: img/1elfos/legolas/ATACK.png
    icono: img/1elfos/legolas/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 24
    vida: 100
@@ -317,7 +317,7 @@ tipos:
    imagen_quieto: img/1elfos/legolas a caballo/STAND.png
    imagen_atacar: img/1elfos/legolas a caballo/ATACK.png
    icono: img/1elfos/legolas a caballo/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 40
    vida: 85
@@ -336,7 +336,7 @@ tipos:
    imagen_quieto: img/2hobbit/frodo-aldeano/STAND.png
    imagen_atacar: img/2hobbit/frodo-aldeano/ATACK.png
    icono: img/2hobbit/frodo-aldeano/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 30
    vida: 30
@@ -353,7 +353,7 @@ tipos:
    imagen_quieto: img/2hobbit/barcoHobbit.png
    imagen_atacar: img/2hobbit/barcoHobbit.png
    icono: img/2hobbit/frodo-aldeano/icon.bmp
-   fps: 3
+   fps: 2
    delay: 0
    velocidad: 24
    vida: 100
@@ -374,7 +374,7 @@ tipos:
    imagen_quieto: img/2hobbit/enano/STAND.png
    imagen_atacar: img/2hobbit/enano/ATACK.png
    icono: img/2hobbit/enano/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 24
    vida: 80
@@ -394,7 +394,7 @@ tipos:
    imagen_quieto: img/2hobbit/gandalf/STAND.png
    imagen_atacar: img/2hobbit/gandalf/ATACK.png
    icono: img/2hobbit/gandalf/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 40
    vida: 70
@@ -413,7 +413,7 @@ tipos:
    imagen_quieto: img/2hobbit/heroe/STAND.png
    imagen_atacar: img/2hobbit/heroe/STAND.png
    icono: img/2hobbit/heroe/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 25
    vida: 100
@@ -426,7 +426,7 @@ tipos:
    imagen_quieto: img/3humanos/aldeano/STAND.png
    imagen_atacar: img/3humanos/aldeano/ATACK.png
    icono: img/3humanos/aldeano/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 22
    vida: 25
@@ -443,7 +443,7 @@ tipos:
    imagen_quieto: img/3humanos/barcoHumanos.png
    imagen_atacar: img/3humanos/barcoHumanos.png
    icono: img/3humanos/aldeano/icon.bmp
-   fps: 3
+   fps: 2
    delay: 0
    velocidad: 24
    vida: 100
@@ -464,7 +464,7 @@ tipos:
    imagen_quieto: img/3humanos/caballero/STAND.png
    imagen_atacar: img/3humanos/caballero/ATACK.png
    icono: img/3humanos/caballero/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 18
    vida: 60
@@ -482,7 +482,7 @@ tipos:
    imagen_quieto: img/3humanos/espadachin/STAND.png
    imagen_atacar: img/3humanos/espadachin/ATACK.png
    icono: img/3humanos/espadachin/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 22
    vida: 100
@@ -501,7 +501,7 @@ tipos:
    imagen_quieto: img/3humanos/Prince John - heroe/STAND.png
    imagen_atacar: img/3humanos/Prince John - heroe/STAND.png
    icono: img/3humanos/Prince John - heroe/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 24
    vida: 100
@@ -514,7 +514,7 @@ tipos:
    imagen_quieto: img/4mordor/aldeano/STAND.png
    imagen_atacar: img/4mordor/aldeano/ATACK.png
    icono: img/4mordor/aldeano/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 30
    vida: 20
@@ -531,7 +531,7 @@ tipos:
    imagen_quieto: img/4mordor/barcoMordor.png
    imagen_atacar: img/4mordor/barcoMordor.png
    icono: img/4mordor/aldeano/icon.bmp
-   fps: 3
+   fps: 2
    delay: 0
    velocidad: 24
    vida: 100
@@ -551,7 +551,7 @@ tipos:
    imagen_quieto: img/4mordor/heroe mordor/STAND.png
    imagen_atacar: img/4mordor/heroe mordor/STAND.png
    icono: img/4mordor/heroe mordor/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 30
    vida: 100
@@ -564,7 +564,7 @@ tipos:
    imagen_quieto: img/4mordor/orco/STAND.png
    imagen_atacar: img/4mordor/orco/ATACK.png
    icono: img/4mordor/orco/icon.bmp
-   fps: 3
+   fps: 1
    delay: 0
    velocidad: 25
    vida: 20
@@ -581,7 +581,7 @@ tipos:
    imagen_quieto: img/4mordor/orco grande/STAND.png
    imagen_atacar: img/4mordor/orco grande/ATACK.png
    icono: img/4mordor/orco grande/icon.bmp
-   fps: 6
+   fps: 3
    delay: 0
    velocidad: 10
    vida: 200
