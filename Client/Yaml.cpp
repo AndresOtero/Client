@@ -65,6 +65,7 @@ const std::string tag_tipos_oro = "oro";
 const std::string tag_tipos_madera = "madera";
 const std::string tag_tipos_rango = "rango";
 const std::string tag_tipos_musica = "musica";
+const std::string tag_tipos_es_bote  = "es_bote";
 
 
 const std::string tag_escenario = "escenario";
@@ -172,7 +173,7 @@ void Yaml::cargarObjetoMapa(const YAML::Node* pTipos) {
 	Objeto_mapa_t tipo;
 
 	if (const YAML::Node *pTipoNombre = ((*pTipos)[cantidad_de_objetos]).FindValue(tag_tipos_nombre)) {
-
+		printf("%s\n",tipo.nombre.c_str());
 		(*pTipoNombre) >> tipo.nombre;
 
 		if (const YAML::Node *pTipoImagen = ((*pTipos)[cantidad_de_objetos]).FindValue(tag_tipos_imagen)) {
@@ -294,6 +295,14 @@ void Yaml::cargarObjetoMapa(const YAML::Node* pTipos) {
 
 				*pRango >> tipo.rango;
 				objeto->rango = tipo.rango;
+			}
+			if (const YAML::Node *pEs_Bote =
+					((*pTipos)[cantidad_de_objetos]).FindValue(
+							tag_tipos_es_bote)) {
+
+				*pEs_Bote >> tipo.es_bote;
+				objeto->es_bote = tipo.es_bote;
+				printf(objeto->es_bote ?"Verdad\n":"falso\n");
 			}
 			if (const YAML::Node *musica=
 								((*pTipos)[cantidad_de_objetos]).FindValue(

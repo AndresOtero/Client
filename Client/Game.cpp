@@ -55,7 +55,6 @@ void Game::jugar() {
 	tiempo_viejo = SDL_GetTicks();
 	bool fin;
 	while (1) {
-
 		if (myClient->isConnected() == false) {
 			return;
 		}

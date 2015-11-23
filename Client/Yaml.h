@@ -73,6 +73,7 @@ typedef struct {
 	string edificio_constructor;
 	int rango;
 	string musica;
+	bool es_bote;
 } Objeto_mapa_t;
 
 typedef struct {

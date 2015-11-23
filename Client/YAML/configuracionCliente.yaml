@@ -15,7 +15,21 @@ tipos:
    velocidad_de_construccion: 78
    oro: 164
    piedra: 47
-   madera: 82   
+   madera: 82  
+
+ - nombre: muelleElfos
+   imagen: img/1elfos/muelle.png
+   icono:  img/1elfos/icon-arqueria.bmp
+   ancho_base: 3
+   alto_base: 4
+   pixel_ref_x: -75
+   pixel_ref_y: 75
+   vida: 700
+   raza: Elfo  
+   velocidad_de_construccion: 78
+   oro: 100
+   piedra: 50
+   madera: 150   
      
 
  - nombre: caballeriaElfos
@@ -86,6 +100,20 @@ tipos:
    oro: 100
    madera: 300 
 
+ - nombre: muelleHobbit
+   imagen: img/2hobbit/muelle.png
+   icono:  img/2hobbit/icon-cuartel.bmp
+   ancho_base: 4
+   alto_base: 4
+   pixel_ref_x: -60
+   pixel_ref_y: 60
+   vida: 700
+   raza: Hobbit  
+   velocidad_de_construccion: 78
+   oro: 100
+   piedra: 50
+   madera: 150   
+
  - nombre: banderaHobbit
    imagen: img/2hobbit/bandera/flag.png
    ancho_base: 1
@@ -108,6 +136,20 @@ tipos:
    oro: 28
    piedra: 175
    madera: 23 
+
+ - nombre: muelleHumanos
+   imagen: img/3humanos/muelle.png
+   icono:  img/3humanos/icon-escuderia.bmp
+   ancho_base: 5
+   alto_base: 4
+   pixel_ref_x: -120
+   pixel_ref_y: 140
+   vida: 700
+   raza: Humano  
+   velocidad_de_construccion: 78
+   oro: 100
+   piedra: 50
+   madera: 150   
 
  - nombre: centroCivicoHumano
    imagen: img/3humanos/CENTRO-CIVICO.png
@@ -154,6 +196,20 @@ tipos:
    oro: 20
    piedra: 200
    madera: 20 
+
+ - nombre: muelleMordor
+   imagen: img/4mordor/muelle.png
+   icono:  img/4mordor/icon-cuartel.bmp
+   ancho_base: 3
+   alto_base: 4
+   pixel_ref_x: -55
+   pixel_ref_y: 38
+   vida: 700
+   raza: Mordor  
+   velocidad_de_construccion: 78
+   oro: 100
+   piedra: 50
+   madera: 150
 
  - nombre: centroCivicoMordor
    imagen: img/4mordor/CENTRO-CIVICO.png
@@ -204,6 +260,7 @@ tipos:
    comida: 25
    musica: img/1elfos/aldeano/ATTACK.wav
 
+
  - nombre: arwen
    imagen: img/1elfos/heroe - Noblewoman/WALK.png
    imagen_quieto: img/1elfos/heroe - Noblewoman/STAND.png
@@ -215,6 +272,25 @@ tipos:
    vida: 100
    raza: Elfo
    musica: img/1elfos/heroe - Noblewoman/ATTACK.wav
+
+ - nombre: barElf
+   imagen: img/1elfos/barcoElfos.png
+   imagen_quieto: img/1elfos/barcoElfos.png
+   imagen_atacar: img/1elfos/barcoElfos.png
+   icono: img/1elfos/aldeano/icon.bmp
+   fps: 3
+   delay: 0
+   velocidad: 24
+   vida: 100
+   fuerza: 40
+   armadura: 15
+   raza: Elfo
+   edificio_constructor: muelleElfos
+   oro: 100
+   madera: 50
+   comida: 80
+   rango: 6
+   es_bote: true   
 
 
  - nombre: legolas
@@ -271,6 +347,26 @@ tipos:
    oro: 25
    comida: 25
    musica: img/2hobbit/frodo-aldeano/ATTACK.wav
+
+ - nombre: barHobb
+   imagen: img/2hobbit/barcoHobbit.png
+   imagen_quieto: img/2hobbit/barcoHobbit.png
+   imagen_atacar: img/2hobbit/barcoHobbit.png
+   icono: img/2hobbit/frodo-aldeano/icon.bmp
+   fps: 3
+   delay: 0
+   velocidad: 24
+   vida: 100
+   fuerza: 40
+   armadura: 15
+   raza: Hobbit
+   edificio_constructor: muelleHobbit
+   oro: 100
+   madera: 50
+   comida: 80
+   rango: 6
+   es_bote: true  
+
 
 
  - nombre: enano
@@ -342,6 +438,26 @@ tipos:
    comida: 25
    musica: img/3humanos/aldeano/ATTACK.wav
 
+ - nombre: barHum
+   imagen: img/3humanos/barcoHumanos.png
+   imagen_quieto: img/3humanos/barcoHumanos.png
+   imagen_atacar: img/3humanos/barcoHumanos.png
+   icono: img/3humanos/aldeano/icon.bmp
+   fps: 3
+   delay: 0
+   velocidad: 24
+   vida: 100
+   fuerza: 40
+   armadura: 15
+   raza: Humano
+   edificio_constructor: muelleHumanos
+   oro: 100
+   madera: 50
+   comida: 80
+   rango: 6
+   es_bote: true  
+
+
 
  - nombre: soldado
    imagen: img/3humanos/caballero/WALK.png
@@ -409,6 +525,25 @@ tipos:
    oro: 25
    comida: 25
    musica: img/4mordor/aldeano/ATTACK.wav
+
+ - nombre: barMor
+   imagen: img/4mordor/barcoMordor.png
+   imagen_quieto: img/4mordor/barcoMordor.png
+   imagen_atacar: img/4mordor/barcoMordor.png
+   icono: img/4mordor/aldeano/icon.bmp
+   fps: 3
+   delay: 0
+   velocidad: 24
+   vida: 100
+   fuerza: 40
+   armadura: 15
+   raza: Mordor
+   edificio_constructor: muelleMordor
+   oro: 100
+   madera: 50
+   comida: 80
+   rango: 6
+   es_bote: true  
 
 
  - nombre: sauron
