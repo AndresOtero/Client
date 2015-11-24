@@ -190,7 +190,7 @@ tipos:
    alto_base: 5
    pixel_ref_x: -140
    pixel_ref_y: 120
-   vida: 350
+   vida: 700
    raza: Mordor
    velocidad_de_construccion: 10
    oro: 20
@@ -321,7 +321,7 @@ tipos:
    delay: 0
    velocidad: 40
    vida: 85
-   fuerza: 35
+   fuerza: 20
    armadura: 15
    raza: Elfo
    edificio_constructor: caballeriaElfos
@@ -581,7 +581,7 @@ tipos:
    imagen_quieto: img/4mordor/orco grande/STAND.png
    imagen_atacar: img/4mordor/orco grande/ATACK.png
    icono: img/4mordor/orco grande/icon.bmp
-   fps: 3
+   fps: 2
    delay: 0
    velocidad: 10
    vida: 200
