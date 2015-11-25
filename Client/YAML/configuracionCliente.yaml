@@ -19,7 +19,7 @@ tipos:
 
  - nombre: muelleElfos
    imagen: img/1elfos/muelle.png
-   icono:  img/1elfos/icon-arqueria.bmp
+   icono:  img/1elfos/icon-muelle.bmp
    ancho_base: 3
    alto_base: 4
    pixel_ref_x: -75
@@ -102,7 +102,7 @@ tipos:
 
  - nombre: muelleHobbit
    imagen: img/2hobbit/muelle.png
-   icono:  img/2hobbit/icon-cuartel.bmp
+   icono:  img/2hobbit/icon-muelle.bmp
    ancho_base: 4
    alto_base: 4
    pixel_ref_x: -60
@@ -139,7 +139,7 @@ tipos:
 
  - nombre: muelleHumanos
    imagen: img/3humanos/muelle.png
-   icono:  img/3humanos/icon-escuderia.bmp
+   icono:  img/3humanos/icon-muelle.bmp
    ancho_base: 5
    alto_base: 4
    pixel_ref_x: -120
@@ -199,7 +199,7 @@ tipos:
 
  - nombre: muelleMordor
    imagen: img/4mordor/muelle.png
-   icono:  img/4mordor/icon-cuartel.bmp
+   icono:  img/4mordor/icon-muelle.bmp
    ancho_base: 3
    alto_base: 4
    pixel_ref_x: -55
@@ -277,7 +277,7 @@ tipos:
    imagen: img/1elfos/barcoElfos.png
    imagen_quieto: img/1elfos/barcoElfos.png
    imagen_atacar: img/1elfos/barcoElfos.png
-   icono: img/1elfos/aldeano/icon.bmp
+   icono: img/1elfos/icon-barco.bmp
    fps: 2
    delay: 0
    velocidad: 24
@@ -352,7 +352,7 @@ tipos:
    imagen: img/2hobbit/barcoHobbit.png
    imagen_quieto: img/2hobbit/barcoHobbit.png
    imagen_atacar: img/2hobbit/barcoHobbit.png
-   icono: img/2hobbit/frodo-aldeano/icon.bmp
+   icono: img/2hobbit/icon-barco.bmp
    fps: 2
    delay: 0
    velocidad: 24
@@ -442,7 +442,7 @@ tipos:
    imagen: img/3humanos/barcoHumanos.png
    imagen_quieto: img/3humanos/barcoHumanos.png
    imagen_atacar: img/3humanos/barcoHumanos.png
-   icono: img/3humanos/aldeano/icon.bmp
+   icono: img/3humanos/icon-barco.bmp
    fps: 2
    delay: 0
    velocidad: 24
@@ -530,7 +530,7 @@ tipos:
    imagen: img/4mordor/barcoMordor.png
    imagen_quieto: img/4mordor/barcoMordor.png
    imagen_atacar: img/4mordor/barcoMordor.png
-   icono: img/4mordor/aldeano/icon.bmp
+   icono: img/4mordor/icon-barco.bmp
    fps: 2
    delay: 0
    velocidad: 24
